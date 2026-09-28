@@ -1,0 +1,108 @@
+Art of Electronics Third Edition
+1.4.3. Differentiators
+25
+
+could somehow use the current through C as our “output”!
+But we can’t.25
+
+2. So we add a small resistor from the low side of the
+capacitor to ground, to act as a “current-sensing” resistor
+(Figure 1.41B). The good news is that we now have an output proportional to the current through the capacitor. The
+bad news is that the circuit is no longer a perfect mathematical differentiator. That’s because the voltage across C
+(whose derivative produces the current we are sensing with
+R) is no longer equal to Vin; it now equals the difference between Vin and Vout. Here’s how it goes: the voltage across
+C is Vin−Vout, so
+
+I = C d
+
+the capacitor fast enough (> 99% in 5 RC time constants,
+or 0.05 s). (b) The comparator output would likely bounce
+around a bit (see Figure 4.31), just as the (+) input crosses
+the reference voltage in its leisurely exponential promenade toward ground, owing to unavoidable bits of electrical
+noise. To fix this problem you usually see the circuit arranged so that some of the output is coupled back to the input in a way that reinforces the switching (this is officially
+called hysteresis, or positive feedback; we’ll see it in Chapters 4 and 10). (c) In electronic circuits it’s always a good
+idea to bypass the dc supply by connecting one or more capacitors between the dc “rail” and ground. The capacitance
+is noncritical – values of 0.1 μF to 10 μF are commonly
+used; see §1.7.16A.
+
+dt (Vin −Vout) = Vout
+
+R .
+
+If we choose R and C small enough so that dVout/dt ≪
+dVin/dt, then
+
+C dVin
+
+dt
+≈Vout
+
+R
+or
+
+Vout(t) ≈RC d
+
+dt Vin(t).
+
+That is, we get an output proportional to the rate of change
+of the input waveform.
+
+Our simple examples above all involved turning some
+load on and off. But there are other uses for an electronic
+logic signal, like the output of the comparator, that is in
+one of two possible binary states, called HIGH and LOW (in
+this case +5 V and ground), 1 and 0, or TRUE and FALSE.
+For example, such a signal can enable or disable the operation of some other circuit. Imagine that the opening of
+a car door triggers our 1 min HIGH output, which then enables a keypad to accept a security code so you can start
+the car. After a minute, if you haven’t managed to type the
+magic code, it shuts off, thus ensuring a certain minimum
+of operator sobriety.
+
+I (t)
+
+Vin(t)
+
+C
+
+To keep dVout/dt ≪dVin/dt, we make the product RC
+small, taking care not to “load” the input by making R too
+small (at the transition the change in voltage across the capacitor is zero, so R is the load seen by the input). We will
+have a better criterion for this when we look at things in the
+frequency domain (§1.7.10). If you drive this circuit with a
+square wave, the output will be as shown in Figure 1.42.
+
+A.
+
+C
+
+Vin
+
+Vout(t)
+
+Vin(t)
+
+R
+
+Vout
+
+B.
+
+Figure 1.41. Differentiators. A. Perfect (except it has no output terminal). B. Approximate (but at least it has an output!).
+
+Figure 1.42. Output waveform (bottom) from differentiator driven
+by a square wave.
+
+1.4.3 Differentiators
+
+Differentiators are handy for detecting leading edges
+and trailing edges in pulse signals, and in digital circuitry you sometimes see things like those depicted in Figure 1.43. The RC differentiator generates spikes at the transitions of the input signal, and the output buffer converts
+
+You can make a simple circuit that differentiates an input
+signal; that is, Vout ∝dVin/dt. Let’s take it in two steps.
+
+25 Devotees of the cinema will be reminded of Dr. Strangelove’s outburst:
+“The whole point of a doomsday machine is lost ... if you keep it
+secret!”
+
+1. First look at the (impractical) circuit in Figure 1.41A:
+The input voltage Vin(t) produces a current through the capacitor of Icap =CdVin/dt. That’s just what we want – if we

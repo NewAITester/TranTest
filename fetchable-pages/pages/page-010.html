@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Page 10 of 70</title><meta name="source-page" content="10"><link rel="stylesheet" href="../styles.css">
+<link rel="prev" href="page-009.html"><link rel="next" href="page-011.html"></head><body>
+<header><div><a class="back" href="../index.html">All pages</a> <span class="meta">Source page 10 / 70</span></div>
+<nav class="nav" aria-label="Page navigation"><a href="page-009.html">Previous</a><a href="page-011.html">Next</a></nav></header>
+<main><h1 class="meta">Page 10</h1><figure class="sheet"><img src="../images/page-010.webp" width="1152" height="1440" alt="Complete visual rendering of source PDF page 10"></figure>
+<details class="transcript" open><summary>Fetchable text — page 10</summary><div class="text"><p>10
+1.2. Voltage, current, and resistance
+Art of Electronics Third Edition</p><p>set of switchable ranges. Ideally, a current-measuring meter should have
+zero resistance13 in order not to disturb the circuit under test, since it
+must be put in series with the circuit. In practice, you tolerate a few
+tenths of a volt drop (sometimes called “voltage burden”) with both
+VOMs and digital multimeters. For either kind of meter, selecting a
+current range puts a small resistor across the meter’s input terminals,
+typically of resistance value to create a voltage drop of 0.1 V to 0.25 V
+for the chosen full-scale current; the voltage drop is then converted to a
+corresponding current indication.14 Typically, multimeters provide current ranges from 50 μA (or less) to an amp (or more), full scale.</p><p>MULTIMETERS
+There are numerous instruments that let you measure voltages and currents in a circuit. The oscilloscope is the most versatile; it lets you “see”
+voltages versus time at one or more points in a circuit. Logic probes
+and logic analyzers are special-purpose instruments for troubleshooting
+digital circuits. The simple multimeter provides a good way to measure voltage, current, and resistance, often with good precision; however, it responds slowly, and thus it cannot replace the oscilloscope
+where changing voltages are of interest. Multimeters are of two varieties: those that indicate measurements on a conventional scale with a
+moving pointer, and those that use a digital display.</p><p>Multimeters also have one or more batteries in them to power the
+resistance measurement. By supplying a small current and measuring
+the voltage drop, they measure resistance, with several ranges to cover
+values from 1 Ω (or less) to 10 MΩ (or more).</p><p>Important: don’t try to measure “the current of a voltage source,” by
+sticking the meter across the wall plug; the same applies for ohms. This
+is a leading cause of blown-out meters.</p><p>Exercise 1.7. What will a 20,000 Ω/V meter read, on its 1 V
+scale, when attached to a 1 V source with an internal resistance
+of 10k? What will it read when attached to a 10k–10k voltage
+divider driven by a “stiff” (zero source resistance) 1 V source?</p><p>The traditional (and now largely obsolete) VOM (volt-ohmmilliammeter) multimeter uses a meter movement that measures current (typically 50 μA full scale). (See a less-design-oriented electronics
+book for pretty pictures of the innards of meter movements; for our
+purposes, it suffices to say that it uses coils and magnets.) To measure
+voltage, the VOM puts a resistor in series with the basic movement.
+For instance, one kind of VOM will generate a 1 V (full-scale) range
+by putting a 20k resistor in series with the standard 50 μA movement;
+higher voltage ranges use correspondingly larger resistors. Such a VOM
+is specified as 20,000 Ω/V, meaning that it looks like a resistor whose
+value is 20k multiplied by the full-scale voltage of the particular range
+selected. Full scale on any voltage range is 1/20,000 amps, or 50 μA.
+It should be clear that one of these voltmeters disturbs a circuit less
+on a higher range, since it looks like a higher resistance (think of the
+voltmeter as the lower leg of a voltage divider, with the Th´evenin resistance of the circuit you are measuring as the upper resistor). Ideally, a
+voltmeter should have infinite input resistance.</p><p>Exercise 1.8. A 50 μA meter movement has an internal resistance of 5k. What shunt resistance is needed to convert it to a
+0–1 A meter? What series resistance will convert it to a 0–10 V
+meter?</p><p>Most contemporary multimeters use electronic amplification and
+have an input resistance of 10 MΩ to 1000 MΩ when measuring voltage; they display their results digitally, and are known collectively as
+digital multimeters (DMMs). A word of caution: sometimes the input
+resistance of these meters is very high on the most sensitive ranges,
+dropping to a lower resistance for the higher ranges. For instance, you
+might typically have an input resistance of 109 Ω on the 0.2 V and 2 V
+ranges, and 107 Ω on all higher ranges. Read the specifications carefully! However, for most circuit measurements these high input resistances will produce negligible loading effects. In any case, it is easy to
+calculate how serious the effect is by using the voltage-divider equation.
+Typically, multimeters provide voltage ranges from a volt (or less) to a
+kilovolt (or more), full scale.</p><p>A multimeter usually includes current-measuring capability, with a</p><p>Exercise 1.9. The very high internal resistance of digital multimeters, in their voltage-measuring ranges, can be used to measure extremely low currents (even though the DMM may not
+offer a low current range explicitly). Suppose, for example, you
+want to measure the small current that flows through a 1000 MΩ
+“leakage” resistance (that term is used to describe a small current that ideally should be absent entirely, for example through
+the insulation of an underground cable). You have available a
+standard DMM, whose 2 V dc range has 10 MΩ internal resistance, and you have available a dc source of +10 V. How can
+you use what you’ve got to measure accurately the leakage resistance?</p><p>drop for a given load resistance: use the Th´evenin equivalent circuit, attach a load, and calculate the new output,
+noting that the new circuit is nothing but a voltage divider
+(Figure 1.12).</p><p>Exercise 1.10. For the circuit shown in Figure 1.12, with</p><p>Vin=30 V and R1 = R2 = 10k, find (a) the output voltage with
+no load attached (the open-circuit voltage); (b) the output voltage
+with a 10k load (treat as a voltage divider, with R2 and Rload combined into a single resistor); (c) the Th´evenin equivalent circuit;
+(d) the same as in part (b), but using the Th´evenin equivalent circuit [again, you wind up with a voltage divider; the answer should
+agree with the result in part (b)]; (e) the power dissipated in each
+of the resistors.</p><p>13 This is the opposite of an ideal voltage-measuring meter, which should
+present infinite resistance across its input terminals.
+14 A special class of current meters known as electrometers operate with
+very small voltage burdens (as little at 0.1 mV) by using the technique
+of feedback, something we’ll learn about in Chapters 2 and 4.</p><p>A. Equivalent source resistance and circuit loading
+As we have just seen, a voltage divider powered from some
+fixed voltage is equivalent to some smaller voltage source</p></div></details></main>
+<footer>Visual layout, figures, tables, equations, footnotes, and original printed page number are preserved in the lossless page image. <a href="../text/page-010.txt">Plain text</a> · <a href="../data/page-010.json">JSON</a></footer>
+</body></html>

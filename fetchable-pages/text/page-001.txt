@@ -1,0 +1,77 @@
+FOUNDATIONS
+
+CHAPTER 1
+
+1.1 Introduction
+
+electronic circuits. Because you can’t touch, see, smell, or
+hear electricity, there will be a certain amount of abstraction (particularly in the first chapter), as well as some dependence on such visualizing instruments as oscilloscopes
+and voltmeters. In many ways the first chapter is also the
+most mathematical, in spite of our efforts to keep mathematics to a minimum in order to foster a good intuitive
+understanding of circuit design and behavior.
+
+In this new edition we’ve included some intuition-aiding
+approximations that our students have found helpful. And,
+by introducing one or two “active” components ahead of
+their time, we’re able to jump directly into some applications that are usually impossible in a traditional textbook
+“passive electronics” chapter; this will keep things interesting, and even exciting.
+
+Once we have considered the foundations of electronics, we will quickly get into the active circuits (amplifiers,
+oscillators, logic circuits, etc.) that make electronics the exciting field it is. The reader with some background in electronics may wish to skip over this chapter, since it assumes
+no prior knowledge of electronics. Further generalizations
+at this time would be pointless, so let’s just dive right in.
+
+The field of electronics is one of the great success stories
+of the 20th century. From the crude spark-gap transmitters
+and “cat’s-whisker” detectors at its beginning, the first halfcentury brought an era of vacuum-tube electronics that developed considerable sophistication and found ready application in areas such as communications, navigation, instrumentation, control, and computation. The latter halfcentury brought “solid-state” electronics – first as discrete
+transistors, then as magnificent arrays of them within “integrated circuits” (ICs) – in a flood of stunning advances
+that shows no sign of abating. Compact and inexpensive
+consumer products now routinely contain many millions
+of transistors in VLSI (very large-scale integration) chips,
+combined with elegant optoelectronics (displays, lasers,
+and so on); they can process sounds, images, and data, and
+(for example) permit wireless networking and shirt-pocket
+access to the pooled capabilities of the Internet. Perhaps as
+noteworthy is the pleasant trend toward increased performance per dollar.1 The cost of an electronic microcircuit
+routinely decreases to a fraction of its initial cost as the
+manufacturing process is perfected (see Figure 10.87 for
+an example). In fact, it is often the case that the panel controls and cabinet hardware of an instrument cost more than
+the electronics inside.
+
+1.2 Voltage, current, and resistance
+1.2.1 Voltage and current
+
+There are two quantities that we like to keep track of in
+electronic circuits: voltage and current. These are usually
+changing with time; otherwise nothing interesting is happening.
+
+Voltage (symbol V or sometimes E). Officially, the volt-
+
+On reading of these exciting new developments in electronics, you may get the impression that you should be able
+to construct powerful, elegant, yet inexpensive, little gadgets to do almost any conceivable task – all you need to
+know is how all these miracle devices work. If you’ve had
+that feeling, this book is for you. In it we have attempted
+to convey the excitement and know-how of the subject of
+electronics.
+
+age between two points is the cost in energy (work done)
+required to move a unit of positive charge from the more
+negative point (lower potential) to the more positive
+point (higher potential). Equivalently, it is the energy
+released when a unit charge moves “downhill” from
+the higher potential to the lower.2 Voltage is also called
+
+In this chapter we begin the study of the laws, rules of
+thumb, and tricks that constitute the art of electronics as we
+see it. It is necessary to begin at the beginning – with talk of
+voltage, current, power, and the components that make up
+
+1 A mid-century computer (the IBM 650) cost $300,000, weighed 2.7
+tons, and contained 126 lamps on its control panel; in an amusing reversal, a contemporary energy-efficient lamp contains a computer of
+greater capability within its base, and costs about $10.
+
+2 These are the definitions, but hardly the way circuit designers think of
+voltage. With time, you’ll develop a good intuitive sense of what voltage really is, in an electronic circuit. Roughly (very roughly) speaking,
+voltages are what you apply to cause currents to flow.
+
+1

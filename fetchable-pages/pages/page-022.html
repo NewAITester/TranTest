@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Page 22 of 70</title><meta name="source-page" content="22"><link rel="stylesheet" href="../styles.css">
+<link rel="prev" href="page-021.html"><link rel="next" href="page-023.html"></head><body>
+<header><div><a class="back" href="../index.html">All pages</a> <span class="meta">Source page 22 / 70</span></div>
+<nav class="nav" aria-label="Page navigation"><a href="page-021.html">Previous</a><a href="page-023.html">Next</a></nav></header>
+<main><h1 class="meta">Page 22</h1><figure class="sheet"><img src="../images/page-022.webp" width="1152" height="1440" alt="Complete visual rendering of source PDF page 22"></figure>
+<details class="transcript" open><summary>Fetchable text — page 22</summary><div class="text"><p>22
+1.4. Capacitors and ac circuits
+Art of Electronics Third Edition</p><p>V</p><p>Vf</p><p>63%</p><p>Vout = Vf (1 – e–t/RC)</p><p>A. Time constant
+The product RC is called the time constant of the circuit.
+For R in ohms andC in farads, the product RC is in seconds.
+A microfarad across 1.0k has a time constant of 1 ms; if the
+capacitor is initially charged to 1.0 V, the initial current is
+1.0 mA.</p><p>0</p><p>t
+t = RC</p><p>R</p><p>Vout
++</p><p>Figure 1.34. RC charging waveform.</p><p>C
+battery,
+voltage = Vf</p><p>Vin</p><p>Figure 1.33. RC charging circuit.</p><p>t</p><p>(lower frequency)</p><p>Vout</p><p>Figure 1.33 shows a slightly different circuit. At time
+t = 0, someone connects the battery. The equation for the
+circuit is then</p><p>I = C dV</p><p>dt = Vf −Vout</p><p>R
+,</p><p>t</p><p>with the solution</p><p>Vout = Vf +Ae−t/RC.</p><p>Figure 1.35. Output (lower waveforms) across a capacitor, when
+driven by square waves through a resistor.</p><p>within 1% of its final value in five time constants.) If we
+then change the battery voltage to some other value (say,
+0 V), V will decay toward that new value with an exponential e−t/RC. For example, replacing the battery’s step input
+from 0 to +Vf with a square-wave input Vin(t) would produce the output shown in Figure 1.35.</p><p>(Please don’t worry if you can’t follow the mathematics.
+What we are doing is getting some important results, which
+you should remember. Later we will use the results often, with no further need for the mathematics used to derive them. For readers whose knowledge of math is somewhat, uh, rusty, the brief review in Appendix A may prove
+helpful.) The constant A is determined by initial conditions
+(Figure 1.34): V = 0 at t = 0; therefore, A = −Vf, and</p><p>Vout = Vf (1−e−t/RC).
+(1.21)</p><p>Exercise 1.16. Show that the rise time (the time required for going
+from 10% to 90% of its final value) of this signal is 2.2RC.</p><p>You might ask the obvious next question: what about
+V(t) for arbitrary Vin(t)? The solution involves an inhomogeneous differential equation and can be solved by standard methods (which are, however, beyond the scope of
+this book). You would find</p><p> t</p><p>Once again there’s good intuition: as the capacitor charges
+up, the slope (which is proportional to current, because it’s
+a capacitor) is proportional to the remaining voltage (because that’s what appears across the resistor, producing the
+current); so we have a waveform whose slope decreases
+proportionally to the vertical distance it has still to go – an
+exponential.</p><p>V(t) = 1</p><p>RC</p><p>−∞Vin(τ)e−(t−τ)/RCdτ.</p><p>That is, the RC circuit averages past history at the input
+with a weighting factor of</p><p>You can turn around the last equation to figure out the
+time required to reach a voltage V on the way to the final
+voltage Vf. Try it! (Refer to Appendix A if you need help
+with logarithms.) You should get</p><p>e−Δt/RC.</p><p></p><p>(1.22)</p><p>t = RC loge</p><p>
+Vf
+Vf −V</p><p>B. Decay to equilibrium
+Eventually (when t ≫RC), V reaches Vf. (Presenting the
+“5RC rule of thumb”: a capacitor charges or decays to</p><p>In practice, you seldom ask this question. Instead, you
+deal in the frequency domain, in which you ask how much
+of each frequency component present in the input gets
+through. We will get to this important topic soon (§1.7).
+Before we do, though, there are a few other interesting</p></div></details></main>
+<footer>Visual layout, figures, tables, equations, footnotes, and original printed page number are preserved in the lossless page image. <a href="../text/page-022.txt">Plain text</a> · <a href="../data/page-022.json">JSON</a></footer>
+</body></html>

@@ -1,0 +1,123 @@
+Art of Electronics Third Edition
+1.2.3. Voltage dividers
+7
+
+signal in
+
+R1
+
+signal out
+
+volume
+
+R2
+
+(adjustable)
+
+A.
+
+signal in
+R1
+
+signal out
+
+volume
+
+R2
+
+B.
+
+D. Input and output
+Nearly all electronic circuits accept some sort of applied
+input (usually a voltage) and produce some sort of corresponding output (which again is often a voltage). For example, an audio amplifier might produce a (varying) output
+voltage that is 100 times as large as a (similarly varying) input voltage. When describing such an amplifier, we imagine measuring the output voltage for a given applied input
+voltage. Engineers speak of the transfer function H, the ratio of (measured) output divided by (applied) input; for the
+audio amplifier above, H is simply a constant (H = 100).
+We’ll get to amplifiers soon enough, in the next chapter.
+However, with only resistors we can already look at a very
+important circuit fragment, the voltage divider (which you
+might call a “de-amplifier”).
+
+1.2.3 Voltage dividers
+
+Figure 1.7. An adjustable voltage divider can be made from a fixed
+and variable resistor, or from a potentiometer. In some contemporary circuits you’ll find instead a long series chain of equal-value
+resistors, with an arrangement of electronic switches that lets you
+choose any one of the junctions as the output; this sounds much
+more complicated – but it has the advantage that you can adjust
+the voltage ratio electrically (rather than mechanically).
+
+We now come to the subject of the voltage divider, one of
+the most widespread electronic circuit fragments. Show us
+any real-life circuit and we’ll show you half a dozen voltage dividers. To put it very simply, a voltage divider is a
+circuit that, given a certain voltage input, produces a predictable fraction of the input voltage as the output voltage.
+The simplest voltage divider is shown in Figure 1.6.
+
+(We’ve used the definition of resistance and the series law.)
+Then, for R2,
+
+Vin.
+(1.6)
+
+R1
+
+Vout = IR2 =
+R2
+R1 +R2
+
+R2
+
+Vout
+
+=
+
+R1 + R2
+Vin
+Vin
+
+Vout
+R2
+
+Figure 1.6. Voltage divider. An applied voltage Vin results in a
+(smaller) output voltage Vout.
+
+Note that the output voltage is always less than (or equal
+to) the input voltage; that’s why it’s called a divider. You
+could get amplification (more output than input) if one
+of the resistances were negative. This isn’t as crazy as it
+sounds; it is possible to make devices with negative “incremental” resistances (e.g., the component known as a tunnel
+diode) or even true negative resistances (e.g., the negativeimpedance converter that we will talk about later in the
+book, §6.2.4B). However, these applications are rather specialized and need not concern you now.
+
+An important word of explanation: when engineers
+draw a circuit like this, it’s generally assumed that the Vin
+on the left is a voltage that you are applying to the circuit,
+and that the Vout on the right is the resulting output voltage
+(produced by the circuit) that you are measuring (or at
+least are interested in). You are supposed to know all this
+(a) because of the convention that signals generally flow
+from left to right, (b) from the suggestive names (“in,”
+“out”) of the signals, and (c) from familiarity with circuits
+like this. This may be confusing at first, but with time it
+becomes easy.
+
+Voltage dividers are often used in circuits to generate a particular voltage from a larger fixed (or varying)
+voltage. For instance, if Vin is a varying voltage and R2
+is an adjustable resistor (Figure 1.7A), you have a “volume control”; more simply, the combination R1R2 can be
+made from a single variable resistor, or potentiometer (Figure 1.7B). This and similar applications are common, and
+potentiometers come in a variety of styles, some of which
+are shown in Figure 1.8.
+
+What is Vout? Well, the current (same everywhere, assuming no “load” on the output; i.e., nothing connected
+across the output) is
+
+.
+
+The humble voltage divider is even more useful, though,
+as a way of thinking about a circuit: the input voltage and
+upper resistance might represent the output of an amplifier,
+say, and the lower resistance might represent the input of
+
+I =
+Vin
+R1 +R2

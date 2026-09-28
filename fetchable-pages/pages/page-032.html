@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Page 32 of 70</title><meta name="source-page" content="32"><link rel="stylesheet" href="../styles.css">
+<link rel="prev" href="page-031.html"><link rel="next" href="page-033.html"></head><body>
+<header><div><a class="back" href="../index.html">All pages</a> <span class="meta">Source page 32 / 70</span></div>
+<nav class="nav" aria-label="Page navigation"><a href="page-031.html">Previous</a><a href="page-033.html">Next</a></nav></header>
+<main><h1 class="meta">Page 32</h1><figure class="sheet"><img src="../images/page-032.webp" width="1152" height="1440" alt="Complete visual rendering of source PDF page 32"></figure>
+<details class="transcript" open><summary>Fetchable text — page 32</summary><div class="text"><p>32
+1.6. Diodes and diode circuits
+Art of Electronics Third Edition</p><p>Table 1.1 Representative Diodes</p><p>Capacitance</p><p>VF @ IF</p><p>VR (max) IR (typ, 25°C)</p><p>Part #</p><p>SMTa p/n
+(A @ V)
+(mV)
+(mA)
+(V)
+Comments</p><p>(pF @ VR)</p><p>Silicon</p><p>0.5pF
+0.9pF
+12pF
+18pF</p><p>0.25pA
+10nA
+50nA
+&lt;10μA</p><p>PAD5
+45
+20V
+800
+1
+5V
+SSTPAD5
+metal + glass can
+1N4148
+75
+20V
+750
+10
+0V
+1N4148W
+jellybean sig diode
+1N4007
+1000
+800V
+800
+250
+10V
+DL4007
+1N4004 lower V
+1N5406
+600
+600V
+1.0V
+10A
+10V
+none
+heat through leads
+Schottkyb</p><p>1N6263
+60
+20V
+400
+1
+10V
+1N6263W
+see also 1N5711
+1N5819
+40
+32V
+400
+1000
+1V
+1N5819HW
+jellybean
+1N5822
+40
+32V
+480
+3000
+1V
+none
+power Schottky
+MBRP40045
+45
+40V
+540
+400A
+10V
+you jest!
+Moby dual Schottky</p><p>0.6pF
+150pF
+450pF
+3500pF</p><p>7nA
+10μA
+40μA
+500μA</p><p>Notes: (a) SMT, surface-mount technology. (b) Schottky diodes have lower forward voltage and zero
+reverse-recovery time, but more capacitance.</p><p>which the diode drop becomes significant, you have to remember that.29</p><p>understanding how the circuit works. This circuit is called
+a half-wave rectifier, because only half of the input waveform is used.</p><p>Vload</p><p>Rload
+ac</p><p>Figure 1.59. Full-wave output voltage (unfiltered).</p><p>Figure 1.56. Half-wave rectifier.</p><p>1.6.3 Power-supply filtering</p><p>Vload</p><p>Figure 1.57. Half-wave output voltage (unfiltered).</p><p>Rload</p><p>The preceding rectified waveforms aren’t good for much as
+they stand. They’re “dc” only in the sense that they don’t
+change polarity. But they still have a lot of “ripple” (periodic variations in voltage about the steady value) that has
+to be smoothed out in order to generate genuine dc. This
+we do by attaching a relatively large value capacitor (Figure 1.60); it charges up to the peak output voltage during
+the diode conduction, and its stored charge (Q = CV) provides the output current in between charging cycles. Note
+that the diodes prevent the capacitor from discharging back
+through the ac source. In this application you should think
+of the capacitor as an energy storage device, with stored
+energy U = 1</p><p>2CV 2 (recall §1.4.1; for C in farads and V in
+volts, U comes out in joules, or equivalently, watt seconds).</p><p>Figure 1.58. Full-wave bridge rectifier.</p><p>The capacitor value is chosen so that</p><p>RloadC ≫1/f,</p><p>29 The diode drop can be eliminated with active switching (or synchronous switching, a technique in which the diodes are replaced by
+transistor switches, actuated in synchronism with the input ac waveform (see §9.5.3B).</p><p>Figure 1.58 shows another rectifier circuit, a “full-wave
+bridge.” Figure 1.59 shows the voltage across the load;
+note that the entire input waveform is used. The gaps at
+zero voltage occur because of the diodes’ forward voltage
+drop. In this circuit, two diodes are always in series with
+the input; when you design low-voltage power supplies, for</p></div></details></main>
+<footer>Visual layout, figures, tables, equations, footnotes, and original printed page number are preserved in the lossless page image. <a href="../text/page-032.txt">Plain text</a> · <a href="../data/page-032.json">JSON</a></footer>
+</body></html>

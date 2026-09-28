@@ -1,0 +1,96 @@
+18
+1.4. Capacitors and ac circuits
+Art of Electronics Third Edition
+
++
+
+several modes (linear or logarithmic frequency variation
+versus time). They are available with pulse outputs (although not with the flexibility you get with a pulse generator), and some of them have provision for modulation.
+
+Figure 1.27. Capacitors. The curved electrode indicates the negative terminal of a polarized capacitor, or the “outer foil” of a
+wrapped-film capacitor.
+
+tions of the treatment that follows are necessarily mathematical in nature; the reader with little mathematical preparation may find the math review in Appendix A helpful. In
+any case, an understanding of the details is less important
+in the long run than an understanding of the results.
+
+1.4.1 Capacitors
+
+A capacitor (Figure 1.27) (the old-fashioned name was
+condenser) is a device that has two wires sticking out of
+it and has the property
+
+Q = CV.
+(1.13)
+
+Traditional function generators used analog circuitry,
+but contemporary models generally are synthesized digital function generators, exhibiting all the flexibility of
+a function generator along with the stability and accuracy of a frequency synthesizer. In addition, they let you
+program an “arbitrary” waveform, specifying the amplitude at a set of equally spaced points. An example is
+the Tektronix AFG3102, with a lower frequency limit of
+1 microhertz, which can make sine and square waves to
+100 MHz, pulses and “noise” to 50 MHz, and arbitrary
+waveforms (up to 128k points) to 50 MHz. It has modulation (five kinds), sweep (linear and log), and burst modes (1
+to 106 cycles), and everything is programmable, including
+frequency, pulse width and rise times, modulation, and amplitude (20 mV to 10 Vpp); it even includes some bizarre
+built-in waveforms such as sin(x)/x, exponential rise and
+fall, Gaussian, and Lorentzian. It has two independent outputs and costs about $5k. For general use, if you can have
+only one signal source, the function generator is for you.
+
+1.4 Capacitors and ac circuits
+
+Its basic form is a pair of closely-spaced metal plates,
+separated by some insulating material, as in the rolledup “axial-film capacitor” of Figure 1.28. A capacitor of C
+farads with V volts across its terminals has Q coulombs of
+stored charge on one plate and −Q on the other. The capacitance is proportional to the area and inversely proportional
+to the spacing. For the simple parallel-plate capacitor, with
+separation d and plate area A (and with the spacing d much
+less than the dimensions of the plates), the capacitance C is
+given by
+
+C = 8.85×10−14 εA/d F,
+(1.14)
+
+where ε is the dielectric constant of the insulator, and the
+dimensions are measured in centimeters. It takes a lot of
+area, and tiny spacing, to make the sort of capacitances
+commonly used in circuits.21 For example, a pair of 1 cm2
+
+Once we enter the world of changing voltages and currents,
+or “signals,” we encounter two very interesting circuit
+elements that are useless in purely dc circuits: capacitors
+and inductors. As you will see, these humble devices,
+combined with resistors, complete the triad of passive
+linear circuit elements that form the basis of nearly all
+circuitry.20 Capacitors, in particular, are essential in nearly
+every circuit application. They are used for waveform
+generation, filtering, and blocking and bypass applications.
+They are used in integrators and differentiators. In combination with inductors, they make possible sharp filters
+for separating desired signals from background. You will
+see some of these applications as we continue with this
+chapter, and there will be numerous interesting examples
+in later chapters.
+
+Let’s proceed, then, to look at capacitors in detail. Por-
+
+plates separated by 1 mm is a capacitor of slightly less than
+10−12 F (a picofarad); you’d need 100,000 of them just to
+create the 0.1 μF capacitor of Figure 1.28 (which is nothing
+special; we routinely use capacitors with many microfarads
+of capacitance). Ordinarily you don’t need to calculate capacitances, because you buy a capacitor as an electronic
+component.
+
+To a first approximation, capacitors are devices that
+might be considered simply frequency-dependent resistors.
+
+21 And it doesn’t hurt to have a high dielectric constant, as well: air has
+ε=1, but plastic films have ε=2.1 (polypropylene) or 3.1 (polyester).
+And certain ceramics are popular among capacitor makers: ε=45
+(“C0G” type) or 3000 (“X7R” type).
+
+20 Readers of the scientific journal Nature (London) were greeted,
+in 2008, with an article titled “The missing memristor found”
+(D. B. Strukov et al., 453, 80, 2008), purporting to have found a heretofore missing “fourth fundamental [passive circuit] element.” We are
+skeptical. However the controversy is ultimately resolved, it should be
+noted that the memristor is a nonlinear element; there are only three
+linear passive 2-terminal circuit elements.

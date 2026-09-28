@@ -1,0 +1,141 @@
+Art of Electronics Third Edition
+1.7.6. Power in reactive circuits
+47
+
+I(t)
+
+where V and I are complex rms amplitudes (and an asterisk means complex conjugate – see the math review, Appendix A, if this is unfamiliar).
+
+V(t)
+
+I(t)
+
+V(t)
+
+Let’s take an example. Consider the preceding circuit,
+with a 1 volt (rms) sinewave driving a capacitor. We’ll do
+everything with rms amplitudes, for simplicity. We have
+
+t
+
+C
+
+V = 1,
+
+sine
+wave
+
+I =
+V
+−j/ωC = jωC,
+
+C
+D
+A
+B
+
+P = Re(VI∗) = Re(−jωC) = 0.
+
+That is, the average power is zero, as stated earlier.
+
+Figure 1.94. The power delivered to a capacitor is zero over a full
+sinusoidal cycle, owing to the 90◦phase shift between voltage and
+current.
+
+C
+
+I
+
+1.7.6 Power in reactive circuits
+
+R
+
+V0 cos ωt
+
+Figure 1.95. Power and power factor in a series RC circuit.
+
+As another example, consider the circuit shown in Figure 1.95. Our calculations go like this:
+
+Z = R−
+j
+ωC ,
+
+V = V0,
+
+I = V
+
+Z =
+V0
+R−(j/ωC) = V0 [R+(j/ωC)]
+
+R2 +(1/ω2C2) ,
+
+P = Re(VI∗) =
+V 2
+
+0 R
+R2 +(1/ω2C2).
+
+The instantaneous power delivered to any circuit element
+is always given by the product P = VI. However, in reactive circuits where V and I are not simply proportional, you
+can’t just multiply their amplitudes together. Funny things
+can happen; for instance, the sign of the product can reverse over one cycle of the ac signal. Figure 1.94 shows
+an example. During time intervals A and C, power is being
+delivered to the capacitor (albeit at a variable rate), causing
+it to charge up; its stored energy is increasing (power is the
+rate of change of energy). During intervals B and D, the
+power delivered to the capacitor is negative; it is discharging. The average power over a whole cycle for this example
+is in fact exactly zero, a statement that is always true for
+any purely reactive circuit element (inductors, capacitors,
+or any combination thereof). If you know your trigonometric integrals, the next exercise will show you how to prove
+this.
+
+Exercise 1.27. Optional exercise: prove that a circuit whose current is 90◦out of phase with the driving voltage consumes no
+power, averaged over an entire cycle.
+
+(In the third line we multiplied numerator and denominator
+by the complex conjugate of the denominator in order to
+make the denominator real.) The calculated power42 is less
+than the product of the magnitudes of V and I. In fact, their
+ratio is called the power factor:
+
+|V||I| =
+V 2
+
+0
+[R2 +(1/ω2C2)]1/2 ,
+
+power factor = power
+
+How do we find the average power consumed by an arbitrary circuit? In general, we can imagine adding up little
+pieces of VI product, then dividing by the elapsed time. In
+other words,
+
+|V||I|
+
+ T
+
+P = 1
+
+T
+
+0 V(t)I(t)dt,
+(1.33)
+
+=
+R
+[R2 +(1/ω2C2)]1/2
+
+where T is the time for one complete cycle. Luckily, that’s
+almost never necessary. Instead, it is easy to show that the
+average power is given by
+
+42 It’s always a good idea to check limiting values: here we see that
+P →V 2/R for large C; and for small C the magnitude of the current
+|I| →V0/XC, or V0ωC, thus P →I2R = V 2
+
+0 ω2C2R, in agreement at
+both limits.
+
+P = Re(VI∗) = Re(V∗I),
+(1.34)

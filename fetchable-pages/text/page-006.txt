@@ -1,0 +1,117 @@
+6
+1.2. Voltage, current, and resistance
+Art of Electronics Third Edition
+
+Exercise 1.4. Show that several resistors in parallel have resistance
+
+education is a fine way to prevent you from understanding
+what’s really going on.
+
+(1.5)
+
++···
+
++ 1
+
++ 1
+
+R =
+1
+1
+R1
+
+R2
+
+R3
+
+Beginners tend to get carried away with complicated algebra in designing or trying to understand electronics. Now
+is the time to begin learning intuition and shortcuts. Here
+are a couple of good tricks:
+
+Shortcut #1 A large resistor in series (parallel) with a
+
+In trying to develop intuition about resistance, some
+people find it helpful to think about conductance, G = 1/R.
+The current through a device of conductance G bridging
+a voltage V is then given by I = GV (Ohm’s law). A
+small resistance is a large conductance, with correspondingly large current under the influence of an applied voltage. Viewed in this light, the formula for parallel resistors
+is obvious: when several resistors or conducting paths are
+connected across the same voltage, the total current is the
+sum of the individual currents. Therefore the net conductance is simply the sum of the individual conductances,
+G = G1 +G2 +G3 +···, which is the same as the formula
+for parallel resistors derived earlier.
+
+small resistor has the resistance of the larger (smaller)
+one, roughly. So you can “trim” the value of a resistor
+up or down by connecting a second resistor in series or
+parallel: to trim up, choose an available resistor value
+below the target value, then add a (much smaller) series
+resistor to make up the difference; to trim down, choose
+an available resistor value above the target value, then
+connect a (much larger) resistor in parallel. For the latter you can approximate with proportions – to lower the
+value of a resistor by 1%, say, put a resistor 100 times
+as large in parallel.10
+
+Engineers are fond of defining reciprocal units, and they
+have designated as the unit of conductance the siemens
+(S= 1/Ω), also known as the mho (that’s ohm spelled
+backward, given the symbol ℧). Although the concept of
+conductance is helpful in developing intuition, it is not
+used widely;11 most people prefer to talk about resistance
+instead.
+
+Shortcut #2 Suppose you want the resistance of 5k in par-
+
+C. Power in resistors
+The power dissipated by a resistor (or any other device) is
+P = IV. Using Ohm’s law, you can get the equivalent forms
+P = I2R and P = V 2/R.
+
+Exercise 1.5. Show that it is not possible to exceed the power
+rating of a 1/4 watt resistor of resistance greater than 1k, no matter
+how you connect it, in a circuit operating from a 15 volt battery.
+
+allel with 10k. If you think of the 5k as two 10k’s in
+parallel, then the whole circuit is like three 10k’s in parallel. Because the resistance of n equal resistors in parallel is 1/nth the resistance of the individual resistors,
+the answer in this case is 10k/3, or 3.33k. This trick is
+handy because it allows you to analyze circuits quickly
+in your head, without distractions. We want to encourage mental designing, or at least “back-of-the-envelope”
+designing, for idea brainstorming.
+
+Exercise 1.6. Optional exercise: New York City requires about
+1010 watts of electrical power, at 115 volts12 (this is plausible:
+10 million people averaging 1 kilowatt each). A heavy power cable might be an inch in diameter. Let’s calculate what will happen
+if we try to supply the power through a cable 1 foot in diameter
+made of pure copper. Its resistance is 0.05 μΩ (5×10−8 ohms)
+per foot. Calculate (a) the power lost per foot from “I2R losses,”
+(b) the length of cable over which you will lose all 1010 watts, and
+(c) how hot the cable will get, if you know the physics involved
+(σ = 6 × 10−12W/K4 cm2). If you have done your computations
+correctly, the result should seem preposterous. What is the solution to this puzzle?
+
+Some more home-grown philosophy: there is a tendency among beginners to want to compute resistor values and other circuit component values to many significant places, particularly with calculators and computers
+that readily oblige. There are two reasons you should try to
+avoid falling into this habit: (a) the components themselves
+are of finite precision (resistors typically have tolerances of
+±5% or ±1%; for capacitors it’s typically ±10% or ±5%;
+and the parameters that characterize transistors, say, frequently are known only to a factor of 2); (b) one mark of a
+good circuit design is insensitivity of the finished circuit to
+precise values of the components (there are exceptions, of
+course). You’ll also learn circuit intuition more quickly if
+you get into the habit of doing approximate calculations in
+your head, rather than watching meaningless numbers pop
+up on a calculator display. We believe strongly that reliance
+on formulas and equations early in your electronic circuit
+
+10 With an error, in this case, of just 0.01%.
+
+11 Although the elegant Millman’s theorem has its admirers: it says that
+the output voltage from a set of resistors (call them Ri) that are driven
+from a set of corresponding input voltages (Vi) and connected together
+at the output is Vout=(∑ViGi)/∑Gi, where the Gi are the conductances
+(Gi=1/Ri).
+12 Although the “official” line voltage is 120 V ±5%, you’ll sometimes
+see 110 V, 115 V, or 117 V. This loose language is OK (and we use
+it in this book), because (a) the median voltage at the wall plug is 3
+to 5 volts lower, when powering stuff; and (b) the minimum wall-plug
+voltage is 110 V. See ANSI standard C84.1.

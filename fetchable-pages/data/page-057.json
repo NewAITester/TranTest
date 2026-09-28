@@ -1,0 +1,12 @@
+{
+  "page": 57,
+  "pageCount": 70,
+  "source": "01.pdf",
+  "sourceSha256": "581a8b5a2723409889735a5eb32995aa6949b75d859d32ee7c6977f7531166c4",
+  "width": 1152,
+  "height": 1440,
+  "html": "pages/page-057.html",
+  "image": "images/page-057.webp",
+  "text": "text/page-057.txt",
+  "content": "Figure 1.117. Switch Smorgasbord. The nine switches at right are momentary-contact (“pushbutton”) switches, including both panelmounting and PCB-mounting types (PCB, printed-circuit board). To their left are additional types, including lever-actuated and multipole\nstyles. Above them are a pair of panel-mounting binary-coded thumbwheel switches, to the left of which is a matrix-encoded hexadecimal\nkeypad. The switches at center foreground are toggle switches, in both panel-mounting and PCB-mounting varieties; several actuator\nstyles are shown, including a locking variety (fourth from front) that must be pulled before it will switch. The rotary switches in the left\ncolumn illustrate binary-coded types (the three in front and the larger square one), and the traditional multipole–multiposition configurable\nwafer switches.\n\nFigure 1.118. Board-mounted “DIP switches.” Left group, front to back and left to right (all are SPST): single station side-action toggle;\nthree-station side-action, two-station rocker, and single-station slide; eight-station slide (low-profile) and six-station rocker; eight-station\nslide and rocker. Middle group (all are hexadecimal coded): six-pin low-profile, six-pin with top or side adjust; 16-pin with true and complement coding. Right group: 2 mm×2 mm surface-mount header block with movable jumper (“shunt”), 0.1′′×0.1′′ (2.54 mm×2.54 mm)\nthrough-hole header block with shunts; 18-pin SPDT (common actuator); eight-pin dual SPDT slide and rocker; 16-pin quad SPDT slide\n(two examples).\n\n57"
+}

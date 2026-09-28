@@ -1,0 +1,43 @@
+60
+1.9. Other passive components
+Art of Electronics Third Edition
+
+Figure 1.123. Rectangular connectors. The variety of available multipin connectors is staggering. Here is a collection of common specimens: the five connectors at lower left are multipin nylon power connectors (sometimes called Molex-type for historical reasons). Above
+them are four dual-row box headers (0.1′′ spacing, shown with and without latch ejectors, and also with Wire-Wrap® and right-angle
+tails), and to their right an open (“unshrouded”) 0.1′′ dual-row header, along with a pair of dual-row headers of finer pitch (2 mm and
+1.27 mm). These dual-row male connectors mate with insulation displacement connectors (IDC) such as the one shown attached to a
+short length of ribbon cable (just above the unshrouded header). Just below the ribbon are shown single-row 0.1′′ headers, with mating
+shells (AMP MODU) that accept individual wire leads. At bottom right are several terminal blocks used for power wiring, and four “Faston”-
+type crimpable spade lugs. Above them are USB connectors, and to their left are the common RJ-45 and RJ-11 modular telephone/data
+connectors. The popular and reliable D-subminiature connectors are at center, including (right to left) a pair of 50-pin micro-D (cable plug,
+PCB socket), the 9-pin D-sub, 26-pin high-density, and a pair of 25-pin D-subs (one IDC). Above them are (right to left) a 96-pin VME
+backplane connector, a 62-pin card-edge connector with solder tails, a “Centronics-type” connector with latching bail, and a card-edge
+connector with ribbon IDC. At top left is a miscellany – a mating pair of “GR-type” dual banana connectors, a mating pair of Cinch-type
+connectors, a mating pair of shrouded Winchester-type connectors with locking jackscrews, and (to their right) a screw-terminal barrier
+block. Not shown here are the really tiny connectors used in small portable electronics (smartphones, cameras, etc); you can see a fine
+example in Figure 1.131.
+
+adorns most instrument front panels. It connects with a
+quarter-turn twist and completes both the shield (ground)
+circuit and inner conductor (signal) circuit simultaneously.
+Like all connectors used to mate a cable to an instrument,
+it comes in both panel-mounting and cable-terminating varieties.
+
+inner (signal) conductor mates before the shield (ground)
+when you plug it in; furthermore, the design of the connector is such that both shield and center conductor tend to
+make poor contact. You’ve undoubtedly heard the results!
+Not to be outdone, the television industry has responded
+with its own bad standard, the type-F coax “connector,”
+which uses the unsupported inner wire of the coax as the
+pin of the male plug, and a shoddy arrangement to mate the
+shield.53
+
+We hereby induct these losers into the Electronic
+
+53 Advocates of each would probably reply “This is our most modestly
+priced receptacle.”
+
+Among the other connectors for use with coaxial cable are the TNC (“threaded Neill–Concelman,” a close
+cousin of the BNC, but with threaded outer shell), the highperformance but bulky type N, the miniature SMA and
+SMB, the subminiature LEMO and SMC, and the highvoltage MHV and SHV. The so-called phono jack used in
+audio equipment is a nice lesson in bad design, because the

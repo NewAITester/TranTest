@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Page 37 of 70</title><meta name="source-page" content="37"><link rel="stylesheet" href="../styles.css">
+<link rel="prev" href="page-036.html"><link rel="next" href="page-038.html"></head><body>
+<header><div><a class="back" href="../index.html">All pages</a> <span class="meta">Source page 37 / 70</span></div>
+<nav class="nav" aria-label="Page navigation"><a href="page-036.html">Previous</a><a href="page-038.html">Next</a></nav></header>
+<main><h1 class="meta">Page 37</h1><figure class="sheet"><img src="../images/page-037.webp" width="1152" height="1440" alt="Complete visual rendering of source PDF page 37"></figure>
+<details class="transcript" open><summary>Fetchable text — page 37</summary><div class="text"><p>Art of Electronics Third Edition
+1.6.6. Circuit applications of diodes
+37</p><p>C
+0</p><p>RVD
+667Ω</p><p>+5V</p><p>out
+R
+signal</p><p>in</p><p>Figure 1.77. dc restoration.</p><p>Figure 1.74. Clamping to voltage divider: equivalent circuit.</p><p>R</p><p>1.0k</p><p>out
+in</p><p>out
+in</p><p>667Ω</p><p>+5.6V</p><p>Figure 1.78. Diode limiter.</p><p>Figure 1.75. Poor clamping: voltage divider not stiff enough.</p><p>Vclamp</p><p>the frequency domain, a subject we’ll take up shortly. For
+now we’ll simply say that you can put a capacitor across
+the 1k resistor, and its stored charge acts to maintain that
+point at constant voltage. For example, a 15 μF capacitor to
+ground would make the divider look as if it had a Th´evenin
+resistance of less than 10 Ω for frequencies above 1 kHz.
+(You could similarly add a bypass capacitor across D1 in
+Figure 1.70.) As we’ll learn, the effectiveness of this trick
+decreases at low frequencies, and it does nothing at dc.</p><p>Figure 1.76. Clamping waveform for circuit of Figure 1.73.</p><p>One interesting clamp application is “dc restoration” of
+a signal that has been ac coupled (capacitively coupled).
+Figure 1.77 shows the idea. This is particularly important
+for circuits whose inputs look like diodes (e.g., a transistor
+with grounded emitter, as we’ll see in the next chapter);
+otherwise an ac-coupled signal will just fade away, as the
+coupling capacitor charges up to the signal’s peak voltage.</p><p>in Figure 1.74 when the voltage divider is replaced with its
+Th´evenin equivalent circuit. When the diode conducts (input voltage exceeds clamp voltage), the output is really just
+the output of a voltage divider, with the Th´evenin equivalent resistance of the voltage reference as the lower resistor
+(Figure 1.75). So, for the values shown, the output of the
+clamp for a triangle-wave input would look as shown in
+Figure 1.76. The problem is that the voltage divider doesn’t
+provide a stiff reference, in the language of electronics. A
+stiff voltage source is one that doesn’t bend easily, i.e., it
+has low internal (Th´evenin) resistance.</p><p>D. Limiter
+One last clamp circuit is shown in Figure 1.78. This circuit limits the output “swing” (again, a common electronics
+term) to one diode drop in either polarity, roughly ±0.6 V.
+That might seem awfully small, but if the next stage is an
+amplifier with large voltage amplification, its input will always be near 0 V; otherwise the output is in “saturation”
+(e.g., if the next stage has a gain of 1000 and operates from
+±15 V supplies, its input must stay in the range ±15 mV
+in order for its output not to saturate). Figure 1.79 shows
+what a limiter does to oversize sinewaves and spikes. This
+clamp circuit is often used as input protection for a highgain amplifier.</p><p>In practice, the problem of finite impedance of the
+voltage-divider reference can be easily solved by use of a
+transistor or an op-amp. This is usually a better solution
+than using very small resistor values, because it doesn’t
+consume large currents, yet it provides a voltage reference
+with a Th´evenin resistance of a few ohms or less. Furthermore, there are other ways to construct a clamp, using an
+op-amp as part of the clamp circuit. You will see these
+methods in Chapter 4.</p><p>E. Diodes as nonlinear elements
+To a good approximation the forward current through a
+diode is proportional to an exponential function of the</p><p>Alternatively, a simple way to stiffen the clamp circuit
+of Figure 1.73, for time-varying signals only, is to add a socalled bypass capacitor across the lower (1 kΩ) resistor. To
+understand this fully we need to know about capacitors in</p></div></details></main>
+<footer>Visual layout, figures, tables, equations, footnotes, and original printed page number are preserved in the lossless page image. <a href="../text/page-037.txt">Plain text</a> · <a href="../data/page-037.json">JSON</a></footer>
+</body></html>

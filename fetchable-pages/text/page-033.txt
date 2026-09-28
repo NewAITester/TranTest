@@ -1,0 +1,117 @@
+Art of Electronics Third Edition
+1.6.4. Rectifier configurations for power supplies
+33
+
++
+
++
+
+full-wave
+bridge
+load
+ac
+C
+
+–
+
+Figure 1.60. Full-wave bridge with output storage (“filter”) capacitor.
+
+of accuracy, though, for two reasons. (a) The discharge is
+an exponential only if the load is a resistance; many loads
+are not. In fact, the most common load, a voltage regulator, looks like a constant-current load. (b) Power supplies
+are built with capacitors with typical tolerances of 20%
+or more. Realizing the manufacturing spread, you design
+conservatively, allowing for the worst-case combination of
+component values.
+
+In this case, viewing the initial part of the discharge as
+a ramp is in fact quite accurate, especially if the ripple is
+small, and in any case it errs in the direction of conservative
+design – it overestimates the ripple.
+
+(where f is the ripple frequency, here 120 Hz) in order to
+ensure small ripple by making the time constant for discharge much longer than the time between recharging. We
+make this vague statement clearer now.
+
+Exercise 1.20. Design a full-wave bridge rectifier circuit to deliver 10 V dc with less than 0.1 V (pp) ripple into a load drawing
+up to 10 mA. Choose the appropriate ac input voltage, assuming
+0.6 V diode drops. Be sure to use the correct ripple frequency in
+your calculation.
+
+Vdc ≈ √2 Vsec (rms)
+
+A. Calculation of ripple voltage
+It is easy to calculate the approximate ripple voltage, particularly if it is small compared with the dc (see Figure 1.61). The load causes the capacitor to discharge somewhat between cycles (or half-cycles, for full-wave rectification). If you assume that the load current stays constant
+(it will, for small ripple), you have
+
+
+
+
+
+Vdc
++
+
+ΔV = I
+
+from I = C dV
+
+.
+(1.25)
+
+C Δt
+
+dt
+
+Just use 1/ f (or 1/2f for full-wave rectification) for Δt (this
+estimate is a bit on the safe side, because the capacitor begins charging again in less than a half-cycle). You get30
+
+Figure 1.62. Bridge rectifier circuit. The polarity marking and
+curved electrode indicate a polarized capacitor, which must not be
+allowed to charge with the opposite polarity.
+
+ΔV = Iload
+
+fC
+(half-wave),
+
+ΔV = Iload
+
+2fC
+(full-wave).
+
+1.6.4 Rectifier configurations for power supplies
+
+peak-to-peak ripple
+
+Vload
+
+output from filter,
+under load
+
+output with
+no capacitor
+
+A. Full-wave bridge
+A dc power supply with the bridge circuit we just discussed
+looks as shown in Figure 1.62. In practice, you generally
+buy the bridge as a prepackaged module. The smallest ones
+come with maximum current ratings of 1 A average, with
+a selection of rated minimum breakdown voltages going
+from 100 V to 600 V, or even 1000 V. Giant bridge rectifiers
+are available with current ratings of 25 A or more.
+
+t
+
+Figure 1.61. Power-supply ripple calculation.
+
+If you wanted to do the calculation without any approximation, you would use the exact exponential discharge formula. You would be misguided in insisting on that kind
+
+30 While teaching electronics we’ve noticed that students love to memorize these equations! An informal poll of the authors showed that two
+out of two engineers don’t memorize them. Please don’t waste brain
+cells that way – instead, learn how to derive them.
+
+B. Center-tapped full-wave rectifier
+The circuit in Figure 1.63 is called a center-tapped fullwave rectifier. The output voltage is half what you get if
+you use a bridge rectifier. It is not the most efficient circuit in terms of transformer design, because each half of
+the secondary is used only half the time. To develop some
+intuition on this subtle point, consider two different configurations that produce the same rectified dc output voltage: (a) the circuit of Figure 1.63, and (b) the same transformer, this time with its secondary cut at the center tap and

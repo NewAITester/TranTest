@@ -1,0 +1,75 @@
+Art of Electronics Third Edition
+Additional Exercises for Chapter 1
+67
+
+6.3V ac (rms)
+
+1.0
+
+Vout
+
+1k
+Vout
+
+Vin
+
+0.5
+
+117V ac
+
+00
+ω0
+ω
+
+Figure 1.136. High-emphasis filter response.
+
+Figure 1.138. Circuit for Exercise 1.43.
+
+f1 and f2 are the 3 dB points. Choose impedances so that the first
+stage isn’t much affected by the loading of the second stage.
+
+probe
+
+tip
+
+vertical
+amplifier
+(Zin = ∞)
+
+Exercise 1.43. Sketch the output for the circuit shown in Figure 1.138.
+
+1.0
+
+1.0MΩ
+20pF
+100pF
+(cable)
+
+Vout
+
+Vin
+
+00
+ω1
+ω
+ω2
+
+scope input
+
+Figure 1.139. Oscilloscope ×10 probe.
+
+Figure 1.137. Bandpass filter response.
+
+20 dB (×10 voltage division ratio) attenuation at all frequencies,
+including dc. The reason for using a ×10 probe is to increase
+the load impedance seen by the circuit under test, which reduces
+loading effects. What input impedance (R in parallel with C) does
+your ×10 probe present to the circuit under test when used with
+the scope?
+
+Exercise 1.44. Design an oscilloscope “×10 probe” to use with a
+scope whose input impedance is 1 MΩ in parallel with 20 pF by
+figuring out what goes inside the probe handle in Figure 1.139.
+Assume that the probe cable adds an additional 100 pF and that
+the probe components are placed at the tip end (rather than at
+the scope end) of the cable. The resultant network should have

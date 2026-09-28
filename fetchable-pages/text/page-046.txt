@@ -1,0 +1,133 @@
+46
+1.7. Impedance and reactance
+Art of Electronics Third Edition
+
+a real part to the impedance. The term “reactance” in that
+case means the imaginary part only.
+
+we’ll analyze (correctly, this time) the simple but extremely
+important and useful RC lowpass and highpass filter circuits.
+
+1.7.5 Ohm’s law generalized
+
+Imagine putting a 1 μF capacitor across a 115 volts
+(rms) 60 Hz powerline. What current flows? Using complex Ohm’s law, we have
+
+With these conventions for representing voltages and currents, Ohm’s law takes a simple form. It reads simply
+
+Z = −j/ωC.
+
+I = V/Z,
+
+Therefore, the current is given by
+
+V = IZ,
+
+I = V/Z.
+
+√
+
+The phase of the voltage is arbitrary, so let us choose V =
+A, i.e., V(t) = Acosωt, where the amplitude A = 115
+
+where the voltage represented by V is applied across a circuit of impedance Z, giving a current represented by I. The
+complex impedance of devices in series or parallel obeys
+the same rules as resistance:
+
+2 ≈
+163 volts. Then
+
+Z = Z1 +Z2 +Z3 +···
+(series),
+(1.30)
+
+I = jωCA ≈−0.061sinωt.
+
+(parallel).
+(1.31)
+
++···
+
++ 1
+
++ 1
+
+Z =
+1
+1
+Z1
+
+Z2
+
+Z3
+
+Finally, for completeness we summarize here the formulas
+for the impedance of resistors, capacitors, and inductors:
+
+ZR = R
+(resistor),
+
+(1.32)
+
+ZC = −j/ωC = 1/jωC (capacitor),
+
+The resulting current has an amplitude of 61 mA (43 mA
+rms) and leads the voltage by 90◦. This agrees with our
+previous calculation. More simply, we could have noticed
+that the impedance of the capacitor is negative imaginary,
+so whatever the absolute phase of V, the phase of Icap must
+lead by 90◦. And in general the phase angle between current and voltage, for any two-terminal RLC circuit, is equal
+to the angle of the (complex) impedance of that circuit.
+
+ZL = jωL
+(inductor).
+
+Note that if we wanted to know just the magnitude of
+the current, and didn’t care what the relative phase was, we
+could have avoided doing any complex algebra: if
+
+A = B/C,
+
+then
+
+A = B/C,
+
+where A, B, and C are the magnitudes of the respective
+complex numbers; this holds for multiplication, also (see
+Exercise 1.18). Thus, in this case,
+
+With these rules we can analyze many ac circuits by the
+same general methods we used in handling dc circuits, i.e.,
+application of the series and parallel formulas and Ohm’s
+law. Our results for circuits such as voltage dividers will
+look nearly the same as before. For multiply-connected
+networks we may have to use Kirchhoff’s laws, just as with
+dc circuits, in this case using the complex representations
+for V and I: the sum of the (complex) voltage drops around
+a closed loop is zero, and the sum of the (complex) currents into a point is zero. The latter rule implies, as with dc
+circuits, that the (complex) current in a series circuit is the
+same everywhere.
+
+I = V/Z = ωCV.
+
+This trick, which we used earlier (because we didn’t know
+any better), is often useful.
+
+Exercise 1.25. Use the preceding rules for the impedance of devices in parallel and in series to derive the formulas (1.17) and
+(1.18) for the capacitance of two capacitors (a) in parallel and (b)
+in series. Hint: in each case, let the individual capacitors have capacitancesC1 andC2. Write down the impedance of the parallel or
+series combination; then equate it to the impedance of a capacitor
+with capacitance C. Then find C.
+
+Surprisingly, there is no power dissipated by the capacitor in this example. Such activity won’t increase your electric bill; you’ll see why in the next section. Then we will
+go on to look at circuits containing resistors and capacitors
+with our complex Ohm’s law.
+
+Exercise 1.26. Show that, if A = BC, then A = BC, where A, B,
+and C are magnitudes. Hint: represent each complex number in
+polar form, i.e., A = Aeiθ.
+
+Let’s try out these techniques on the simplest circuit
+imaginable, an ac voltage applied across a capacitor, which
+we looked at earlier, in §1.7.1. Then, after a brief look at
+power in reactive circuits (to finish laying the groundwork),

@@ -1,0 +1,117 @@
+12
+1.2. Voltage, current, and resistance
+Art of Electronics Third Edition
+
+through a resistor from a higher voltage available somewhere in the circuit, as in Figure 1.16.
+
+I
+
+Lest this example leave the wrong impression, we
+would like to emphasize again that circuits are ordinarily
+designed so that the load resistance is much greater than
+the source resistance of the signal that drives the load.
+
+1mA
+1k
+
+1.2.6 Small-signal resistance
+
+4k
+
+1V
+V
+
+A.
+
+I
+
+diode
+conduction
+
+We often deal with electronic devices for which I is not
+proportional to V; in such cases there’s not much point in
+talking about resistance, since the ratio V/I will depend on
+V, rather than being a nice constant, independent of V. For
+these devices it is sometimes useful to know instead the
+slope of the V–I curve, in other words, the ratio of a small
+change in applied voltage to the resulting change in current through the device, ΔV/ΔI (or dV/dI). This quantity
+has the units of resistance (ohms) and substitutes for resistance in many calculations. It is called the small-signal
+resistance, incremental resistance, or dynamic resistance.
+
+V
+
+real
+zener
+
+ideal
+zener
+B.
+
+Figure 1.15. I–V curves: A. Resistor (linear). B. Zener diode (nonlinear).
+
++
++
+R
+
+Vin
+Vout
+
+Figure 1.16. Zener regulator.
+
+Then,
+
+I = Vin −Vout
+
+R
+and
+
+A. Zener diodes
+As an example, consider the zener diode, which has the
+I–V curve shown in Figure 1.15. Zeners are used to create a constant voltage inside a circuit somewhere, simply
+done by providing them with a (roughly constant) current
+derived from a higher voltage within the circuit.17 For example, the zener diode in Figure 1.15 will convert an applied current in the range shown to a corresponding (but
+fractionally narrower) range of voltages. It is important to
+know how the resulting zener voltage will change with applied current; this is a measure of its “regulation” against
+changes in the driving current provided to it. Included in
+the specifications of a zener will be its dynamic resistance,
+given at a certain current. For example, a zener might have
+a dynamic resistance of 10 Ω at 10 mA, at its specified
+zener voltage of 5 V. Using the definition of dynamic resistance, we find that a 10% change in applied current will
+therefore result in a change in voltage of
+
+ΔI = ΔVin −ΔVout
+
+ΔV = RdynΔI = 10×0.1×0.01 = 10mV
+
+R
+,
+
+so
+
+or
+
+ΔVout = RdynΔI = Rdyn
+
+ΔV/V = 0.002 = 0.2%,
+
+R (ΔVin −ΔVout)
+
+and finally
+
+thus demonstrating good voltage-regulating ability. In this
+sort of application you frequently get the zener current
+
+ΔVin.
+
+ΔVout =
+Rdyn
+R+Rdyn
+
+17 Zeners belong to the more general class of diodes and rectifiers, important devices that we’ll see later in the chapter (§1.6), and indeed
+throughout the book. The ideal diode (or rectifier) acts as a perfect
+conductor for current flow in one direction, and a perfect insulator for
+current flow in the reverse direction; it is a “one-way valve” for current.
+
+Aha – the voltage-divider equation, again! Thus, for
+changes in voltage, the circuit behaves like a voltage divider, with the zener replaced by a resistor equal to its
+dynamic resistance at the operating current. This is the

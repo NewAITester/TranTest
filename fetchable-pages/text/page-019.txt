@@ -1,0 +1,99 @@
+Art of Electronics Third Edition
+1.4.1. Capacitors
+19
+
+I = C dV
+
+dt .
+(1.15)
+
+dielectric
+(insulator)
+
+outside foil
+
+inside foil
+
+Figure 1.28. You get a lot of area by rolling up a pair of metallized plastic films. And it’s great fun unrolling one of these axial-lead
+Mylar capacitors (ditto for the old-style golf balls with their lengthy
+wound-up rubber band).
+
+So a capacitor is more complicated than a resistor: the current is not simply proportional to the voltage, but rather
+to the rate of change of voltage. If you change the voltage
+across a farad by 1 volt per second, you are supplying an
+amp. Conversely, if you supply an amp, its voltage changes
+by 1 volt per second. A farad is an enormous capacitance,
+and you usually deal in microfarads (μF), nanofarads (nF),
+or picofarads (pF).23 For instance, if you supply a current
+of 1 mA to 1μF, the voltage will rise at 1000 volts per second. A 10 ms pulse of this current will increase the voltage
+across the capacitor by 10 volts (Figure 1.29).
+
+I
+
+1mA
+
+t
+
+10ms
+
+They allow you to make frequency-dependent voltage dividers, for instance. For some applications (bypass, coupling) this is almost all you need to know, but for other
+applications (filtering, energy storage, resonant circuits) a
+deeper understanding is needed. For example, ideal capacitors cannot dissipate power, even though current can flow
+through them, because the voltage and current are 90◦out
+of phase.
+
+V
+
+C=1μF
+
+Vafter
+
+10V
+
+Vbefore
+
+t
+
+Figure 1.29. The voltage across a capacitor changes when a current flows through it.
+
+When you charge up a capacitor, you’re supplying energy. The capacitor doesn’t get hot; instead, it stores the
+energy in its internal electric fields. It’s an easy exercise to
+discover for yourself that the amount of stored energy in a
+charged capacitor is just
+
+UC = 1
+
+2CV 2,
+(1.16)
+
+where UC is in joules for C in farads and V in volts. This is
+an important result; we’ll see it often.
+
+Before launching into the details of capacitors in the following dozen pages (including some necessary mathematics that describes their behavior in time and in frequency),
+we wish to emphasize those first two applications – bypass and coupling – because they are the most common
+uses of capacitors, and they are easy to understand at the
+simplest level. We’ll see these in detail later (§§1.7.1C and
+1.7.16A), but no need to wait – it’s easy, and intuitive. Because a capacitor looks like an open circuit at dc, it lets
+you couple a varying signal while blocking its average dc
+level. This is a blocking capacitor (also called a coupling
+capacitor), as in Figure 1.93. Likewise, because a capacitor looks like a short circuit at high frequencies, it suppresses (“bypasses”) signals where you don’t want them,
+for example on the dc voltages that power your circuits, as
+in Figure 8.80A (where capacitors are suppressing signals
+on the +5 V and −5 V dc supply voltages, and also on the
+base terminal of transistor Q2).22 Demographically, these
+two applications account for the vast majority of capacitors that are wired into the world’s circuits.
+
+Taking the derivative of the defining equation 1.13, you
+get
+
+Exercise 1.14. Take the energy challenge: imagine charging up
+a capacitor of capacitance C, from 0 V to some final voltage Vf.
+If you do it right, the result won’t depend on how you get there,
+
+22 Ironically, these essential bypass capacitors are so taken for granted
+that they are usually omitted from schematic diagrams (a practice we
+follow in this book). Don’t make the mistake of omitting them also
+from your actual circuits!
+
+23 To make matters confusing to the uninitiated, the units are often omitted on capacitor values specified in schematic diagrams. You have to
+figure it out from the context.

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Page 13 of 70</title><meta name="source-page" content="13"><link rel="stylesheet" href="../styles.css">
+<link rel="prev" href="page-012.html"><link rel="next" href="page-014.html"></head><body>
+<header><div><a class="back" href="../index.html">All pages</a> <span class="meta">Source page 13 / 70</span></div>
+<nav class="nav" aria-label="Page navigation"><a href="page-012.html">Previous</a><a href="page-014.html">Next</a></nav></header>
+<main><h1 class="meta">Page 13</h1><figure class="sheet"><img src="../images/page-013.webp" width="1152" height="1440" alt="Complete visual rendering of source PDF page 13"></figure>
+<details class="transcript" open><summary>Fetchable text — page 13</summary><div class="text"><p>Art of Electronics Third Edition
+1.2.7. An example: “It’s too hot!”
+13</p><p>10</p><p>8</p><p>3.3V zener</p><p>6</p><p>5.6V zener</p><p>2.4V zener</p><p>4</p><p>2.50V ref</p><p>Current (mA)</p><p>1.25V ref</p><p>2</p><p>utility of incremental resistance. For instance, suppose in
+the preceding circuit we have an input voltage ranging
+between 15 and 20 V, and we use a 1N4733 (5.1 V, 1W
+zener diode) in order to generate a stable 5.1 V power supply. We choose R = 300 Ω, for a maximum zener current of 50 mA: (20 V−5.1 V)/300 Ω. We can now estimate
+the output-voltage regulation (variation in output voltage),
+knowing that this particular zener has a specified maximum dynamic resistance of 7.0 Ω at 50 mA. The zener current varies from 50 mA to 33 mA over the input-voltage
+range; this 17 mA change in current then produces a voltage change at the output of ΔV = RdynΔI, or 0.12 V.</p><p>0</p><p>6
+5
+4
+3
+2
+1
+0
+Voltage (volts)</p><p>Figure 1.17. Low-voltage zeners are pretty dismal, as seen in
+these measured I vs. V curves (for three members of the 1N5221–
+67 series), particularly in contrast to the excellent measured performance of a pair of “IC voltage references” (LM385Z-1.2 and
+LM385Z-2.5, see §9.10 and Table 9.7). However, zener diodes
+in the neighborhood of 6 V (such as the 5.6 V 1N5232B or 6.2 V
+1N5234B) exhibit admirably steep curves, and are useful parts.</p><p>It’s a useful fact, when dealing with zener diodes, that
+the dynamic resistance of a zener diode varies roughly
+in inverse proportion to current. It’s worth knowing, also,
+that there are ICs designed to substitute for zener diodes;
+these “two-terminal voltage references” have superior performance – much lower dynamic resistance (less than 1 Ω,
+even at currents as small as 0.1 mA; that’s a thousand times
+better than the zener we just used), and excellent temperature stability (better than 0.01%/C). We will see more of
+zeners and voltage references in §§2.2.4 and 9.10.</p><p>it the lower leg of a voltage divider (R3R4), whose output
+is compared with the temperature-insensitive divider R1R2.
+When it’s hotter than 30◦C, point “X” is at a lower voltage
+than point “Y,” so the comparator pulls its output to ground.</p><p>In real life, a zener will provide better regulation if
+driven by a current source, which has, by definition,
+Rincr=∞(the same current, regardless of voltage). But current sources are more complex, and therefore in practice
+we often resort to the humble resistor. When thinking about
+zeners, it’s worth remembering that low-voltage units (e.g.,
+3.3 V) behave rather poorly, in terms of constancy of voltage versus current (Figure 1.17); if you think you need
+a low voltage zener, use a two-terminal reference instead
+(§9.10).</p><p>1.2.7 An example: “It’s too hot!”</p><p>At the output there’s an LED, which behaves electrically
+like a 1.6 V zener diode; and when current is flowing, it
+lights up. Its lower terminal is then at 5 V−1.6 V, or +3.4 V.
+So we’ve added a series resistor, sized to allow 5 mA when
+the comparator output is at ground: R5=3.4 V/5 mA, or
+680 Ω.
+If you wanted to, you could make the setpoint adjustable
+by replacing R2 with a 5k pot in series with a 5k fixed
+resistor. We’ll see later that it’s also a good idea to add
+some hysteresis, to encourage the comparator to be decisive. Note that this circuit is insensitive to the exact powersupply voltage because it compares ratios. Ratiometric
+techniques are good; we’ll see them again later.</p><p>1.3 Signals</p><p>Some people like to turn the thermostat way up, annoying other people who like their houses cool. Here’s a little
+gadget (Figure 1.18) that lets folks of the latter persuasion
+know when to complain – it lights up a red light-emitting
+diode (LED) indicator when the room is warmer than 30◦C
+(86◦F). It also shows how to use the humble voltage divider
+(and even humbler Ohm’s law), and how to deal with an
+LED, which behaves like a zener diode (and is sometimes
+used as such).</p><p>The triangular symbol is a comparator, a handy device
+(discussed in §12.3) that switches its output according to
+the relative voltages at its two input terminals. The temperature sensing device is R4, which decreases in resistance by
+about 4%/◦C, and which is 10kΩ at 25◦C. So we’ve made</p><p>A later section in this chapter will deal with capacitors, devices whose properties depend on the way the voltages and
+currents in a circuit are changing. Our analysis of dc circuits so far (Ohm’s law, Th´evenin equivalent circuits, etc.)
+still holds, even if the voltages and currents are changing in
+time. But for a proper understanding of alternating-current
+(ac) circuits, it is useful to have in mind certain common</p></div></details></main>
+<footer>Visual layout, figures, tables, equations, footnotes, and original printed page number are preserved in the lossless page image. <a href="../text/page-013.txt">Plain text</a> · <a href="../data/page-013.json">JSON</a></footer>
+</body></html>

@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Page 51 of 70</title><meta name="source-page" content="51"><link rel="stylesheet" href="../styles.css">
+<link rel="prev" href="page-050.html"><link rel="next" href="page-052.html"></head><body>
+<header><div><a class="back" href="../index.html">All pages</a> <span class="meta">Source page 51 / 70</span></div>
+<nav class="nav" aria-label="Page navigation"><a href="page-050.html">Previous</a><a href="page-052.html">Next</a></nav></header>
+<main><h1 class="meta">Page 51</h1><figure class="sheet"><img src="../images/page-051.webp" width="1152" height="1440" alt="Complete visual rendering of source PDF page 51"></figure>
+<details class="transcript" open><summary>Fetchable text — page 51</summary><div class="text"><p>Art of Electronics Third Edition
+1.7.11. Inductors versus capacitors
+51</p><p>The RC integrator (§1.4.4) is the same circuit as the lowpass filter; by similar reasoning, the criterion for a good integrator is that the lowest signal frequencies must be well
+above the 3 dB point.</p><p>1.7.11 Inductors versus capacitors</p><p>In Figure 1.104, we’ve plotted the same lowpass filter
+response with logarithmic axes, which is a more common
+way that it’s done. You can think of the vertical axis as
+decibels, and the horizontal axis as octaves (or decades).
+On such a plot, equal distances correspond to equal ratios. We’ve also plotted the phase shift, using a linear vertical axis (degrees) and the same logarithmic frequency
+axis. This sort of plot is good for seeing the detailed response even when it is greatly attenuated (as at right); we’ll
+see a number of such plots in Chapter 6, when we treat
+active filters. Note that the filter curve plotted here becomes a straight line at large attenuations, with a slope of
+−20 dB/decade (engineers prefer to say “−6 dB/octave”).
+Note also that the phase shift goes smoothly from 0◦(at frequencies well below the breakpoint) to −90◦(well above
+it), with a value of −45◦at the −3 dB point. A rule of
+thumb for single-section RC filters is that the phase shift
+is ≈6◦from its asymptotic value at 0.1 f3dB and at 10f3dB.</p><p>Exercise 1.31. Prove the last assertion.</p><p>Instead of capacitors, inductors can be combined with resistors to make lowpass (or highpass) filters. In practice,
+however, you rarely see RL lowpass or highpass filters. The
+reason is that inductors tend to be more bulky and expensive and perform less well (i.e., they depart further from
+the ideal) than capacitors (see Chapter 1x). If you have a
+choice, use a capacitor. One important exception to this
+general statement is the use of ferrite beads and chokes in
+high-frequency circuits. You just string a few beads here
+and there in the circuit; they make the wire interconnections slightly inductive, raising the impedance at very high
+frequencies and preventing oscillations, without the added
+series resistance you would get with an RC filter. An RF
+choke is an inductor, usually a few turns of wire wound
+on a ferrite core, used for the same purpose in RF circuits.
+Note, however, that inductors are essential components in
+(a) LC tuned circuits (§1.7.14), and (b) switch-mode power
+converters (§9.6.4).</p><p>1.7.12 Phasor diagrams</p><p>An interesting question is the following: is it possible
+to make a filter with some arbitrary specified amplitude response and some other arbitrary specified phase response?
+Surprisingly, the answer is no: the demands of causality
+(i.e., that response must follow cause, not precede it) force
+a relationship between phase and amplitude response of realizable analog filters (known officially as the Kramers–
+Kronig relation).</p><p>1.7.10 RC differentiators and integrators in the
+frequency domain</p><p>The RC differentiator that we saw in §1.4.3 is exactly the
+same circuit as the highpass filter in this section. In fact, it
+can be considered as either, depending on whether you’re
+thinking of waveforms in the time domain or response
+in the frequency domain. We can restate the earlier timedomain condition for its proper operation (dVout≪dVin) in
+terms of the frequency response: for the output to be small
+compared with the input, the signal frequency (or frequencies) must be well below the 3 dB point. This is easy to
+check: suppose we have the input signal Vin = sinωt. Then,
+using the equation we obtained earlier for the differentiator
+output, we have</p><p>Vout = RC d</p><p>dt sinωt = ωRCcosωt,</p><p>and so dVout≪dVin if ωRC ≪1, i.e., RC ≪1/ω. If the
+input signal contains a range of frequencies, this must hold
+for the highest frequencies present in the input.</p><p>There’s a nice graphical method that can be helpful when
+we are trying to understand reactive circuits. Let’s take an
+example, namely, the fact that an RC filter attenuates 3 dB
+at a frequency f = 1/2πRC, which we derived in §1.7.8.
+This is true for both highpass and lowpass filters. It is easy
+to get a bit confused here, because at that frequency the reactance of the capacitor equals the resistance of the resistor; so you might at first expect 6 dB attenuation (a factor
+of 1/2 in voltage). That is what you would get, for example,
+if you were to replace the capacitor with a resistor of the
+same impedance magnitude. The confusion arises because
+the capacitor is reactive, but the matter is clarified by a phasor diagram (Figure 1.105). The axes are the real (resistive)
+and imaginary (reactive) components of the impedance. In
+a series circuit like this, the axes also represent the (complex) voltage, because the current is the same everywhere.
+So for this circuit (think of it as an RC voltage divider)
+the input voltage (applied across the series RC pair) is proportional to the length of the hypotenuse, and the output
+voltage (across R only) is proportional to the length of the
+R leg of the triangle. The diagram represents the situation
+at the frequency where the capacitor’s reactance equals R,</p></div></details></main>
+<footer>Visual layout, figures, tables, equations, footnotes, and original printed page number are preserved in the lossless page image. <a href="../text/page-051.txt">Plain text</a> · <a href="../data/page-051.json">JSON</a></footer>
+</body></html>

@@ -1,0 +1,12 @@
+{
+  "page": 66,
+  "pageCount": 70,
+  "source": "01.pdf",
+  "sourceSha256": "581a8b5a2723409889735a5eb32995aa6949b75d859d32ee7c6977f7531166c4",
+  "width": 1152,
+  "height": 1440,
+  "html": "pages/page-066.html",
+  "image": "images/page-066.webp",
+  "text": "text/page-066.txt",
+  "content": "66\nAdditional Exercises for Chapter 1\nArt of Electronics Third Edition\n\nFigure 1.133. A taste of the world of passive components in surface-mount packages: connectors, switches, trimmer pots, inductors,\nresistors, capacitors, crystals, fuses. . . . If you can name it, you can probably get it in SMT.\n\ndown at 10 kHz). Use the same source and load impedances as in\nExercise 1.39.\n\n10k\n\n10V battery\n10k\n+\n\n–\n\npackages have no leads at all, just an array of bumps (up\nto several thousand!) on the underside; and these require\nserious “reflow” equipment before you can do anything\nwith them. Sadly, we cannot ignore this disturbing trend,\nbecause the majority of new components are offered only\nin surface-mount packages. Woe to the lone basement\nexperimenter–inventor! Figure 1.133 give a sense of the\nvariety of passive component types that come in surfacemount configurations.\n\nFigure 1.134. Example for Norton equivalent circuit.\n\nAdditional Exercises for Chapter 1\n\n+\n\n0.5mA\n\n10k\n\nExercise 1.37. Find the Norton equivalent circuit (a current\nsource in parallel with a resistor) for the voltage divider in Figure 1.134. Show that the Norton equivalent gives the same output\nvoltage as the actual circuit when loaded by a 5k resistor.\n\n10k\n\nExercise 1.38. Find the Th´evenin equivalent for the circuit shown\nin Figure 1.135. Is it the same as the Th´evenin equivalent for Exercise 1.37?\n\nFigure 1.135. Example for Th´evenin equivalent circuit.\n\nExercise 1.39. Design a “rumble filter” for audio. It should pass\nfrequencies greater than 20 Hz (set the −3 dB point at 10 Hz).\nAssume zero source impedance (perfect voltage source) and 10k\n(minimum) load impedance (that’s important so that you can\nchoose R and C such that the load doesn’t affect the filter operation significantly).\n\nExercise 1.41. How would you make a filter with R’s and C’s to\ngive the response shown in Figure 1.136?\n\nExercise 1.42. Design a bandpass RC filter (as in Figure 1.137);\n\nExercise 1.40. Design a “scratch filter” for audio signals (3 dB"
+}

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Page 24 of 70</title><meta name="source-page" content="24"><link rel="stylesheet" href="../styles.css">
+<link rel="prev" href="page-023.html"><link rel="next" href="page-025.html"></head><body>
+<header><div><a class="back" href="../index.html">All pages</a> <span class="meta">Source page 24 / 70</span></div>
+<nav class="nav" aria-label="Page navigation"><a href="page-023.html">Previous</a><a href="page-025.html">Next</a></nav></header>
+<main><h1 class="meta">Page 24</h1><figure class="sheet"><img src="../images/page-024.webp" width="1152" height="1440" alt="Complete visual rendering of source PDF page 24"></figure>
+<details class="transcript" open><summary>Fetchable text — page 24</summary><div class="text"><p>24
+1.4. Capacitors and ac circuits
+Art of Electronics Third Edition</p><p>+5V</p><p>R3
+620k</p><p>comparator
+TLC 3702</p><p>R1
+1k</p><p>–</p><p>that can activate pretty much any load you care to switch
+on and off. The use of a relay has the important property
+that the load – the circuit being switched by the relay – is
+electrically isolated from the +5 V and ground of the timing
+circuit itself.</p><p>V+</p><p>5V</p><p>+</p><p>300</p><p>0
++</p><p>1 minute</p><p>R2
+6.2M</p><p>R4
+360k</p><p>LED
+Panasonic
+LN21RUQ</p><p>C1
+10μF</p><p>A.</p><p>Figure 1.38. RC timing circuit: one push →one minute!.</p><p>piezo buzzer
+(w. drive ckt)
+CUI CEP-2242 etc.</p><p>B.</p><p>switch
+closure</p><p>+5</p><p>+1.8V (Vref)</p><p>VC1</p><p>0</p><p>relay
+COTO 8L01-05
+5V, 10mA coil (use Vcc=6V)</p><p>C.</p><p>comp
+output</p><p>1 min</p><p>solid-state relay
+Crydom D2450</p><p>270</p><p>air
+compressor</p><p>Figure 1.39. Producing a delayed digital waveform for the circuit
+of Figure 1.38. The voltage VC1 has a rise time of R1C1 ≈10 ms.</p><p>D.</p><p>110/220 vac
+from wall plug</p><p>Figure 1.40. Driving interesting stuff from the output of the timer
+circuit in Figure 1.38.</p><p>Finally, for turning serious industrial machinery on and
+off, you would probably use a hefty solid-state relay (SSR,
+§12.7), which has within it an infrared LED coupled to
+an ac switching device known as a triac. When activated,
+the triac acts as an excellent mechanical switch, capable
+of switching many amperes, and (like the electromechanical relay) is fully isolated electrically from its input circuit.
+The example shows this thing hooked to an air compressor,
+so your friends will get a minute’s worth of air to inflate
+their tires at your home “gas station” (literally!) after they
+drop a quarter into your coin-initiated timer. You could do
+an analogous thing with a coin-operated hot shower (but,
+hey, we get only one minute?!).</p><p>Some details: (a) in the circuit of Figure 1.38 you could
+omit R1 and the circuit would still work, but there would
+be a large transient current when the discharged capacitor was initially connected across the +5 V supply (recall
+I = C dV/dt: here you would be trying to produce 5 V of
+“dV” in roughly 0 s of “dt”). By adding a series resistor R1
+you limit the peak current to a modest 5 mA while charging</p><p>So if the circuit has been sitting there for a while, C1 is
+fully discharged, and the comparator’s output is at ground.
+When you push the START button momentarily, C1 charges
+quickly (10 ms time constant) to +5 V, which makes the
+comparator’s output switch to +5 V; see Figure 1.39. After the button is released, the capacitor discharges exponentially toward ground, with a time constant of τ = R2C1,
+which we’ve set to be 1 minute. At that time its voltage
+crosses the reference voltage, so the comparator’s output
+switches rapidly back to ground. (Note that we’ve conveniently chosen the reference voltage to be a fraction 1/e of
+V+, so it takes exactly one time constant τ for that to happen. For R2 we used the closest standard value to 6 MΩ;
+see Appendix C.) The bottom line is that the output spends
+1 minute at +5 V, after the button is pushed.
+We’ll add a few details shortly, but first let’s use the
+output to do some interesting things, which are shown in
+Figures 1.40A–D. You can make a self-stopping flashlight
+key fob by connecting its output to an LED; you need to
+put a resistor in series, to set the current (we’ll say much
+more about this later). If you prefer to make some noise,
+you could connect a piezo beeper to beep continuously (or
+intermittently) for a minute (this might be an end-of-cycle
+signal for a clothes dryer). Another possibility is to attach a
+small electromechanical relay, which is just an electrically
+operated mechanical switch, to provide a pair of contacts</p></div></details></main>
+<footer>Visual layout, figures, tables, equations, footnotes, and original printed page number are preserved in the lossless page image. <a href="../text/page-024.txt">Plain text</a> · <a href="../data/page-024.json">JSON</a></footer>
+</body></html>

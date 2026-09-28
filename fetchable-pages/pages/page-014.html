@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Page 14 of 70</title><meta name="source-page" content="14"><link rel="stylesheet" href="../styles.css">
+<link rel="prev" href="page-013.html"><link rel="next" href="page-015.html"></head><body>
+<header><div><a class="back" href="../index.html">All pages</a> <span class="meta">Source page 14 / 70</span></div>
+<nav class="nav" aria-label="Page navigation"><a href="page-013.html">Previous</a><a href="page-015.html">Next</a></nav></header>
+<main><h1 class="meta">Page 14</h1><figure class="sheet"><img src="../images/page-014.webp" width="1152" height="1440" alt="Complete visual rendering of source PDF page 14"></figure>
+<details class="transcript" open><summary>Fetchable text — page 14</summary><div class="text"><p>14
+1.3. Signals
+Art of Electronics Third Edition</p><p>+5V</p><p>second. Just remember the important relation ω = 2π f and
+you won’t go wrong.</p><p>red LED
+VF = 1.6V
+@ 5mA</p><p>R1
+10k</p><p>Y</p><p>R3
+10k
+R5
+680Ω</p><p>–</p><p>X</p><p>+</p><p>goes low
+when VX &lt; VY</p><p>TLC 372
+comparator</p><p>R2
+8.06k</p><p>R4</p><p>thermistor:
+#103JG1F</p><p>10.0k @ 25°C 8.06k @ 30°C 6.53k @ 35°C</p><p>Figure 1.18. The LED lights up when it’s hotter than 30◦C. The
+comparator (which we’ll see later, in Chapters 4 and 12) pulls its
+output to ground when the voltage at “X” is less than the voltage
+at “Y.” R4 is a thermistor, which is a resistor with a deliberate negative temperature coefficient; that is, its resistance decreases with
+increasing temperature – by about 4%/◦C.</p><p>types of signals, voltages that change in time in a particular way.</p><p>1.3.1 Sinusoidal signals</p><p>Sinusoidal signals are the most popular signals around;
+they’re what you get out of the wall plug. If someone says
+something like “take a 10 μV signal at 1 MHz,” they mean
+a sinewave. Mathematically, what you have is a voltage described by</p><p>V = Asin2π ft
+(1.10)</p><p>The great merit of sinewaves (and the cause of their
+perennial popularity) is the fact that they are the solutions
+to certain linear differential equations that happen to describe many phenomena in nature as well as the properties of linear circuits. A linear circuit has the property
+that its output, when driven by the sum of two input signals, equals the sum of its individual outputs when driven
+by each input signal in turn; i.e., if O(A) represents the
+output when driven by signal A, then a circuit is linear
+if O(A + B) = O(A) + O(B). A linear circuit driven by
+a sinewave always responds with a sinewave, although in
+general the phase and amplitude are changed. No other periodic signal can make this statement. It is standard practice, in fact, to describe the behavior of a circuit by its frequency response, by which we mean the way the circuit
+alters the amplitude of an applied sinewave as a function
+of frequency. A stereo amplifier, for instance, should be
+characterized by a “flat” frequency response over the range
+20 Hz to 20 kHz, at least.
+The sinewave frequencies we usually deal with range
+from a few hertz to a few tens of megahertz. Lower frequencies, down to 0.0001 Hz or lower, can be generated
+with carefully built circuits, if needed. Higher frequencies,
+up to say 2000 MHz (2 GHz) and above, can be generated, but they require special transmission-line techniques.
+Above that, you’re dealing with microwaves, for which
+conventional wired circuits with lumped-circuit elements
+become impractical, and exotic waveguides or “striplines”
+are used instead.</p><p>where A is called the amplitude and f is the frequency in
+hertz (cycles per second). A sinewave looks like the wave
+shown in Figure 1.19. Sometimes it is important to know
+the value of the signal at some arbitrary time t = 0, in which
+case you may see a phase φ in the expression:</p><p>1.3.2 Signal amplitudes and decibels</p><p>V = Asin(2π ft +φ).</p><p>A</p><p>t</p><p>√</p><p>In addition to its amplitude, there are several other ways to
+characterize the magnitude of a sinewave or any other signal. You sometimes see it specified by peak-to-peak amplitude (pp amplitude), which is just what you would guess,
+namely, twice the amplitude. The other method is to give
+the root-mean-square amplitude (rms amplitude), which is
+Vrms = (1/</p><p>3
+2f
+1
+f
+1
+2f</p><p>Figure 1.19. Sinewave of amplitude A and frequency f.</p><p>The other variation on this simple theme is the use of
+angular frequency, which looks like this:</p><p>2)A = 0.707A (this is for sinewaves only; the
+ratio of pp to rms will be different for other waveforms).
+Odd as it may seem, this is the usual method, because rms
+voltage is what’s used to compute power. The nominal voltage across the terminals of a wall socket (in the United
+States) is 120 volts rms, 60 Hz. The amplitude is 170 volts
+(339 volts pp).18</p><p>V = Asinωt.</p><p>18 Occasionally you’ll encounter devices (e.g., mechanical movingpointer meters) that respond to the average magnitude of an ac signal.</p><p>Here ω is the angular frequency, measured in radians per</p></div></details></main>
+<footer>Visual layout, figures, tables, equations, footnotes, and original printed page number are preserved in the lossless page image. <a href="../text/page-014.txt">Plain text</a> · <a href="../data/page-014.json">JSON</a></footer>
+</body></html>

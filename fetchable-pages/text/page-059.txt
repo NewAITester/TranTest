@@ -1,0 +1,84 @@
+Art of Electronics Third Edition
+1.9.3. Connectors
+59
+
++12V
+
+buzzer
+
+excitation, and coil voltages from 3 volts up to 115 volts
+(ac or dc) are common. “Mercury-wetted” and “reed” relays are intended for high-speed (∼1 ms) applications, and
+giant relays intended to switch thousands of amps are used
+by power companies.
+
+seat
+
+right
+door
+left
+door
+
+Figure 1.121. Switch circuit example: open door warning.
+
+The solid-state relay (SSR) – consisting of a semiconductor electronic switch that is turned on by a LED – provides better performance and reliability than mechanical
+relays, though at greater cost. SSRs operate rapidly, without contact “bounce,” and usually provide for smart switching of ac power (they turn on at the moment of zero voltage, and they turn off at the moment of zero current). Much
+more on these useful devices in Chapter 12.
+
+Chapters 2, 3, and 10 when we talk about transistors and
+digital logic.
+
+Figure 1.122 shows a classic switch circuit used to turn
+a ceiling lamp on or off from a switch at either of two entrances to a room.
+
+As we’ll learn, electrically controlled switching of signals within a circuit can be accomplished with transistor
+switches, without having to use relays of any sort (Chapters 2 and 3). The primary uses of relays are in remote
+switching and high-voltage (or high-current) switching,
+where it is important to have complete electrical isolation
+between the control signal and the circuit being switched.
+
+1.9.3 Connectors
+
+115Vac
+
+Figure 1.122. Electrician’s “three-way” switch wiring.
+
+Bringing signals in and out of an instrument, routing signal
+and dc power around between the various parts of an instrument, providing flexibility by permitting circuit boards
+and larger modules of the instrument to be unplugged (and
+replaced) – these are the functions of the connector, an essential ingredient (and usually the most unreliable part) of
+any piece of electronic equipment. Connectors come in a
+bewildering variety of sizes and shapes.52 Figures 1.123,
+1.124, and 1.125 give some idea of the variety.
+
+Exercise 1.36. Although few electronic circuit designers know
+how, every electrician can wire up a light fixture so that any of
+N switches can turn it on or off. See if you can figure out this
+generalization of Figure 1.122. It requires two SPDT switches
+and N−2 DPDT switches.
+
+1.9.2 Electromechanical devices: relays
+
+A. Single-wire connectors
+The simplest kind of connector is the simple pin jack or
+banana jack used on multimeters, power supplies, etc. It is
+handy and inexpensive, but not as useful as the shieldedcable or multiwire connectors you often need. The humble
+binding post is another form of single-wire connector, notable for the clumsiness it inspires in those who try to use
+it.
+
+Relays are electrically controlled switches. In the traditional electromechanical relay, a coil pulls in an armature (to close the contacts) when sufficient coil current
+flows. Many varieties are available, including “latching”
+and “stepping” relays.51 Relays are available with dc or ac
+
+B. Shielded-cable connectors
+To prevent capacitive pickup, and for other reasons we’ll go
+into in Appendix H, it is usually desirable to pipe signals
+around from one instrument to another in shielded coaxial
+cable. The most popular connector is the BNC type that
+
+52 A search for “connector” on the DigiKey website returns 116 categories, with approximately 43,000 individual varieties in stock.
+
+51 In an amusing historical footnote, the stepping relay used for a century
+as the cornerstone of telephone exchanges (the “Strowger selector”)
+was invented by a Topeka undertaker, Almon Strowger, evidently because he suspected that telephone calls intended for his business were
+being routed (by the switchboard operators in his town) to a funeral
+home competitor.

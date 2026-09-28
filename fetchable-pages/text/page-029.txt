@@ -1,0 +1,58 @@
+Art of Electronics Third Edition
+1.5.1. Inductors
+29
+
+Figure 1.51. Inductors. Top row, left to right: encapsulated toroid, hermetically-sealed toroid, board-mount pot core, bare toroid (two
+sizes). Middle row: slug-tuned ferrite-core inductors (three sizes). Bottom row: high-current ferrite-core choke, ferrite-bead choke, dipped
+radial-lead ferrite-core inductor, surface-mount ferrite chokes, molded axial-lead ferrite-core chokes (two styles), lacquered ferrite-core
+inductors (two styles).
+
+made in molds). See Figure 1.51 for some typical geometries.
+
+where K = 1.0 or 0.395 for dimensions in inches or centimeters, respectively. This is known as Wheeler’s formula
+and is accurate to 1% as long as l > 0.4d.
+
+Inductors find heavy use in radiofrequency (RF) circuits, serving as RF “chokes” and as parts of tuned circuits (§1.7.14). A pair of closely coupled inductors forms
+the interesting object known as a transformer. We will talk
+briefly about them shortly.
+
+An inductor is, in a real sense, the opposite of a capacitor.28 You will see how that works out later in the chapter
+when we deal with the important subject of impedance.
+
+As with capacitive current, inductive current is not simply proportional to voltage (as in a resistor). Furthermore,
+unlike the situation in a resistor, the power associated with
+inductive current (V×I) is not turned into heat, but is stored
+as energy in the inductor’s magnetic field (recall that for a
+capacitor the power associated with capacitive current is
+likewise not dissipated as heat, but is stored as energy in
+the capacitor’s electric field). You get all that energy back
+when you interrupt the inductor’s current (with a capacitor
+you get all the energy back when you discharge the voltage
+to zero).
+
+A. A look ahead: some magic with inductors
+Just to give a taste of some of the tricks that you can do
+with inductors, take a look at Figure 1.52. Although we’ll
+understand these circuits a lot better when we go at them
+in Chapter 9, it’s possible to see what’s going on with what
+we know already. In Figure 1.52A the left-hand side of inductor L is alternately switched between a dc input voltage
+Vin and ground, at some rapid rate, spending equal times
+
+28 In practice, however, capacitors are much more widely used in electronic circuits. That is because practical inductors depart significantly
+from ideal performance – by having winding resistance, core losses,
+and self-capacitance – whereas practical capacitors are nearly perfect
+(more on this in Chapter 1x). Inductors are indispensable, however, in
+switching power converters, as well as in tuned LC circuits for RF applications.
+
+The basic inductor is a coil, which may be just a loop
+with one or more turns of wire; or it may be a coil with
+some length, known as a solenoid. Variations include coils
+wound on various core materials, the most popular being
+iron (or iron alloys, laminations, or powder) and ferrite (a
+gray, nonconductive, brittle magnetic material). These are
+all ploys to multiply the inductance of a given coil by the
+“permeability” of the core material. The core may be in the
+shape of a rod, a toroid (doughnut), or even more bizarre
+shapes, such as a “pot core” (which has to be seen to be
+understood; the best description we can come up with is a
+doughnut mold split horizontally in half, if doughnuts were

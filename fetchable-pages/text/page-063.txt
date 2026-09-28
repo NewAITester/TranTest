@@ -1,0 +1,81 @@
+Art of Electronics Third Edition
+1.9.5. Variable components
+63
+
+For use inside an instrument, rather than on the front
+panel, trimmer pots come in single-turn and multiturn
+styles, most intended for printed-circuit mounting. These
+are handy for calibration adjustments of the “set-andforget” type. Good advice: resist the temptation to use lots
+of trimmers in your circuits. Use good design instead.
+
+CCW
+CW
+
+Figure 1.127. Potentiometer (three-terminal variable resistor).
+
+The symbol for a variable resistor, or pot, is shown in
+Figure 1.127. Sometimes the symbols CW and CCW are
+used to indicate the clockwise and counterclockwise ends.
+
+Figure 1.126. Components to avoid. We advise against using
+components like these, if you have a choice (see text if you need
+convincing!). Top row, left to right: low-value wirewound pot, type
+UHF connector, electrical tape (“just say no!”). Middle row: “cinchtype” connectors, microphone connector, hexagon connectors.
+Bottom row: slide switch, cheap IC socket (not “screw-machined”),
+type-F connector, open-element trimmer pot, phono connector.
+
+An all-electronic version of a potentiometer can be
+made with an array of electronic (transistor) switches that
+select a tap in a long chain of fixed resistors. As awkward as that may sound, it is a perfectly workable scheme
+when implemented as an IC. For example, Analog Devices,
+Maxim/Dallas Semiconductor, and Xicor make a series of
+“digital potentiometers” with up to 1024 steps; they come
+as single or dual units, and some of them are “nonvolatile,”
+meaning that they remember their last setting even if power
+has been turned off. These find application in consumer
+electronics (televisions, stereos) where you want to adjust
+the volume from your infrared remote control, rather than
+by turning a knob; see §3.4.3E.
+
+as 7-segment numeric displays or (for displaying letters as
+well as numbers – “alphanumeric”) 16-segment displays or
+dot-matrix displays. However, if more than a few digits or
+characters need to be displayed, LCDs are generally preferred. These come in line-oriented arrays (e.g., 16 characters by 1 line, up to 40 characters by 4 lines), with a simple interface that permits sequential or addressable entry
+of alphanumeric characters and additional symbols. They
+are inexpensive, low power, and visible even in sunlight.
+Back-lighted versions work well even in subdued light, but
+are not low power. Much more on these (and other) optoelectronic devices in §12.5.
+
+1.9.5 Variable components
+
+One important point about variable resistors: don’t attempt to use a potentiometer as a substitute for a precise
+resistor value somewhere within a circuit. This is tempting,
+because you can trim the resistance to the value you want.
+The trouble is that potentiometers are not as stable as good
+(1%) resistors, and in addition they may not have good resolution (i.e., they can’t be set to a precise value). If you
+must have a precise and settable resistor value somewhere,
+use a combination of a 1% (or better) precision resistor and
+a potentiometer, with the fixed resistor contributing most
+of the resistance. For example, if you need a 23.4k resistor,
+use a 22.6k 1% fixed resistor (a standard value) in series
+with a 2k trimmer pot. Another possibility is to use a series
+combination of several precision resistors, selecting the last
+(and smallest) resistor to give the desired series resistance.
+
+A. Variable resistors
+Variable resistors (also called volume controls, potentiometers, pots, or trimmers) are useful as panel controls
+or internal adjustments in circuits. A classic panel type is
+the 2-watt-type AB potentiometer; it uses the same basic
+material as the fixed carbon-composition resistor, with a
+rotatable “wiper” contact. Other panel types are available
+with ceramic or plastic resistance elements, with improved
+characteristics. Multiturn types (3, 5, or 10 turns) are available, with counting dials, for improved resolution and linearity. “Ganged” pots (several independent sections on one
+shaft) are also manufactured, although in limited variety,
+for applications that demand them. Figure 1.8 shows a representative selection of pots and trimmers.
+
+As we’ll see later (§3.2.7), it is possible to use FETs as
+voltage-controlled variable resistors in some applications.
+Another possibility is an “optophotoresistor” (§12.7).
+Transistors can be used as variable-gain amplifiers, again
+controlled by a voltage. Keep an open mind when design
+brainstorming.

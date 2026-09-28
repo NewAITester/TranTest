@@ -1,0 +1,134 @@
+Art of Electronics Third Edition
+1.4.2. RC circuits: V and I versus time
+21
+
+study of ac circuits in the time domain. Starting with §1.7,
+we will tackle the frequency domain.
+
+used in demanding applications; tantalum capacitors are
+used where greater capacitance is needed; and aluminum
+electrolytics are used for power-supply filtering.
+
+What are some of the features of circuits with capacitors? To answer this question, let’s begin with the simple
+RC circuit (Figure 1.31). Application of the capacitor rules
+gives
+
+C dV
+
+dt = I = −V
+
+R .
+(1.19)
+
+A. Capacitors in parallel and series
+The capacitance of several capacitors in parallel is the sum
+of their individual capacitances. This is easy to see: put
+voltage V across the parallel combination; then
+
+This is a differential equation, and its solution is
+
+CtotalV = Qtotal = Q1 +Q2 +Q3 +···
+
+V = Ae−t/RC.
+(1.20)
+
+= C1V +C2V +C3V +···
+
+= (C1 +C2 +C3 +···)V
+
+or
+
+Ctotal = C1 +C2 +C3 +···.
+(1.17)
+
+For capacitors in series, the formula is like that for resistors
+in parallel:
+
+So a charged capacitor placed across a resistor will discharge as in Figure 1.32. Intuition serves well here: the current that flows is (from the resistor equation) proportional
+to the remaining voltage; but the slope of the discharge is
+(from the capacitor equation) proportional to that current.
+So the discharge curve has to be a function whose derivative is proportional to its value, i.e., an exponential.
+
+(1.18)
+
++···
+
++ 1
+
++ 1
+
+Ctotal =
+1
+1
+C1
+
+C2
+
+C3
+
+R
+C
+
+or (two capacitors only)
+
+.
+
+Figure 1.31. The simplest RC circuit.
+
+Ctotal =
+C1C2
+C1 +C2
+
+V
+
+V0
+
+Exercise 1.15. Derive the formula for the capacitance of two capacitors in series. Hint: because there is no external connection
+to the point where the two capacitors are connected together, they
+must have equal stored charges.
+
+V = V0e–t/RC
+
+37%
+
+t
+
+A.
+
+t = RC
+
+V
+
+1.0
+
+The current that flows in a capacitor during charging
+(I = CdV/dt) has some unusual features. Unlike resistive
+current, it’s not proportional to voltage, but rather to the
+rate of change (the “time derivative”) of voltage. Furthermore, unlike the situation in a resistor, the power (V×I) associated with capacitive current is not turned into heat, but
+is stored as energy in the capacitor’s internal electric field.
+You get all that energy back when you discharge the capacitor. We’ll see another way to look at these curious properties when we talk about reactance, beginning in §1.7.
+
+0.1
+
+1.4.2 RC circuits: V and I versus time
+
+0.01
+
+5RC
+4RC
+3RC
+2RC
+RC
+
+time (seconds)
+0
+B.
+
+Figure 1.32. RC discharge waveform, plotted with (A) linear and
+(B) logarithmic voltage axes.
+
+When dealing with ac circuits (or, in general, any circuits
+that have changing voltages and currents), there are two
+possible approaches. You can talk about V and I versus
+time, or you can talk about amplitude versus signal frequency. Both approaches have their merits, and you find
+yourself switching back and forth according to which description is most convenient in each situation. We begin our

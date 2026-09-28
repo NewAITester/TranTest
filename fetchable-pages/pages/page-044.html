@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Page 44 of 70</title><meta name="source-page" content="44"><link rel="stylesheet" href="../styles.css">
+<link rel="prev" href="page-043.html"><link rel="next" href="page-045.html"></head><body>
+<header><div><a class="back" href="../index.html">All pages</a> <span class="meta">Source page 44 / 70</span></div>
+<nav class="nav" aria-label="Page navigation"><a href="page-043.html">Previous</a><a href="page-045.html">Next</a></nav></header>
+<main><h1 class="meta">Page 44</h1><figure class="sheet"><img src="../images/page-044.webp" width="1152" height="1440" alt="Complete visual rendering of source PDF page 44"></figure>
+<details class="transcript" open><summary>Fetchable text — page 44</summary><div class="text"><p>44
+1.7. Impedance and reactance
+Art of Electronics Third Edition</p><p>of capacitance and frequency, giving the value of XC =
+1/2π fC.</p><p>the first stage is highpass with a breakpoint of 100 Hz, and the
+second stage is lowpass with a breakpoint of 10 kHz. Assume the
+input signal source has an impedance of 100Ω. What is the worstcase output impedance of your filter, and therefore what is the
+minimum recommended load impedance?</p><p>1.7.2 Reactance of inductors</p><p>D. Driving and loading RC filters
+This example of an audio-blocking capacitor raised the issue of driving and loading RC filter circuits. As we discussed in §1.2.5A, in the context of voltage dividers, you
+generally like to arrange things so that the circuit being driven does not significantly load the driving resistance (Th´evenin equivalent source resistance) of the signal
+source.</p><p>Before we embark on a fully correct treatment of
+impedance, replete with complex exponentials and the like,
+let’s use our approximation tricks to figure out the reactance of an inductor.</p><p>It goes as before: we imagine an inductor L driven by
+a sinusoidal voltage source of angular frequency ω such
+that a current I(t) = I0 sinωt is flowing.40 Then the voltage
+across the inductor is</p><p>V(t) = LdI(t)</p><p>dt
+= LωI0 cosωt.</p><p>The same logic applies here, but with a generalized
+kind of resistance that includes the reactance of capacitors
+(and inductors), known as impedance. So a signal source’s
+impedance should generally be small compared with the
+impedance of the thing being driven.39 We’ll have a precise way of talking about impedance shortly, but it’s correct to say that, apart from phase shifts, the impedance of a
+capacitor is equal to its reactance.</p><p>And so the ratio of magnitudes of voltage to current – the
+resistance-like quantity called reactance – is just</p><p>|V|</p><p>= ωL.</p><p>|I| = LωI0</p><p>I0</p><p>So. for an inductor,</p><p>What we want to know, then, are the input and output impedances of the two simple RC filters (lowpass and
+highpass). This sounds complicated, because there are four
+impedances, and they all vary with frequency. However, if
+you ask the question the right way, the answer is simple,
+and the same in all cases!</p><p>XL = ωL.
+(1.29)</p><p>Inductors, like capacitors, have a frequency-dependent
+reactance; however, here the reactance increases with increasing frequency (the opposite of capacitors, where it
+decreases with increasing frequency). So, in the simplest
+view, a series inductor can be used to pass dc and low frequencies (where its reactance is small) while blocking high
+frequencies (where its reactance is high). You often see inductors used this way, particularly in circuits that operate
+at radio frequencies; in that application they’re sometimes
+called chokes.</p><p>First, assume that in each case the right thing is being
+done to the other end of the filter: when we ask the input
+impedance, we assume the output drives a high impedance
+(compared with its own); and when we ask the output
+impedance, we assume the input is driven by a signal
+source of low internal (Th´evenin) impedance. Second, we
+dispose of the variation of impedances with frequency by
+asking only for the worst-case value; that is, we care what
+only the maximum output impedance of a filter circuit may
+be (because that is the worst for driving a load), and we care
+about only the minimum input impedance (because that is
+the hardest to drive).</p><p>1.7.3 Voltages and currents as complex numbers</p><p>Now the answer is astonishingly simple: in all cases the
+worst-case impedance is just R.</p><p>Exercise 1.23. Show that the preceding statement is correct.</p><p>At this point it is necessary to get into some complex algebra; you may wish to skip over the math in some of the
+following sections, taking note of the results as we derive
+them. A knowledge of the detailed mathematics is not necessary for understanding the remainder of the book. Very
+little mathematics will be used in later chapters. The section ahead is easily the most difficult for the reader with
+little mathematical preparation. Don’t be discouraged!</p><p>So, for example, if you want to hang an RC lowpass filter onto the output of an amplifier whose output resistance
+is 100 Ω, start with R = 1k, then choose C for the breakpoint you want. Be sure that whatever loads the output has
+an input impedance of at least 10k. You can’t go wrong.</p><p>As we’ve just seen, there can be phase shifts between</p><p>Exercise 1.24. Design a two-stage “bandpass” RC filter, in which</p><p>39 With two important exceptions, namely, transmission lines and current
+sources.</p><p>40 We take the easy path here by specifying the current, rather than the
+voltage; we are rewarded with a simple derivative (rather than a simple
+integral!).</p></div></details></main>
+<footer>Visual layout, figures, tables, equations, footnotes, and original printed page number are preserved in the lossless page image. <a href="../text/page-044.txt">Plain text</a> · <a href="../data/page-044.json">JSON</a></footer>
+</body></html>

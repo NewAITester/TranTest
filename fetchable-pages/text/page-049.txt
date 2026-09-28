@@ -1,0 +1,236 @@
+Art of Electronics Third Edition
+1.7.8. RC highpass filters
+49
+
+C
+
+100mH
+
+10mH
+
+1H
+
+100H
+
+10H
+
+1mH
+
+1MEG
+
+0.1pF
+
+1pF
+
+R
+
+100μH
+
+100k
+
+10pF
+
+10μH
+
+1μH
+
+100pF
+
+10k
+
+1nF
+
+100 nH
+
+10nF
+
+Figure 1.97. Input impedance of unloaded highpass filter.
+
+1k
+
+reactance
+
+100nF
+
+1μF
+
+10 nH
+
+100Ω
+
+jZ
+
+10μF
+
+100μF
+
+R
+
+100 1kHz
+10
+100 1MHz 10
+100 1GHz
+
+|Ztotal| = √R2 +
+1
+ω2C2
+
+φ
+
+10Ω
+10Hz
+frequency
+
+A.
+
+–j/ωC
+
+–1/ωC
+
+φ = tan–1 ( )
+
+R
+
+0.22
+
+Ztotal = R – j/ωC
+
+10.0
+
+0.33
+
+10
+9
+8
+7
+
+Figure 1.98. Impedance of series RC.
+
+0.47
+
+6.8
+
+6
+
+4.7
+
+0.68
+
+5
+
+Vout
+
+1.0
+
+∝ ω
+Vin
+
+3.3
+
++ –3dB
+
+C = 1.0
+
+4
+
+Vout
+
+1.5
+
+2.2
+
+Vin
+
+2.2
+
+3
+
+reactance
+
+0
+
+1.5
+
+ω3dB = 1/RC
+ω
+
+3.3
+
+L = 1.0
+
+4.7
+
+2
+
+0.68
+
+6.8
+
+0.47
+
+10.0
+
+0.33
+
+Figure 1.99. Frequency response of highpass filter. The corresponding phase shift goes smoothly from +90◦(at ω = 0), through
++45◦(at ω3dB), to 0◦(at ω = ∞), analogous to the lowpass filter’s
+phase shift (Figure 1.104).
+
+0.22
+
+3
+4
+5
+6
+7 8 9 10
+
+1
+1
+2
+
+frequency
+
+B.
+
+(Figure 1.97) is as shown in Figure 1.98. So the “response”
+of this circuit, ignoring phase shifts by taking magnitudes
+of the complex amplitudes, is given by
+
+Vout =
+R
+[R2 +(1/ω2C2)]1/2 Vin
+
+Figure 1.100. A: Reactance of inductors and capacitors versus
+frequency; all decades are identical, except for scale. B: A single
+decade from part A expanded, with standard 20% component values (EIA “E6”) shown.
+
+=
+2π fRC
+[1+(2π fRC)2]1/2 Vin
+(1.35)
+
+and looks as shown in Figure 1.99 (and earlier in Figure 1.91).
+
+very common; for instance, the input to the oscilloscope
+can be switched to “ac coupling.” That’s just an RC highpass filter with the bend at about 10 Hz (you would use ac
+coupling if you wanted to look at a small signal riding on
+a large dc voltage). Engineers like to refer to the −3 dB
+“breakpoint” of a filter (or of any circuit that behaves like
+a filter). In the case of the simple RC high-pass filter, the
+−3 dB breakpoint is given by
+
+Note that we could have gotten this result immediately
+by taking the ratio of the magnitudes of impedances, as in
+Exercise 1.26 and the example immediately preceding it;
+the numerator is the magnitude of the impedance of the
+lower leg of the divider (R), and the denominator is the
+magnitude of the impedance of the series combination of R
+and C.
+
+f3dB = 1/2πRC.
+
+As we noted earlier, the output is approximately equal
+to the input at high frequencies (how high? ω ≳1/RC)
+and goes to zero at low frequencies. The highpass filter is
+
+You often need to know the impedance of a capacitor at a given frequency (e.g., for the design of filters).

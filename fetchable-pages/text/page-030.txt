@@ -1,0 +1,119 @@
+30
+1.5. Inductors and transformers
+Art of Electronics Third Edition
+
+Figure 1.53. Transformer.
+
+connected to each (a “50% duty cycle”). But the defining equation V=LdI/dt requires that the average voltage
+across an inductor must be zero, otherwise the magnitude
+of its average current is rising without limit. (This is sometimes called the volt-second balance rule.) From this it follows that the average output voltage is half the input voltage (make sure you understand why). In this circuit C2
+acts as a storage capacitor for steadying the output voltage
+(more on this later, and in Chapter 9).
+
+Transformers are quite efficient (output power is very
+nearly equal to input power); thus, a step-up transformer
+gives higher voltage at lower current. Jumping ahead for
+a moment, a transformer of turns ratio n increases the
+impedance by n2. There is very little primary current if the
+secondary is unloaded.
+
+Producing an output that is half the voltage of an input
+is not very exciting; after all, a simple voltage divider can
+do that. But, unlike a voltage divider, this circuit does not
+waste any energy; apart from non-idealities of the components, it is 100% efficient. And in fact this circuit is widely
+used in power conversion; it’s called a “synchronous buck
+converter.”
+
+But look now at Figure 1.52B, which is just a turnedaround version of Figure 1.52A. This time, volt-second
+balance requires that the output voltage be twice the input voltage. You can’t do that with a voltage divider! Once
+again, the output capacitor (C1 this time) serves to hold the
+output voltage steady by storing charge. This configuration
+is called a “synchronous boost converter.”
+
+These and other switching converters are discussed extensively in Chapter 9, where Table 9.5 lists some fifty representative types.
+
+L
+
++
+
++
+
+Vin
+C1
+
+Power transformers (meant for use from the 115 V powerline) serve two important functions in electronic instruments: they change the ac line voltage to a useful (usually
+lower) value that can be used by the circuit, and they “isolate” the electronic device from actual connection to the
+powerline, because the windings of a transformer are electrically insulated from each other. They come in an enormous variety of secondary voltages and currents: outputs
+as low as 1 volt or so up to several thousand volts, current
+ratings from a few milliamps to hundreds of amps. Typical
+transformers for use in electronic instruments might have
+secondary voltages from 10 to 50 volts, with current ratings of 0.1 to 5 amps or so. A related class of transformers
+is used in electronic power conversion, in which plenty of
+power is flowing, but typically as pulse or square waveforms, and at much higher frequencies (50 kHz to 1 MHz
+is typical).
+
+–
+
+Vout = Vin
+
+C2
+
+1
+2
+
+–
+
+A.
+
+50%
+
++
+
+L
+
++
+
+Vout = 2Vin
+
+C1
+
+Vin
+
+C2
+
+–
+
+–
+
+B.
+
+50%
+
+Figure 1.52. Inductors let you do neat tricks, such as increasing a
+dc input voltage.
+
+Transformers for signals at audio frequencies and radio frequencies are also available. At radio frequencies you
+sometimes use tuned transformers if only a narrow range
+of frequencies is present. There is also an interesting class
+of transmission-line transformers. In general, transformers
+for use at high frequencies must use special core materials or construction to minimize core losses, whereas lowfrequency transformers (e.g., ac powerline transformers)
+are burdened instead by large and heavy cores. The two
+kinds of transformers are in general not interchangeable.
+
+1.5.2 Transformers
+
+A transformer is a device consisting of two closely coupled
+coils (called primary and secondary). An ac voltage applied
+to the primary appears across the secondary, with a voltage
+multiplication proportional to the turns ratio of the transformer, and with a current multiplication inversely proportional to the turns ratio. Power is conserved. Figure 1.53
+shows the circuit symbol for a laminated-core transformer
+(the kind used for 60 Hz ac power conversion).
+
+A. Problems, problems. . .
+This simple “first-look” description ignores interesting –
+and important – issues. For example, there are inductances
+associated with the transformer, as suggested by its circuit symbol: an effective parallel inductance (called the
+magnetizing inductance) and an effective series inductance
+(called the leakage inductance). Magnetizing inductance
+causes a primary current even with no secondary load;
+more significantly, it means that you cannot make a “dc
