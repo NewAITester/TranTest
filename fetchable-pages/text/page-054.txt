@@ -1,0 +1,105 @@
+54
+1.7. Impedance and reactance
+Art of Electronics Third Edition
+
+Q=10
+
+1.0
+
+Q=3
+
+Q=1
+
+0.8
+
+0.6
+
+Q=1
+
+Vout/Vin
+
+0.4
+
+Q=3
+
+0.2
+
+Q=10
+
+0
+
+2
+1.5
+1
+0.5
+0
+Normalized Frequency (f/fo)
+
+Figure 1.110. Response of LC tank (dotted curves) and trap (solid
+curves) for several values of quality factor, Q.
+
+Figure 1.111. There are six LC lowpass filters on this circuit board,
+part of the process of frequency conversion and digitizing for which
+this “mixer-digitizer” was designed.
+
+Exercise 1.35. Find the response (Vout/Vin versus frequency) for
+the series LC trap circuit in Figure 1.108.
+
+RF bands; its design could occupy a book chapter. For now
+just gaze at the lumpy filter in the oval (there are five more
+on the board), comprising three inductors (the square metal
+cans) and four capacitors (the pairs of shiny oblongs). It’s
+a lowpass filter, designed to cut off at 1.0 MHz; it prevents
+‘aliases” in the digitized output, a subject we’ll visit in
+Chapter 13.
+
+These descriptions of LC resonant circuits are phrased
+in terms of frequency response, i.e., in the frequency domain. In the time domain you’re generally interested in a
+circuit’s response to pulses, or steps; there you see the sort
+of behavior shown in the inset of Figure 1.107, an LC circuit with Q=20. The signal voltage falls to 1/e (37%) in
+Q/π cycles; the stored energy (proportional to v2) falls to
+1/e (61% in amplitude) in Q/2π cycles. You may prefer to
+think in radians: the energy falls to 1/e in Q radians, and
+the voltage falls to 1/e in 2Q radians. LC resonant circuits
+are not unique in providing highly frequency-selective circuit behavior; alternatives include quartz-crystal, ceramic,
+and surface acoustic-wave (SAW) resonators; transmission
+lines; and resonant cavities.
+
+How well does it work? Figure 1.112 shows a “frequency sweep,” in which a sinewave input goes from
+0 Hz to 2 MHz as the trace goes from left to right across
+the screen. The sausage shapes are the “envelope” of the
+sinewave output, here comparing the LC filter with an
+RC lowpass filter with the same 1 MHz cutoff (1 kΩ and
+160 pF). The LC wins, hands down. The RC is pathetic by
+comparison. It’s not even good English to call 1 MHz its
+“cutoff”: it hardly cuts anything off.
+
+1.7.16 Other capacitor applications
+
+1.7.15 LC filters
+
+In addition to their uses in filters, resonant circuits, differentiators, and integrators, capacitors are needed for several
+other important applications. We treat these in detail later
+in the book, mentioning them here only as a preview.
+
+By combining inductors with capacitors you can produce
+filters (lowpass, highpass, bandpass) with far sharper behavior in frequency response than you can with a filter
+made from a simple RC, or from any number of cascaded
+RC sections. We’ll see more of this, and the related topic
+of active filters, in Chapter 6. But it’s worth admiring now
+how well this works, to appreciate the virtue of the humble
+inductor (an often-maligned circuit component).
+
+A. Bypassing
+The impedance of a capacitor decreases with increasing
+frequency. This is the basis of another important application: bypassing. There are places in circuits where you
+want to allow a dc voltage, but you don’t want signals
+present. Placing a capacitor across that circuit element
+(usually a resistor) will help to kill any signals there.
+You choose the (noncritical) capacitor value so that its
+
+As an example, look at Figure 1.111, a photograph
+of a “mixer-digitizer” circuit board that we built for a
+project some years back (specifically, a radio receiver with
+250 million simultaneous channels). There’s lots of stuff on
+the board, which has to frequency-shift and digitize three

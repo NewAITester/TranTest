@@ -1,0 +1,89 @@
+2
+1.2. Voltage, current, and resistance
+Art of Electronics Third Edition
+
+In real circuits we connect things together with wires
+(metallic conductors), each of which has the same voltage
+on it everywhere (with respect to ground, say).4 We mention this now so that you will realize that an actual circuit
+doesn’t have to look like its schematic diagram, because
+wires can be rearranged.
+
+Here are some simple rules about voltage and current:
+
+potential difference or electromotive force (EMF). The
+unit of measure is the volt, with voltages usually expressed in volts (V), kilovolts (1 kV = 103 V), millivolts
+(1 mV = 10−3 V), or microvolts (1 μV = 10−6 V) (see
+the box on prefixes). A joule (J) of work is done in moving a coulomb (C) of charge through a potential difference of 1 V. (The coulomb is the unit of electric charge,
+and it equals the charge of approximately 6×1018 electrons.) For reasons that will become clear later, the opportunities to talk about nanovolts (1 nV = 10−9 V) and
+megavolts (1 MV = 106 V) are rare.
+Current (symbol I). Current is the rate of flow of elec-
+
+1. The sum of the currents into a point in a circuit equals
+the sum of the currents out (conservation of charge).
+This is sometimes called Kirchhoff’s current law (KCL).
+Engineers like to refer to such a point as a node. It follows that, for a series circuit (a bunch of two-terminal
+things all connected end-to-end), the current is the same
+everywhere.
+
+A
+B
+
+Figure 1.1. Parallel connection.
+
+tric charge past a point. The unit of measure is the
+ampere, or amp, with currents usually expressed in
+amperes (A), milliamperes (1 mA = 10−3 A), microamperes (1 μA = 10−6 A), nanoamperes (1 nA = 10−9 A),
+or occasionally picoamperes (1 pA = 10−12 A). A current of 1 amp equals a flow of 1 coulomb of charge per
+second. By convention, current in a circuit is considered
+to flow from a more positive point to a more negative
+point, even though the actual electron flow is in the opposite direction.
+
+Important: from these definitions you can see that currents flow through things, and voltages are applied (or appear) across things. So you’ve got to say it right: always refer to the voltage between two points or across two points
+in a circuit. Always refer to current through a device or
+connection in a circuit.
+
+2. Things hooked in parallel (Figure 1.1) have the same
+voltage across them. Restated, the sum of the “voltage
+drops” from A to B via one path through a circuit equals
+the sum by any other route, and is simply the voltage
+between A and B. Another way to say it is that the sum
+of the voltage drops around any closed circuit is zero.
+This is Kirchhoff’s voltage law (KVL).
+3. The power (energy per unit time) consumed by a circuit
+device is
+
+P = VI
+(1.1)
+
+To say something like “the voltage through a resistor
+. . . ” is nonsense. However, we do frequently speak of the
+voltage at a point in a circuit. This is always understood to
+mean the voltage between that point and “ground,” a common point in the circuit that everyone seems to know about.
+Soon you will, too.
+
+This is simply (energy/charge) × (charge/time). For V in
+volts and I in amps, P comes out in watts. A watt is a
+joule per second (1W = 1 J/s). So, for example, the current flowing through a 60W lightbulb running on 120 V
+is 0.5 A.
+
+We generate voltages by doing work on charges in
+devices such as batteries (conversion of electrochemical
+energy), generators (conversion of mechanical energy by
+magnetic forces), solar cells (photovoltaic conversion of
+the energy of photons), etc. We get currents by placing voltages across things.
+
+Power goes into heat (usually), or sometimes mechanical work (motors), radiated energy (lamps, transmitters),
+or stored energy (batteries, capacitors, inductors). Managing the heat load in a complicated system (e.g., a large
+computer, in which many kilowatts of electrical energy are
+converted to heat, with the energetically insignificant byproduct of a few pages of computational results) can be a
+crucial part of the system design.
+
+At this point you may well wonder how to “see” voltages and currents. The single most useful electronic instrument is the oscilloscope, which allows you to look at voltages (or occasionally currents) in a circuit as a function
+of time.3 We will deal with oscilloscopes, and also voltmeters, when we discuss signals shortly; for a preview see
+Appendix O, and the multimeter box later in this chapter.
+
+3 It has been said that engineers in other disciplines are envious of electrical engineers, because we have such a splendid visualization tool.
+
+4 In the domain of high frequencies or low impedances, that isn’t strictly
+true, and we will have more to say about this later, and in Chapter 1x.
+For now, it’s a good approximation.

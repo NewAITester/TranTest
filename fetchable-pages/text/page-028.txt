@@ -1,0 +1,111 @@
+28
+1.5. Inductors and transformers
+Art of Electronics Third Edition
+
+output
+
+I
+
+V(t)
+
+C
+
+where L is called the inductance and is measured in henrys
+(or mH, μH, nH, etc.). Putting a constant voltage across an
+inductor causes the current to rise as a ramp (compare with
+a capacitor, in which a constant current causes the voltage
+to rise as a ramp); 1 V across 1 H produces a current that
+increases at 1 amp per second.
+
+Figure 1.48. A constant-current source charging a capacitor generates a ramp voltage waveform.
+
+V
+
+Figure 1.50. Inductors. The parallel-bar symbol represents a core
+of magnetic material.
+
+Vsupply
+
+“IC”
+
+RC
+
+Just as with capacitors, the energy invested in ramping
+up the current in an inductor is stored internally, here in the
+form of magnetic fields. And the analogous formula is
+
+t
+
+UL = 1
+
+2LI2,
+(1.24)
+
+Figure 1.49. Constant-current charging (with finite compliance)
+versus RC charging.
+
+1.4.5 Not quite perfect. . .
+
+where UL is in joules (watt seconds) for L in henrys and I
+in amperes. As with capacitors, this is an important result,
+one which lies at the core of switching power conversion
+(exemplified by those little black “wall-warts” that provide
+power to all manner of consumer electronic gadgets). We’ll
+see lots more of this in Chapter 9.
+
+Real capacitors (the kind you can see, and touch, and pay
+money for) generally behave according to theory; but they
+have some additional “features” that can cause problems in
+some demanding applications. For example, all capacitors
+exhibit some series resistance (which may be a function of
+frequency), and some series inductance (see the next section), along with some frequency-dependent parallel resistance. Then there’s a “memory” effect (known as dielectric
+absorption), which is rarely discussed in polite society: if
+you charge a capacitor up to some voltage V0 and hold it
+there for a while, and then discharge it to 0 V, then when
+you remove the short across its terminals it will tend to
+drift back a bit toward V0.
+
+Don’t worry about this stuff, for now. We’ll treat in detail these effects (and other oddities of real-world components) in the advanced topics Chapter 1x.
+
+1.5 Inductors and transformers
+
+The symbol for an inductor looks like a coil of wire;
+that’s because, in its simplest form, that’s all it is. Its somewhat peculiar behavior comes about because inductors are
+magnetic devices, in which two things are going on: current
+flowing through the coil creates a magnetic field aligned
+along the coil’s axis; and then changes in that field produce a voltage (sometimes called “back EMF”) in a way
+that tries to cancel out those changes (an effect known as
+Lenz’s law). The inductance L of a coil is simply the ratio
+of magnetic flux passing through the coil divided by the
+current through the coil that produces that flux (multiplied
+by an overall constant). Inductance depends on the coil geometry (e.g., diameter and length) and the properties of any
+magnetic material (the “core”) that may be used to confine
+the magnetic field. That’s all you need to understand why
+the inductance of a coil of given geometry is proportional
+to the square of the number of turns.
+
+1.5.1 Inductors
+
+Exercise 1.19. Explain why L ∝n2 for an inductor consisting of
+a coil of n turns of wire, maintaining fixed diameter and length as
+n is varied.
+
+We’ll get into some more detail in the Chapter 1x. But
+it’s worth displaying a semi-empirical formula for the approximate inductance L of a coil of diameter d and length
+l, in which the n2 dependence is on display:
+
+If you understand capacitors, you shouldn’t have great
+trouble with inductors (Figure 1.50). They’re closely related to capacitors: the rate of current change in an inductor
+is proportional to the voltage applied across it (for a capacitor it’s the other way around – the rate of voltage change is
+proportional to the current through it). The defining equation for an inductor is
+
+L ≈K
+d2n2
+
+V = LdI
+
+18d +40l
+μH,
+
+dt ,
+(1.23)

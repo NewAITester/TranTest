@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Page 42 of 70</title><meta name="source-page" content="42"><link rel="stylesheet" href="../styles.css">
+<link rel="prev" href="page-041.html"><link rel="next" href="page-043.html"></head><body>
+<header><div><a class="back" href="../index.html">All pages</a> <span class="meta">Source page 42 / 70</span></div>
+<nav class="nav" aria-label="Page navigation"><a href="page-041.html">Previous</a><a href="page-043.html">Next</a></nav></header>
+<main><h1 class="meta">Page 42</h1><figure class="sheet"><img src="../images/page-042.webp" width="1152" height="1440" alt="Complete visual rendering of source PDF page 42"></figure>
+<details class="transcript" open><summary>Fetchable text — page 42</summary><div class="text"><p>42
+1.7. Impedance and reactance
+Art of Electronics Third Edition</p><p>current, in a capacitor driven at a frequency ω, is just</p><p>-40</p><p>|V|</p><p>-30</p><p>|I| =
+1
+ωC ,</p><p>-20</p><p>-10</p><p>0</p><p>which we can think of as a sort of “resistance” – the magnitude of the current is proportional to the magnitude of
+the applied voltage. The official name for this quantity is
+reactance, with the symbol X, thus XC for the reactance of
+a capacitor.37 So, for a capacitor,</p><p>1</p><p>exact</p><p>approx
+approx</p><p>XC =
+1
+ωC .
+(1.26)</p><p>0.8</p><p>0.6</p><p>0.4</p><p>% error
+Vout / Vin</p><p>lowpass
+highpass</p><p>0.2</p><p>0</p><p>f/fo
+0.001
+0.01
+0.1
+1
+10
+100
+1000</p><p>This means that a larger capacitance has a smaller reactance. And this makes sense, because, for example, if you
+double the value of a capacitor, it takes twice as much
+current to charge and discharge it through the same voltage swing in the same time (recall I = CdV/dt). For the
+same reason the reactance decreases as you increase the
+frequency – doubling the frequency (while holding V constant) doubles the rate of change of voltage and therefore
+requires that you double the current, thus half the reactance.</p><p>Figure 1.91. Frequency response of single-section RC filters,
+showing the results both of a simple approximation that ignores
+phase (dashed curve), and the exact result (solid curve). The fractional error (i.e., dashed/solid) is plotted above.</p><p>Vout</p><p>=
+1/ωC
+R+1/ωC =
+1
+1+ωRC
+(approximate!)</p><p>≍
+XC
+R+XC</p><p>Vin</p><p>(1.27)</p><p>So, roughly speaking, we can think of a capacitor as
+a “frequency-dependent resistor.” Sometimes that’s good
+enough, sometimes it isn’t. We’ll look at a few circuits in
+which this simplified view gets us reasonably good results,
+and provides nice intuition; later we’ll fix it up, using the
+correct complex algebra, to get a precise result. (Keep in
+mind that the results we are about to get are approximate;
+we’re lying to you – but it’s a small lie, and anyway we’ll
+tell the truth later. In the meantime we’ll use the weird symbol ≍instead of = in all such “approximate equations,” and
+we’ll flag the equation as approximate.)</p><p>R
+Vin
+Vout</p><p>We’ve plotted that ratio in Figure 1.91 (and also that of its
+cousin, the highpass filter), along with their exact results
+that we’ll understand soon enough in §1.7.8.</p><p>C</p><p>Figure 1.90. Lowpass filter.</p><p>A. RC lowpass filter (approximate)
+The circuit in Figure 1.90 is called a lowpass filter, because
+it passes low frequencies and blocks high frequencies. If
+you think of it as a frequency-dependent voltage divider,
+this makes sense: the lower leg of the divider (the capacitor) has a decreasing reactance with increasing frequency,
+so the ratio of Vout/Vin decreases accordingly:</p><p>You can see that the circuit passes low frequencies fully
+(because at low frequencies the capacitor’s reactance is
+very high, so it’s like a divider with a smaller resistor atop
+a larger one) and that it blocks high frequencies. In particular, the crossover from “pass” to “block” (often called the
+breakpoint) occurs at a frequency ω0 at which the capacitor’s reactance (1/ω0C) is equal to the resistance R: ω0 =
+1/RC. At frequencies well beyond the crossover (where the
+product ωRC ≫1), the output decreases inversely with increasing frequency; that makes sense because the reactance
+of the capacitor, already much smaller than R, continues
+dropping as 1/ω. It’s worth noting that, even with our “ignoration of phase shifts,” the equation (and graph) for the
+ratio of voltages is quite accurate at both low and high frequencies and is only modestly in error around the crossover</p><p>37 Later we’ll see inductors, which also have a 90◦phase shift (though of
+the opposite sign), and so are likewise characterized by a reactance XL.</p></div></details></main>
+<footer>Visual layout, figures, tables, equations, footnotes, and original printed page number are preserved in the lossless page image. <a href="../text/page-042.txt">Plain text</a> · <a href="../data/page-042.json">JSON</a></footer>
+</body></html>

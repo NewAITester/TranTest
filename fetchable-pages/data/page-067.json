@@ -1,0 +1,12 @@
+{
+  "page": 67,
+  "pageCount": 70,
+  "source": "01.pdf",
+  "sourceSha256": "581a8b5a2723409889735a5eb32995aa6949b75d859d32ee7c6977f7531166c4",
+  "width": 1152,
+  "height": 1440,
+  "html": "pages/page-067.html",
+  "image": "images/page-067.webp",
+  "text": "text/page-067.txt",
+  "content": "Art of Electronics Third Edition\nAdditional Exercises for Chapter 1\n67\n\n6.3V ac (rms)\n\n1.0\n\nVout\n\n1k\nVout\n\nVin\n\n0.5\n\n117V ac\n\n00\nω0\nω\n\nFigure 1.136. High-emphasis filter response.\n\nFigure 1.138. Circuit for Exercise 1.43.\n\nf1 and f2 are the 3 dB points. Choose impedances so that the first\nstage isn’t much affected by the loading of the second stage.\n\nprobe\n\ntip\n\nvertical\namplifier\n(Zin = ∞)\n\nExercise 1.43. Sketch the output for the circuit shown in Figure 1.138.\n\n1.0\n\n1.0MΩ\n20pF\n100pF\n(cable)\n\nVout\n\nVin\n\n00\nω1\nω\nω2\n\nscope input\n\nFigure 1.139. Oscilloscope ×10 probe.\n\nFigure 1.137. Bandpass filter response.\n\n20 dB (×10 voltage division ratio) attenuation at all frequencies,\nincluding dc. The reason for using a ×10 probe is to increase\nthe load impedance seen by the circuit under test, which reduces\nloading effects. What input impedance (R in parallel with C) does\nyour ×10 probe present to the circuit under test when used with\nthe scope?\n\nExercise 1.44. Design an oscilloscope “×10 probe” to use with a\nscope whose input impedance is 1 MΩ in parallel with 20 pF by\nfiguring out what goes inside the probe handle in Figure 1.139.\nAssume that the probe cable adds an additional 100 pF and that\nthe probe components are placed at the tip end (rather than at\nthe scope end) of the cable. The resultant network should have"
+}

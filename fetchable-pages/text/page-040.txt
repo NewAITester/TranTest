@@ -1,0 +1,149 @@
+40
+1.7. Impedance and reactance
+Art of Electronics Third Edition
+
+compensating filter
+
+2
+
+speaker
+
+1
+
+lowest
+note on
+piano
+
+highest
+note on
+
+piano
+
+middle C
+
+relative response (linear scale)
+
+√
+
+20kHz
+2kHz
+200Hz
+20Hz
+
+Figure 1.86. The goal is to charge up the capacitor from a
+source of dc voltage Vin. In the top circuit (Figure 1.86A)
+we’ve done it the conventional way, with a series resistor to limit the peak current demanded from the voltage
+source. OK, it does work – but it has a drawback that can
+be serious, namely that half the energy is lost as heat in the
+resistor. By contrast, in the circuit with the inductor (Figure 1.86B) no energy is lost (assuming ideal components);
+and, as a bonus, the capacitor gets charged to twice the
+input voltage. The output-voltage waveform is a sinusoidal
+half-cycle at the resonant frequency f = 1/2π
+
+audible frequencies
+
+LC, a topic
+we’ll see soon (§1.7.14).34,35
+
+ultrasonic
+
+frequency (log scale)
+infrasonic
+
+Vin/R
+
+V(t)
+
+R
+
+I
+
++
+
+C
+
+Vin
+
+Figure 1.87. Example of frequency analysis: “boom box” loudspeaker equalization. The lowest and highest piano notes, called
+A0 and C8, are at 27.5 Hz and 4.2 kHz; they are four octaves below
+A440 and four octaves above middle C, respectively.
+
+–
+
+Vin
+
+V
+
+t
+
+A.
+
+1.7 Impedance and reactance
+
+D
+
+L
+
+V(t)
+
+tf
+
+I
+
++
+
+C
+
+Vin
+
+Warning: this section is somewhat mathematical; you may
+wish to skip over the mathematics, but be sure to pay attention to the results and graphs.
+
+2Vin
+
+–
+
+V
+
+B.
+
+t
+
+Figure 1.86. Resonant charging is lossless (with ideal components) compared with the 50% efficiency of resistive charging.
+Charging is complete after tf, equal to a half-cycle of the resonant
+frequency. The series diode terminates the cycle, which would otherwise continue to oscillate between 0 and 2Vin.
+
+Circuits with capacitors and inductors are more complicated than the resistive circuits we talked about earlier, in that their behavior depends on frequency: a “voltage divider” containing a capacitor or inductor will have
+a frequency-dependent division ratio. In addition, circuits
+containing these components (known collectively as reactive components) “corrupt” input waveforms such as
+square waves, as we saw earlier.
+
+However, both capacitors and inductors are linear devices, meaning that the amplitude of the output waveform,
+whatever its shape, increases exactly in proportion to the
+input waveform’s amplitude. This linearity has many consequences, the most important of which is probably the
+following: the output of a linear circuit, driven with a
+sinewave at some frequency f, is itself a sinewave at the
+same frequency (with, at most, changed amplitude and
+phase).
+
+Because of this remarkable property of circuits containing resistors, capacitors, and inductors (and, later, linear
+amplifiers), it is particularly convenient to analyze any such
+circuit by asking how the output voltage (amplitude and
+phase) depends on the input voltage for sinewave input at a
+single frequency, even though this may not be the intended
+use. A graph of the resulting frequency response, in which
+the ratio of output to input is plotted for each sinewave
+frequency, is useful for thinking about many kinds of
+
+34 A mechanical analogy may be helpful here. Imagine dropping packages onto a conveyor belt that is moving at speed v; the packages are
+accelerated to that speed by friction, with 50% efficiency, finally reaching the belt speed v, at which speed they ride into the sunset. That’s resistive charging. Now we try something completely different, namely,
+we rig up a conveyor belt with little catchers attached by springs to the
+belt; and alongside it we have a second belt, running at twice the speed
+(2v). Now when we drop a package onto the first conveyor it compresses a spring, then rebounds at 2v; and it makes a soft landing onto
+the second conveyor. No energy is lost (ideal springs), and the package
+rides off into the sunset at 2v. That’s reactive charging.
+35 Resonant charging is used for the high-voltage supply in flashlamps
+and stroboscopes, with the advantages of (a) full charge between
+flashes (spaced no closer than tf), and (b) no current immediately after
+discharge (see waveforms), thus permitting the flashlamp to “quench”
+after each flash.

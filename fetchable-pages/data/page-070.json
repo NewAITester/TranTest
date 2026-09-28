@@ -1,0 +1,12 @@
+{
+  "page": 70,
+  "pageCount": 70,
+  "source": "01.pdf",
+  "sourceSha256": "581a8b5a2723409889735a5eb32995aa6949b75d859d32ee7c6977f7531166c4",
+  "width": 1152,
+  "height": 1440,
+  "html": "pages/page-070.html",
+  "image": "images/page-070.webp",
+  "text": "text/page-070.txt",
+  "content": "70\nReview of Chapter 1\nArt of Electronics Third Edition\n\nreversal, as in Figure 1.84; and their exponential current\nversus applied voltage can be used to fashion circuits with\nlogarithmic response (§1.6.6E).\n\nDiodes specify a maximum safe reverse voltage, beyond which avalanche breakdown (an abrupt rise of current) occurs. You don’t go there! But you can (and should)\nwith a zener diode (§1.2.6A), for which a reverse breakdown voltage (in steps, going from about 3.3 V to 100 V\nor more) is specified. Zeners are used to establish a voltage within a circuit (Figure 1.16), or to limit a signal’s\nswing.\n\n¶H. The Diode, a Nonlinear Component.\nThere are important two-terminal devices that are not linear, notably the diode (or rectifier), see §1.6. The ideal\ndiode conducts in one direction only; it is a “one-way\nvalve.” The onset of conduction in real diodes is roughly\nat 0.5 V in the “forward” direction, and there is some\nsmall leakage current in the “reverse” direction, see Figure 1.55. Useful diode circuits include power-supply rectification (conversion of ac to dc, §1.6.2), signal rectification\n(§1.6.6A), clamping (signal limiting, §1.6.6C), and gating\n(§1.6.6B). Diodes are commonly used to prevent polarity"
+}

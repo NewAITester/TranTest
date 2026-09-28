@@ -1,0 +1,95 @@
+Art of Electronics Third Edition
+1.3.5. Signal sources
+17
+
+instance, the second pulse in Figure 1.25 is a negativegoing pulse of positive polarity.
+
+F. Steps and spikes
+Steps and spikes are signals that are talked about a lot but
+are not so often used. They provide a nice way of describing what happens in a circuit. If you could draw them, they
+would look something like the example in Figure 1.26. The
+step function is part of a square wave; the spike is simply a
+jump of vanishingly short duration.
+
+with provision for precise control of amplitude (using a
+resistive divider network called an attenuator). Some units
+let you modulate (i.e., vary in time) the output amplitude
+(“AM” for “amplitude modulated”) or frequency (“FM”
+for “frequency modulated”). A variation on this theme is
+the sweep generator, a signal generator that can sweep
+its output frequency repeatedly over some range. These
+are handy for testing circuits whose properties vary with
+frequency in a particular way, e.g., “tuned circuits” or
+filters. Nowadays these devices, as well as most test
+instruments, are available in configurations that allow you
+to program the frequency, amplitude, etc., from a computer
+or other digital instrument.
+
+spike
+step
+
+Figure 1.26. Steps and spikes.
+
+1.3.4 Logic levels
+
+Pulses and square waves are used extensively in digital
+electronics, in which predefined voltage levels represent
+one of two possible states present at any point in the circuit. These states are called simply HIGH and LOW, and
+correspond to the 1 (true) and 0 (false) states of Boolean
+logic (the algebra that describes such two-state systems).
+
+For many signal generators the signal source is a frequency synthesizer, a device that generates sinewaves
+whose frequencies can be set precisely. The frequency is
+set digitally, often to eight significant figures or more, and
+is internally synthesized from a precise standard (a standalone quartz-crystal oscillator or rubidium frequency standard, or a GPS-derived oscillator) by digital methods we
+will discuss later (§13.13.6). Typical of synthesizers is the
+programmable SG384 from Stanford Research Systems,
+with a frequency range of 1 μHz to 4 GHz, an amplitude
+range of −110 dBm to +16.5 dBm (0.7 μV to 1.5 V, rms),
+and various modulation modes such as AM, FM, and ΦM;
+it costs about $4,600. You can get synthesized sweep generators, and you can get synthesizers that produce other
+waveforms (see Function Generators, below). If your requirement is for no-nonsense accurate frequency generation, you can’t beat a synthesizer.
+
+Precise voltages are not necessary in digital electronics. You need only to distinguish which of the two possible states is present. Each digital logic family therefore
+specifies legal HIGH and LOW states. For example, the
+“74LVC” digital logic family runs from a single +3.3 V
+supply, with output levels that are typically 0 V (LOW) and
+3.3 V (HIGH), and an input decision threshold of 1.5 V.
+However, actual outputs can be as much as 0.4 V away
+from ground or from +3.3 V without malfunction. We’ll
+have much more to say about logic levels in Chapters 10
+through 12.
+
+1.3.5 Signal sources
+
+B. Pulse generators
+Pulse generators make only pulses, but what pulses! Pulse
+width, repetition rate, amplitude, polarity, rise time, etc.,
+may all be adjustable. The fastest ones go up to gigahertz
+pulse rates. In addition, many units allow you to generate pulse pairs, with settable spacing and repetition rate,
+or even programmable patterns (they are sometimes called
+pattern generators). Most contemporary pulse generators
+are provided with logic-level outputs for easy connection
+to digital circuitry. As with signal generators, these come
+in the programmable variety.
+
+Often the source of a signal is some part of the circuit
+you are working on. But for test purposes a flexible signal source is invaluable. They come in three flavors: signal
+generators, pulse generators, and function generators.
+
+A. Signal generators
+Signal
+generators
+are
+sinewave
+oscillators,
+usually
+equipped to give a wide range of frequency coverage,
+
+C. Function generators
+In many ways function generators are the most flexible
+signal sources of all. You can make sine, triangle, and
+square waves over an enormous frequency range (0.01 Hz
+to 30 MHz is typical), with control of amplitude and dc
+offset (a constant-dc voltage added to the signal). Many
+of them have provision for frequency sweeping, often in

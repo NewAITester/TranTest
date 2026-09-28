@@ -1,0 +1,127 @@
+Art of Electronics Third Edition
+1.7.1. Frequency analysis of reactive circuits
+43
+
+√
+
+frequency, where the correct ratio is Vout/Vin = 1/
+
+without loss (attenuation). That determines the product
+RC: RC > 1/ωmin, where for this case you might choose
+
+2 ≈
+0.7, rather than the 0.5 that we got.38
+
+fmin ≈5 Hz, and so RC = 1/ωmin = 1/2π fmin ≈30 ms.
+
+C
+Vin
+Vout
+
+Rout ≤ 1k
+Rin ≥ 100k
+
+C
+
+R
+
+3.3μF
+
+R
+
+10k
+pre-amp
+amplifier
+
+Figure 1.92. Highpass filter.
+
+f3dB =
+1
+2πRC
+≈ 5Hz
+
+Figure 1.93. “Blocking capacitor”: a highpass filter for which all signal frequencies of interest are in the passband.
+
+B. RC highpass filter (approximate)
+You get the reverse behavior (pass high frequencies, block
+low) by interchanging R and C, as in Figure 1.92. Treating
+it as a frequency-dependent voltage divider, and ignoring
+phase shifts once again, we get (see Figure 1.91)
+
+Vout
+
+=
+R
+R+1/ωC =
+ωRC
+1+ωRC
+(approximate!)
+
+≍
+R
+R+XC
+
+Vin
+
+√
+
+2.
+
+(1.28)
+High frequencies (above the same crossover frequency as
+before, ω ≫ω0 = 1/RC) pass through (because the capacitor’s reactance is much smaller than R), whereas frequencies well below the crossover are blocked (the capacitor’s
+reactance is much larger than R). As before, the equation
+and graph are accurate at both ends, and only modestly
+in error at the crossover, where the correct ratio is, again,
+Vout/Vin = 1/
+
+You’ve got the product, but you still have to choose individual values for R and C. You do this by noticing that
+the input signal sees a load equal to R at signal frequencies (where C’s reactance is small – it’s just a piece of wire
+there), so you choose R to be a reasonable load, i.e., not so
+small that it’s hard to drive, and not so large that the circuit
+is prone to signal pickup from other circuits in the box. In
+the audio business it’s common to see a value of 10 kΩ, so
+we might choose that value, for which the corresponding C
+is 3.3 μF (Figure 1.93). The circuit connected to the output
+should have an input resistance much greater than 10 kΩ, to
+avoid loading effects on the filter’s output; and the driving
+circuit should be able to drive a 10 kΩ load without significant attenuation (loss of signal amplitude) to prevent circuit
+loading effects by the filter on the signal source. It’s worth
+noting that our approximate model, ignoring phase shifts,
+is perfectly adequate for blocking capacitor design; that is
+because the signal band is fully in the passband, where the
+effects of phase shifts are negligible.
+
+C. Blocking capacitor
+Sometimes you want to let some band of signal frequencies
+pass through a circuit, but you want to block any steady dc
+voltage that may be present (we’ll see how this can happen when we learn about amplifiers in the next chapter).
+You can do the job with an RC highpass filter if you choose
+the crossover frequency correctly: a highpass filter always
+blocks dc, so what you do is choose component values so
+that the crossover frequency is below all frequencies of interest. This is one of the more frequent uses of a capacitor
+and is known as a dc blocking capacitor.
+
+For instance, every stereo audio amplifier has all its inputs capacitively coupled, because it doesn’t know what dc
+level its input signals might be riding on. In such a coupling
+application you always pick R and C so that all frequencies of interest (in this case, 20 Hz to 20 kHz) are passed
+
+In this section we’ve been thinking in the frequency domain (sinewaves of frequency f). But it’s useful to think
+in the time domain, where, for example, you might use a
+blocking capacitor to couple pulses, or square waves. In
+such situations you encounter waveform distortion, in the
+form of “droop” and overshoot (rather than the simple amplitude attenuation and phase shift you get with sinusoidal
+waves). Thinking in the time domain, the criterion you use
+to avoid waveform distortion in a pulse of duration T is
+that the time constant τ=RC≫T. The resulting droop is
+approximately T/τ (followed by a comparable overshoot
+at the next transition).
+
+You often need to know the reactance of a capacitor at a
+given frequency (e.g., for design of filters). Figure 1.100 in
+§1.7.8 provides a very useful graph covering large ranges
+
+38 Of course, it fails to predict anything about phase shifts in this circuit.
+As we’ll see later, the output signal’s phase lags the input by 90◦at
+high frequencies, going smoothly from 0◦at low frequencies, with a
+45◦lag at ω0 (see Figure 1.104 in §1.7.9).

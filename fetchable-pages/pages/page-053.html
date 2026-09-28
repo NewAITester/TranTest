@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Page 53 of 70</title><meta name="source-page" content="53"><link rel="stylesheet" href="../styles.css">
+<link rel="prev" href="page-052.html"><link rel="next" href="page-054.html"></head><body>
+<header><div><a class="back" href="../index.html">All pages</a> <span class="meta">Source page 53 / 70</span></div>
+<nav class="nav" aria-label="Page navigation"><a href="page-052.html">Previous</a><a href="page-054.html">Next</a></nav></header>
+<main><h1 class="meta">Page 53</h1><figure class="sheet"><img src="../images/page-053.webp" width="1152" height="1440" alt="Complete visual rendering of source PDF page 53"></figure>
+<details class="transcript" open><summary>Fetchable text — page 53</summary><div class="text"><p>Art of Electronics Third Edition
+1.7.14. Resonant circuits
+53</p><p>10</p><p>R</p><p>Vin
+Vout</p><p>RLC</p><p>1.0</p><p>In combination with R it forms a voltage divider. Because
+of the opposite behaviors of inductors and capacitors, the
+impedance of the parallel LC goes to infinity at the resonant
+frequency</p><p>L</p><p>√</p><p>L</p><p>C</p><p>LC
+(1.37)</p><p>f0 = 1/2π</p><p>√</p><p>0.1</p><p>Reactance (X/Xo)</p><p>C</p><p>(i.e., ω0 = 1/</p><p>Q = 20
+Q = ∞</p><p>LC), giving a peak in the response there.
+The overall response is as shown in Figure 1.107.</p><p>0.1fo
+fo
+10fo</p><p>Frequency</p><p>61% (1/e in energy)
+37% (1/e in voltage)</p><p>1.0</p><p>t</p><p>Δf3dB</p><p>Figure 1.108. LC notch filter (“trap”). The inductive and capacitive
+reactances behave as shown, but the opposite sign of their complex impedances causes the series impedance to plummet. For
+ideal components the reactance of the series LC goes completely
+to zero at resonance; for real-world components the minimum is
+non-zero, and usually dominated by the inductor.</p><p>(time domain)</p><p>Vout</p><p>Vin</p><p>Q =
+fo
+Δf3dB</p><p>90º</p><p>60º</p><p>(frequency domain)</p><p>30º</p><p>fo=1/(2π√LC)
+f</p><p>0º</p><p>–30º</p><p>Phase shift</p><p>–60º</p><p>Figure 1.107. Frequency response of parallel LC “tank” circuit. The
+inset shows the time-domain behavior: a damped oscillation (“ringing”) waveform following an input voltage step or pulse.</p><p>–90º</p><p>1.0</p><p>Vout</p><p>Vin</p><p>Q = 3</p><p>0
+0</p><p>(linear scale)</p><p>f
+fo=1/(2π√LC)</p><p>Figure 1.109. Frequency and phase response of the series LC
+trap. The phase changes abruptly at resonance, an effect seen in
+other resonator types (see for example Figure 7.36).</p><p>√</p><p>In practice, losses in the inductor and capacitor limit the
+sharpness of the peak, but with good design these losses
+can be made very small. Conversely, a Q-spoiling resistor
+is sometimes added intentionally to reduce the sharpness
+of the resonant peak. This circuit is known simply as a parallel LC resonant circuit (or “tuned circuit,” or “tank”) and
+is used extensively in RF circuits to select a particular frequency for amplification (the L or C can be variable, so
+you can tune the resonant frequency). The higher the driving impedance, the sharper the peak; it is not uncommon to
+drive them with something approaching a current source,
+as you will see later. The quality factor Q is a measure of
+the sharpness of the peak. It equals the resonant frequency
+divided by the width at the −3 dB points. For a parallel
+RLC circuit, Q = ω0RC.46</p><p>at resonance ( f0 = 1/2π</p><p>Another variety of LC circuit is the series LC (Figure 1.108). By writing down the impedance formulas involved, and assuming that both the capacitor and inductor
+are ideal, i.e., that they have no resistive losses,47 you can
+convince yourself that the impedance of the LC goes to zero</p><p>LC). Such a circuit is a “trap” for
+signals at or near the resonant frequency, shorting them to
+ground. Again, this circuit finds application mainly in RF
+circuits. Figure 1.109 shows what the response looks like.
+The Q of a series RLC circuit is Q = ω0L/R.48 To see the
+impact of increasing Q, look at the accurate plots of tank
+and notch response in Figure 1.110.</p><p>46 Or, equivalently, Q = R/XC = R/XL, where XL = XC are the reactances
+at ω0.
+47 We’ll see in Chapter 1x that real components depart from the ideal,
+often expressed in terms of an effective series resistance, ESR.</p><p>48 Or, equivalently, Q = XL/R = XC/R, where XL = XC are the reactances
+at ω0.</p></div></details></main>
+<footer>Visual layout, figures, tables, equations, footnotes, and original printed page number are preserved in the lossless page image. <a href="../text/page-053.txt">Plain text</a> · <a href="../data/page-053.json">JSON</a></footer>
+</body></html>

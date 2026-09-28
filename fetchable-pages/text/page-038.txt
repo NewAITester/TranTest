@@ -1,0 +1,102 @@
+38
+1.6. Diodes and diode circuits
+Art of Electronics Third Edition
+
+V = A sin ωt
+
+Vout
+R
+Vin
+( 0.6V)
+
+Figure 1.81. Approximate log converter.
+
+A.
+
+Vin
+
+Vout ∝ log Vin
+R
+B
+
++0.6V
+
+dV
+
+dt = ωA
+
+D1
+
+D2
+
+A
+
+–0.6 V
+
+–0.6V
+
+R1
+
+B.
+
+–V
+
+Figure 1.82. Diode drop compensation in the logarithmic converter.
+
++0.6V
+
+–0.6V
+
+C.
+
+Figure 1.79. A. Limiting large-amplitude sinewaves; B. details; and
+C. spikes.
+
+point A at about −0.6 V. Point B is then near ground (making Iin accurately proportional to Vin, incidentally). As long
+as the two (identical) diodes are at the same temperature,
+there is good cancellation of the forward drops, except, of
+course, for the difference owing to input current through
+D1, which produces the desired output. In this circuit, R1
+should be chosen so that the current through D2 is significantly larger than the maximum input current in order to
+keep D2 in conduction.
+
+Iin
+
+Vout ∝ log Iin
+
+Figure 1.80. Exploiting the diode’s nonlinear V–I curve: logarithmic converter.
+
+In Chapter 2x we will examine better ways of constructing logarithmic converter circuits, along with careful methods of temperature compensation. With such methods it is
+possible to construct logarithmic converters accurate to a
+few percent over six decades or more of input current. A
+better understanding of diode and transistor characteristics,
+along with an understanding of op-amps, is necessary first.
+This section is meant to serve only as an introduction for
+things to come.
+
+1.6.7 Inductive loads and diode protection
+
+What happens if you open a switch that is providing current
+to an inductor? Because inductors have the property
+
+voltage across it at a given temperature (for a discussion
+of the exact law, see §2.3.1). So you can use a diode to
+generate an output voltage proportional to the logarithm
+of a current (Figure 1.80). Because V hovers in the region
+of 0.6 V, with only small voltage changes that reflect input
+current variations, you can generate the input current with
+a resistor if the input voltage is much larger than a diode
+drop (Figure 1.81).
+
+V = LdI/dt,
+
+it is not possible to turn off the current suddenly, because
+that would imply an infinite voltage across the inductor’s
+terminals. What happens instead is that the voltage across
+the inductor rises abruptly and keeps rising until it forces
+current to flow. Electronic devices controlling inductive
+
+In practice, you may want an output voltage that isn’t
+offset by the 0.6 V diode drop. In addition, it would be
+nice to have a circuit that is insensitive to changes in temperature (a silicon diode’s voltage drop decreases approximately 2 mV/◦C). The method of diode drop compensation
+is helpful here (Figure 1.82). R1 makes D2 conduct, holding

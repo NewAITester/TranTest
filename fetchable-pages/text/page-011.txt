@@ -1,0 +1,119 @@
+Art of Electronics Third Edition
+1.2.5. Th´evenin equivalent circuit
+11
+
+10k
+
+examples in the chapters ahead. This high-resistance condition ideally characterizes measuring instruments such as
+voltmeters and oscilloscopes.
+
++
+
+5k
+
+30V
++
+
+10k
+
+15V
+
+A word on language: you frequently hear things like
+“the resistance looking into the voltage divider” or “the
+output sees a load of so-and-so many ohms,” as if circuits
+had eyes. It’s OK (in fact, it’s a rather good way of keeping
+straight which resistance you’re talking about) to say what
+part of the circuit is doing the “looking.”16
+
+Thévenin
+actual
+
+1.0
+
+10
+
+Figure 1.13. Voltage divider example.
+
+0.8
+
+8
+
+0.6
+
+6
+
+0.4
+
+4
+
+VOUT/VOPEN
+
+0.2
+
+2
+
+% Reduction from VOPEN
+
+0.0
+
+0
+
+0.1
+1
+10
+100
+RLOAD/ROUT
+
+Figure 1.14. To minimize the attenuation of a signal source below
+its open-circuit voltage, keep the load resistance large compared
+with the output resistance.
+
+in series with a resistor. For example, the output terminals
+of a 10k–10k voltage divider driven by a perfect 30 volt
+battery are precisely equivalent to a perfect 15 volt battery in series with a 5k resistor (Figure 1.13). Attaching
+a load resistor causes the voltage divider’s output to drop,
+owing to the finite source resistance (Th´evenin equivalent
+resistance of the voltage divider output, viewed as a source
+of voltage). This is often undesirable. One solution to the
+problem of making a stiff voltage source (“stiff” is used in
+this context to describe something that doesn’t bend under
+load) might be to use much smaller resistors in a voltage
+divider. Occasionally this brute-force approach is useful.
+However, it is usually best to construct a voltage source, or
+power supply, as it’s commonly called, using active components like transistors or operational amplifiers, which we
+will treat in Chapters 2–4. In this way you can easily make
+a voltage source with internal (Th´evenin equivalent) resistance as small as milliohms (thousandths of an ohm), without the large currents and dissipation of power characteristic of a low-resistance voltage divider delivering the same
+performance. In addition, with an active power supply it is
+easy to make the output voltage adjustable. These topics
+are treated extensively in Chapter 9.
+
+B. Power transfer
+Here is an interesting problem: what load resistance will
+result in maximum power being transferred to the load for
+a given source resistance? (The terms source resistance,
+internal resistance, and Th´evenin equivalent resistance all
+mean the same thing.) It is easy to see that either Rload=0
+or Rload=∞results in zero power transferred, because
+Rload=0 means thatVload=0 and Iload=Vsource/Rsource, so that
+Pload=VloadIload=0. But Rload=∞means that Vload=Vsource
+and Iload=0, so that again Pload=0. There has to be a maximum in between.
+
+Exercise 1.11. Show that Rload = Rsource maximizes the power in
+the load for a given source resistance. Note: skip this exercise if
+you don’t know calculus, and take it on faith that the answer is
+true.
+
+The concept of equivalent internal resistance applies to
+all sorts of sources, not just batteries and voltage dividers.
+Signal sources (e.g., oscillators, amplifiers, and sensing devices) all have an equivalent internal resistance. Attaching a load whose resistance is less than or even comparable to the internal resistance will reduce the output considerably. This undesirable reduction of the open-circuit
+voltage (or signal) by the load is called “circuit loading.”
+Therefore you should strive to make Rload≫Rinternal, because a high-resistance load has little attenuating effect on
+the source (Figure 1.14).15 We will see numerous circuit
+
+dio frequencies and transmission lines, you must “match impedances”
+(i.e., set Rload=Rinternal) in order to prevent reflection and loss of power.
+See Appendix H on transmission lines.
+16 The urge to anthropomorphize runs deep in the engineering and scientific community, despite warnings like “don’t anthropomorphize computers ... they don’t like it.”
+
+15 There are two important exceptions to this general principle: (1) a current source has a high (ideally infinite) internal resistance and should
+drive a load of relatively low load resistance; (2) when dealing with ra-

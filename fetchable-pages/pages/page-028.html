@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Page 28 of 70</title><meta name="source-page" content="28"><link rel="stylesheet" href="../styles.css">
+<link rel="prev" href="page-027.html"><link rel="next" href="page-029.html"></head><body>
+<header><div><a class="back" href="../index.html">All pages</a> <span class="meta">Source page 28 / 70</span></div>
+<nav class="nav" aria-label="Page navigation"><a href="page-027.html">Previous</a><a href="page-029.html">Next</a></nav></header>
+<main><h1 class="meta">Page 28</h1><figure class="sheet"><img src="../images/page-028.webp" width="1152" height="1440" alt="Complete visual rendering of source PDF page 28"></figure>
+<details class="transcript" open><summary>Fetchable text — page 28</summary><div class="text"><p>28
+1.5. Inductors and transformers
+Art of Electronics Third Edition</p><p>output</p><p>I</p><p>V(t)</p><p>C</p><p>where L is called the inductance and is measured in henrys
+(or mH, μH, nH, etc.). Putting a constant voltage across an
+inductor causes the current to rise as a ramp (compare with
+a capacitor, in which a constant current causes the voltage
+to rise as a ramp); 1 V across 1 H produces a current that
+increases at 1 amp per second.</p><p>Figure 1.48. A constant-current source charging a capacitor generates a ramp voltage waveform.</p><p>V</p><p>Figure 1.50. Inductors. The parallel-bar symbol represents a core
+of magnetic material.</p><p>Vsupply</p><p>“IC”</p><p>RC</p><p>Just as with capacitors, the energy invested in ramping
+up the current in an inductor is stored internally, here in the
+form of magnetic fields. And the analogous formula is</p><p>t</p><p>UL = 1</p><p>2LI2,
+(1.24)</p><p>Figure 1.49. Constant-current charging (with finite compliance)
+versus RC charging.</p><p>1.4.5 Not quite perfect. . .</p><p>where UL is in joules (watt seconds) for L in henrys and I
+in amperes. As with capacitors, this is an important result,
+one which lies at the core of switching power conversion
+(exemplified by those little black “wall-warts” that provide
+power to all manner of consumer electronic gadgets). We’ll
+see lots more of this in Chapter 9.</p><p>Real capacitors (the kind you can see, and touch, and pay
+money for) generally behave according to theory; but they
+have some additional “features” that can cause problems in
+some demanding applications. For example, all capacitors
+exhibit some series resistance (which may be a function of
+frequency), and some series inductance (see the next section), along with some frequency-dependent parallel resistance. Then there’s a “memory” effect (known as dielectric
+absorption), which is rarely discussed in polite society: if
+you charge a capacitor up to some voltage V0 and hold it
+there for a while, and then discharge it to 0 V, then when
+you remove the short across its terminals it will tend to
+drift back a bit toward V0.</p><p>Don’t worry about this stuff, for now. We’ll treat in detail these effects (and other oddities of real-world components) in the advanced topics Chapter 1x.</p><p>1.5 Inductors and transformers</p><p>The symbol for an inductor looks like a coil of wire;
+that’s because, in its simplest form, that’s all it is. Its somewhat peculiar behavior comes about because inductors are
+magnetic devices, in which two things are going on: current
+flowing through the coil creates a magnetic field aligned
+along the coil’s axis; and then changes in that field produce a voltage (sometimes called “back EMF”) in a way
+that tries to cancel out those changes (an effect known as
+Lenz’s law). The inductance L of a coil is simply the ratio
+of magnetic flux passing through the coil divided by the
+current through the coil that produces that flux (multiplied
+by an overall constant). Inductance depends on the coil geometry (e.g., diameter and length) and the properties of any
+magnetic material (the “core”) that may be used to confine
+the magnetic field. That’s all you need to understand why
+the inductance of a coil of given geometry is proportional
+to the square of the number of turns.</p><p>1.5.1 Inductors</p><p>Exercise 1.19. Explain why L ∝n2 for an inductor consisting of
+a coil of n turns of wire, maintaining fixed diameter and length as
+n is varied.</p><p>We’ll get into some more detail in the Chapter 1x. But
+it’s worth displaying a semi-empirical formula for the approximate inductance L of a coil of diameter d and length
+l, in which the n2 dependence is on display:</p><p>If you understand capacitors, you shouldn’t have great
+trouble with inductors (Figure 1.50). They’re closely related to capacitors: the rate of current change in an inductor
+is proportional to the voltage applied across it (for a capacitor it’s the other way around – the rate of voltage change is
+proportional to the current through it). The defining equation for an inductor is</p><p>L ≈K
+d2n2</p><p>V = LdI</p><p>18d +40l
+μH,</p><p>dt ,
+(1.23)</p></div></details></main>
+<footer>Visual layout, figures, tables, equations, footnotes, and original printed page number are preserved in the lossless page image. <a href="../text/page-028.txt">Plain text</a> · <a href="../data/page-028.json">JSON</a></footer>
+</body></html>

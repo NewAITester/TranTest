@@ -1,0 +1,92 @@
+58
+1.9. Other passive components
+Art of Electronics Third Edition
+
+switch, and DPDT indicates a double-pole double-throw
+switch). Toggle switches are also available with “center
+
+OFF” positions and with up to four poles switched simultaneously. Toggle switches are always “break before make,”
+e.g., the moving contact never connects to both terminals
+in an SPDT switch.
+
+codes its position as a 4-bit binary quantity, thereby saving
+lots of wires (only five are needed: the four bits, and a common line). An alternative is the use of a rotary encoder, an
+electromechanical panel-mounting device that creates a sequence of N pulse pairs for each full rotation of the knob.
+These come in two flavors (internally using either mechanical contacts or electro-optical methods), and typically provide from 16 to 200 pulse pairs per revolution. The optical
+varieties cost more, but they last forever.
+
+SPDT
+SPST
+
+DPDT
+
+Figure 1.119. Fundamental switch types.
+
+NC
+
+C
+
+NO
+
+form A, NO
+form B, NC
+form C, SPDT
+
+D. PC-mounting switches
+It’s common to see little arrays of switches on printedcircuit (PC) boards, like the ones shown in Figure 1.118.
+They’re often called DIP switches, referring to the integrated circuit dual in-line package that they borrow, though
+contemporary practice increasingly uses the more compact
+surface-mount technology (SMT) package. As the photograph illustrates, you can get coded rotary switches; and
+because these are used for set-and-forget internal settings,
+you can substitute a multipin header block, with little slideon “shunts” to make the connections.
+
+Figure 1.120. Momentary-contact (pushbutton) switches.
+
+B. Pushbutton switches
+Pushbutton switches are useful for momentary-contact applications; they are drawn schematically as shown in Figure 1.120 (NO and NC mean normally open and normally
+closed). For SPDT momentary-contact switches, the terminals must be labeled NO and NC, whereas for SPST
+types the symbol is self-explanatory. Momentary-contact
+switches are always “break before make.” In the electrical
+(as opposed to electronic) industry, the terms form A, form
+B, and form C are used to mean SPST (NO), SPST (NC),
+and SPDT, respectively.
+
+E. Other switch types
+In addition to these basic switch types, there are available
+various exotic switches such as Hall-effect switches, reed
+switches, proximity switches, etc. All switches carry maximum current and voltage ratings; a small toggle switch
+might be rated at 150 volts and 5 amps. Operation with
+inductive loads drastically reduces switch life because of
+arcing during turn-off. It’s always OK to operate a switch
+below its maximum ratings, with one notable exception:
+since many switches rely on substantial current flow to
+clean away contact oxides, it’s important to use a switch
+that is designed for “dry switching” when switching lowlevel signals;50 otherwise you’ll get noisy and intermittent
+operation (see Chapter 1x).
+
+C. Rotary switches
+Rotary switches are available with many poles and many
+positions, often as kits with individual wafers and shaft
+hardware. Both shorting (make-before-break) and nonshorting (break-before-make) types are available, and they
+can be mixed on the same switch. In many applications the
+shorting type is useful to prevent an open circuit between
+switch positions, because circuits can go amok with unconnected inputs. Nonshorting types are necessary if the
+separate lines being switched to one common line must not
+ever be connected to each other.
+
+F. Switch examples
+As an example of what can be done with simple switches,
+let’s consider the following problem: suppose you want to
+sound a warning buzzer if the driver of a car is seated and
+one of the car doors is open. Both doors and the driver’s
+seat have switches, all normally open. Figure 1.121 shows
+a circuit that does what you want. If one OR the other
+door is open (switch closed) AND the seat switch is closed,
+the buzzer sounds. The words OR and AND are used in a
+logic sense here, and we will see this example again in
+
+50 These use gold contact plating.
+
+Sometimes you don’t really want all those poles, you
+just want to know how many clicks (detents) the shaft has
+been turned. For that a common form of rotary switch en-

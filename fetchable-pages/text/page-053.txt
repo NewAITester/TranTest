@@ -1,0 +1,160 @@
+Art of Electronics Third Edition
+1.7.14. Resonant circuits
+53
+
+10
+
+R
+
+Vin
+Vout
+
+RLC
+
+1.0
+
+In combination with R it forms a voltage divider. Because
+of the opposite behaviors of inductors and capacitors, the
+impedance of the parallel LC goes to infinity at the resonant
+frequency
+
+L
+
+√
+
+L
+
+C
+
+LC
+(1.37)
+
+f0 = 1/2π
+
+√
+
+0.1
+
+Reactance (X/Xo)
+
+C
+
+(i.e., ω0 = 1/
+
+Q = 20
+Q = ∞
+
+LC), giving a peak in the response there.
+The overall response is as shown in Figure 1.107.
+
+0.1fo
+fo
+10fo
+
+Frequency
+
+61% (1/e in energy)
+37% (1/e in voltage)
+
+1.0
+
+t
+
+Δf3dB
+
+Figure 1.108. LC notch filter (“trap”). The inductive and capacitive
+reactances behave as shown, but the opposite sign of their complex impedances causes the series impedance to plummet. For
+ideal components the reactance of the series LC goes completely
+to zero at resonance; for real-world components the minimum is
+non-zero, and usually dominated by the inductor.
+
+(time domain)
+
+Vout
+
+Vin
+
+Q =
+fo
+Δf3dB
+
+90º
+
+60º
+
+(frequency domain)
+
+30º
+
+fo=1/(2π√LC)
+f
+
+0º
+
+–30º
+
+Phase shift
+
+–60º
+
+Figure 1.107. Frequency response of parallel LC “tank” circuit. The
+inset shows the time-domain behavior: a damped oscillation (“ringing”) waveform following an input voltage step or pulse.
+
+–90º
+
+1.0
+
+Vout
+
+Vin
+
+Q = 3
+
+0
+0
+
+(linear scale)
+
+f
+fo=1/(2π√LC)
+
+Figure 1.109. Frequency and phase response of the series LC
+trap. The phase changes abruptly at resonance, an effect seen in
+other resonator types (see for example Figure 7.36).
+
+√
+
+In practice, losses in the inductor and capacitor limit the
+sharpness of the peak, but with good design these losses
+can be made very small. Conversely, a Q-spoiling resistor
+is sometimes added intentionally to reduce the sharpness
+of the resonant peak. This circuit is known simply as a parallel LC resonant circuit (or “tuned circuit,” or “tank”) and
+is used extensively in RF circuits to select a particular frequency for amplification (the L or C can be variable, so
+you can tune the resonant frequency). The higher the driving impedance, the sharper the peak; it is not uncommon to
+drive them with something approaching a current source,
+as you will see later. The quality factor Q is a measure of
+the sharpness of the peak. It equals the resonant frequency
+divided by the width at the −3 dB points. For a parallel
+RLC circuit, Q = ω0RC.46
+
+at resonance ( f0 = 1/2π
+
+Another variety of LC circuit is the series LC (Figure 1.108). By writing down the impedance formulas involved, and assuming that both the capacitor and inductor
+are ideal, i.e., that they have no resistive losses,47 you can
+convince yourself that the impedance of the LC goes to zero
+
+LC). Such a circuit is a “trap” for
+signals at or near the resonant frequency, shorting them to
+ground. Again, this circuit finds application mainly in RF
+circuits. Figure 1.109 shows what the response looks like.
+The Q of a series RLC circuit is Q = ω0L/R.48 To see the
+impact of increasing Q, look at the accurate plots of tank
+and notch response in Figure 1.110.
+
+46 Or, equivalently, Q = R/XC = R/XL, where XL = XC are the reactances
+at ω0.
+47 We’ll see in Chapter 1x that real components depart from the ideal,
+often expressed in terms of an effective series resistance, ESR.
+
+48 Or, equivalently, Q = XL/R = XC/R, where XL = XC are the reactances
+at ω0.

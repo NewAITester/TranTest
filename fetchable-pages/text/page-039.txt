@@ -1,0 +1,89 @@
+Art of Electronics Third Edition
+1.6.8. Interlude: inductors as friends
+39
+
++20V
+
+A
+
+100Ω
+
+I
+
+0.05μF
+
+B
+
+BOOM!
+
+Figure 1.85. RC “snubber” for suppressing inductive kick.
+
+Figure 1.83. Inductive “kick.”
+
++
+
+(at turnoff)
+Ion
+
+is proportional to the voltage across it. For applications
+in which the current must decay quickly (high-speed
+actuators or relays, camera shutters, magnet coils, etc.), it
+may be better to put a resistor across the inductor, choosing
+its value so that Vsupply + IR is less than the maximum
+allowed voltage across the switch. For the fastest decay
+with a given maximum voltage, a zener with series diode
+(or other voltage-clamping device) can be used instead,
+giving a linear-like ramp-down of current rather than an
+exponential decay (see discussion in Chapter 1x).
+
+Figure 1.84. Blocking inductive kick.
+
+For inductors driven from ac (transformers, ac relays),
+the diode protection just described will not work, because
+the diode will conduct on alternate half-cycles when the
+switch is closed. In that case a good solution is an RC
+“snubber” network (Figure 1.85). The values shown are
+typical for small inductive loads driven from the ac powerline. Such a snubber should be included in all instruments
+that run from the ac powerline, because the power transformer is inductive.33
+
+loads can be easily damaged, especially the component
+that “breaks down” in order to satisfy the inductor’s craving for continuity of current. Consider the circuit in Figure 1.83. The switch is initially closed, and current is flowing through the inductor (which might be a relay, as described later). When the switch is opened, the inductor tries
+to keep current flowing from A to B, as it had been. In other
+words, it tries to make current flow out of B, which it does
+by forcing B to a high positive voltage (relative to A). In a
+case like this, in which there’s no connection to terminal B,
+it may go 1000 V positive before the switch contact “blows
+over.” This shortens the life of the switch and also generates impulsive interference that may affect other circuits
+nearby. If the switch happens to be a transistor, it would be
+an understatement to say that its life is shortened; its life is
+ended.
+
+An alternative to the RC snubber is the use of a bidirectional zener-like voltage-clamping element. Among these
+the most common are the bidirectional “TVS” (transient
+voltage suppressor) zener and the metal-oxide varistor
+(“MOV”); the latter is an inexpensive device that looks
+something like a disc ceramic capacitor and behaves electrically like a bidirectional zener diode. Both classes are designed for transient voltage protection, are variously available at voltage ratings from 10 to 1000 volts, and can
+handle transient currents up to thousands of amperes (see
+Chapter 9x). Including a transient suppressor (with appropriate fusing) across the ac powerline terminals makes
+good sense in a piece of electronic equipment, not only to
+prevent inductive spike interference to other nearby instruments but also to prevent occasional large powerline spikes
+from damaging the instrument itself.
+
+1.6.8 Interlude: inductors as friends
+
+The best solution usually is to put a diode across the
+inductor, as in Figure 1.84. When the switch is on, the
+diode is back-biased (from the dc drop across the inductor’s winding resistance). At turn-off the diode goes into
+conduction, putting the switch terminal a diode drop above
+the positive supply voltage. The diode must be able to handle the initial diode current, which equals the steady current
+that had been flowing through the inductor; something like
+a 1N4004 is fine for nearly all cases.
+
+Lest we leave the impression that inductance and inductors are things only to be feared, let’s look at the circuit in
+
+33 As explained in §9.5.1, you should choose a capacitor rated for
+“across-the-line” service.
+
+The only disadvantage of this simple protection circuit
+is that it lengthens the decay of current through the
+inductor, because the rate of change of inductor current

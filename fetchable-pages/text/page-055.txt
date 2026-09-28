@@ -1,0 +1,99 @@
+Art of Electronics Third Edition
+1.7.17. Th´evenin’s theorem generalized
+55
+
+7-section
+LC
+
+and the signal source (waveform, amplitude, and phase)
+from the open-circuit output voltage and the short-circuit
+output current.
+
+lowpass
+
+filter
+
+1.8 Putting it all together – an AM radio
+
+RC
+lowpass
+
+filter
+
+0
+2MHz
+1MHz
+input frequency
+
+In our circuit course we tie together the topics of this
+chapter by hooking up a simple AM radio. The signal
+that’s transmitted is a sinewave at the station’s frequency
+in the AM band (520–1720 kHz), with its amplitude varied (“modulated”) according to the audio waveform (Figure 1.113). In other words, an audio waveform described
+by some function f(t) would be transmitted as a RF signal
+[A + f(t)]sin2π fct; here fc is the station’s “carrier” frequency, and the constant A is added to the audio waveform
+so that the coefficient [A+ f(t)] is never negative.
+
+the audiofrequency
+
+Figure 1.112. Frequency sweep of the LC lowpass filter shown in
+Figure 1.111 compared with an RC lowpass filter with the same
+1 MHz cutoff frequency. The dark outline is the amplitude envelope
+of the fast swept sinewave, which achieves a sandpaper appearance in this digital ’scope capture.
+
+waveform
+(20Hz ~ 5kHz)
+
+t
+
+impedance at signal frequencies is small compared with
+what it is bypassing. You will see much more of this in
+later chapters.
+
+the modulated
+radiofrequency carrier
+
+(~1MHz)
+
+Figure 1.113. An AM signal consists of an RF carrier (∼1 MHz)
+whose amplitude is varied by the audio-frequency signal (speech
+or music; audible frequencies up to ∼5 kHz). The audio waveform
+is dc offset so that the envelope does not cross zero.
+
+B. Power-supply filtering
+We saw this application in §1.6.3, to filter the ripple from
+rectifier circuits. Although circuit designers often call them
+filter capacitors, this is really a form of bypassing, or energy storage, with large-value capacitors; we prefer the
+term storage capacitor. And these capacitors really are
+large – they’re the big shiny round things you see inside most electronic instruments. We’ll get into dc powersupply design in detail in Chapter 9.
+
+C. Timing and waveform generation
+As we’ve seen, a capacitor supplied with a constant current
+charges up with a ramp waveform. This is the basis of ramp
+and sawtooth generators, used in analog function generators, oscilloscope sweep circuits, analog–digital converters, and timing circuits. RC circuits are also used for timing, and they form the basis of delay circuits (monostable
+multivibrators). These timing and waveform applications
+are important in many areas of electronics and will be covered in Chapters 3, 6, 10, and 11.
+
+1.7.17 Th´evenin’s theorem generalized
+
+At the receiver end (that’s us!) the task is to select this
+station (among many) and somehow extract the modulating
+envelope, which is the desired audio signal. Figure 1.114
+shows the simplest AM radio; it is the “crystal set” of
+yesteryear. It’s really quite straightforward: the parallel LC
+resonant circuit is tuned to the station’s frequency by the
+variable capacitor C1 (§1.7.14); the diode D is a half-wave
+rectifier (§1.6.2), which (if ideal) would pass only the positive half-cycles of the modulated carrier; and R1 provides
+a light load, so that the rectified output follows the halfcycles back down to zero. We’re almost done. We add small
+capacitor C2 to prevent the output from following the fast
+half-cycles of carrier (it’s a storage capacitor, §1.7.16B),
+choosing the time constant R1C2 to be long compared with
+a carrier period (∼1μs), but short compared with the period of the highest audio frequency (∼200μs).
+
+When capacitors and inductors are included, Th´evenin’s
+theorem must be restated: any two-terminal network of resistors, capacitors, inductors, and signal sources is equivalent to a single complex impedance in series with a single
+signal source. As before, you find the (complex) impedance
+
+Figures 1.115 and 1.116 show what you see when you
+probe around with a ’scope. The bare antenna shows plenty
+of low-frequency pickup (mostly 60 Hz ac powerline), and
+a tiny bit of signal from all the AM stations at once. But

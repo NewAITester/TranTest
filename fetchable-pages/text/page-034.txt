@@ -1,0 +1,100 @@
+34
+1.6. Diodes and diode circuits
+Art of Electronics Third Edition
+
+I
+
+2.0 A
+
+0
+
+~1ms
+
+Figure 1.64. Illustrating greater I2R heating with discontinuous
+current flow.
+
+rewired with the two halves in parallel, the resultant combined secondary winding connected to a full-wave bridge.
+Now, to deliver the same output power, each half winding
+in (a), during its conduction cycle, must supply the same
+current as the parallel pair in (b). But the power dissipated
+in the winding resistances goes like I2R, so the power lost
+to heating in the transformer secondary windings reduced
+by a factor of 2 for the bridge configuration (b).
+
++V
+
++
+
+ground
+
+ac
+in
+
++
+
+–V
+
+Figure 1.65. Dual-polarity (split) supply.
+
++V
+
++
+
+Here’s another way to see the problem: imagine we use
+the same transformer as in (a), but for our comparison circuit we replace the pair of diodes with a bridge, as in Figure 1.62, and we leave the center tap unconnected. Now,
+to deliver the same output power, the current through the
+winding during that time is twice what it would be for a true
+full-wave circuit. To expand on this subtle point: heating in
+the windings, calculated from Ohm’s law, is I2R, so you
+have four times the heating for half the time, or twice the
+average heating of an equivalent full-wave bridge circuit.
+You would have to choose a transformer with a current rating 1.4 (square root of 2) times as large compared with the
+(better) bridge circuit; besides costing more, the resulting
+supply would be bulkier and heavier.
+
+load
+
++
+
+com
+
+Figure 1.66. Voltage doubler.
+
+Exercise 1.21. This illustration of I2R heating may help you understand the disadvantage of the center-tapped rectifier circuit.
+What fuse rating (minimum) is required for passing the current
+waveform shown in Figure 1.64, which has 1 amp average current? Hint: a fuse “blows out” by melting a metallic link (I2R
+heating), for steady currents larger than its rating. Assume for
+this problem that the thermal time constant of the fusible link
+is much longer than the time scale of the square wave, i.e.,
+that the fuse responds to the value of I2 averaged over many
+cycles.
+
+D. Voltage multipliers
+The circuit shown in Figure 1.66 is called a voltage doubler. Think of it as two half-wave rectifier circuits in series. It is officially a full-wave rectifier circuit because both
+halves of the input waveform are used – the ripple frequency is twice the ac frequency (120 Hz for the 60 Hz line
+voltage in the United States).
+
+C. Split supply
+A popular variation of the center-tapped full-wave circuit
+is shown in Figure 1.65. It gives you split supplies (equal
+plus and minus voltages), which many circuits need. It is an
+efficient circuit, because both halves of the input waveform
+are used in each winding section.
+
+Variations of this circuit exist for voltage triplers,
+quadruplers, etc. Figure 1.67 shows doubler, tripler, and
+quadrupler circuits that let you ground one side of the transformer. You can extend this scheme as far as you want, producing what’s called a Cockcroft–Walton generator; these
+are used in arcane applications (such as particle accelerators) and in everyday applications (such as image intensifiers, air ionizers, laser copiers, and even bug zappers) that
+require a high dc voltage but hardly any current.
+
++
+ac
+
+in
+
+1.6.5 Regulators
+
+Figure 1.63. Full-wave rectifier using center-tapped transformer.
+
+By choosing capacitors that are sufficiently large, you can
+reduce the ripple voltage to any desired level. This bruteforce approach has three disadvantages.

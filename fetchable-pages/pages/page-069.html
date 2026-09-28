@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Page 69 of 70</title><meta name="source-page" content="69"><link rel="stylesheet" href="../styles.css">
+<link rel="prev" href="page-068.html"><link rel="next" href="page-070.html"></head><body>
+<header><div><a class="back" href="../index.html">All pages</a> <span class="meta">Source page 69 / 70</span></div>
+<nav class="nav" aria-label="Page navigation"><a href="page-068.html">Previous</a><a href="page-070.html">Next</a></nav></header>
+<main><h1 class="meta">Page 69</h1><figure class="sheet"><img src="../images/page-069.webp" width="1152" height="1440" alt="Complete visual rendering of source PDF page 69"></figure>
+<details class="transcript" open><summary>Fetchable text — page 69</summary><div class="text"><p>Art of Electronics Third Edition
+Review of Chapter 1
+69</p><p>linear 2-terminal components are ZR=R, ZC=−j/ωC, and
+ZL=jωL, where (as always) ω=2π f; see §1.7.5. Sinewave
+current through a resistor is in phase with voltage, whereas
+for a capacitor it leads by 90◦, and for an inductor it lags
+by 90◦.</p><p>impedance at signal frequencies suppresses unwanted signals, e.g., on a dc supply rail; (b) blocking (§1.7.1C), in
+which a highpass filter blocks dc, but passes all frequencies
+of interest (i.e., the breakpoint is chosen below all signal
+frequencies); (c) timing (§1.4.2D), in which an RC circuit
+(or a constant current into a capacitor) generates a sloping
+waveform used to create an oscillation or a timing interval;
+and (d) energy storage (§1.7.16B), in which a capacitor’s
+stored charge Q=CV smooths out the ripples in a dc power
+supply.</p><p>In later chapters we’ll see some additional applications of capacitors: (e) peak detection and sample-and-hold
+(§§4.5.1 and 4.5.2), which capture the voltage peak or transient value of a waveform, and (f) the integrator (§4.2.6),
+which performs a mathematical integration of an input signal.</p><p>¶E. Series and Parallel.
+The impedance of components connected in series is
+the sum of their impedances; thus Rseries=R1+R2+···,
+Lseries=L1+L2+···,
+and
+1/Cseries=1/C1+1/C2+···.
+When connected in parallel, on the other hand, it’s the
+admittances (inverse of impedance) that add. Thus the
+formula for capacitors in parallel looks like the formula for
+resistors in series, Cparallel=C1+C2+···; and vice versa for
+resistors and inductors, thus 1/Rparallel=1/R1+1/R2+···.
+For a pair of resistors in parallel this reduces to
+Rparallel=(R1R2)/(R1+R2).
+For
+example,
+two
+resistors of value R have resistance R/2 when connected in
+parallel, or resistance 2R in series.</p><p>The power dissipated in a resistor R is P=I2R=V 2/R.
+There is no dissipation in an ideal capacitor or inductor,
+because the voltage and current are 90◦out of phase. See
+§1.7.6.</p><p>¶G. Loading; Th´evenin Equivalent Circuit.
+Connecting a load (e.g., a resistor) to the output of a circuit
+(a “signal source”) causes the unloaded output voltage to
+drop; the amount of such loading depends on the load resistance, and the signal source’s ability to drive it. The latter is usually expressed as the equivalent source impedance
+(or Th´evenin impedance) of the signal. That is, the signal
+source is modeled as a perfect voltage source Vsig in series
+with a resistor Rsig. The output of the resistive voltage divider driven from an input voltage Vin, for example, is modeled as a voltage source Vsig=VinR2/(R1+R2) in series with
+a resistance Rsig=R1R2/(R1+R2) (which is just R1∥R2). So
+the output of a 1kΩ–1kΩ voltage divider driven by a 10 V
+battery looks like 5 V in series with 500 Ω.</p><p>¶F. Basic Circuits with R, L, and C.
+Resistors are everywhere. They can be used to set an operating current, as for example when powering an LED or
+biasing a zener diode (Figure 1.16); in such applications
+the current is simply I=(Vsupply−Vload)/R. In other applications (e.g., as a transistor’s load resistor in an amplifier,
+Figure 3.29) it is the current that is known, and a resistor is used to convert it to a voltage. An important circuit
+fragment is the voltage divider (§1.2.3), whose unloaded
+output voltage (across R2) is Vout=VinR2/(R1+R2).</p><p>Any combination of voltage sources, current sources,
+and resistors can be modeled perfectly by a single voltage source in series with a single resistor (its “Th´evenin
+equivalent circuit”), or by a single current source in parallel with a single resistor (its “Norton equivalent circuit”);
+see Appendix D. The Th´evenin equivalent source and resistance values are found from the open-circuit voltage and
+short-circuit current as VTh=Voc, RTh=Voc/Isc; and for the
+Norton equivalent they are IN=Isc, RN=Voc/Isc.</p><p>√</p><p>If one of the resistors in a voltage divider is replaced
+with a capacitor, you get a simple filter: lowpass if the
+lower leg is a capacitor, highpass if the upper leg is a capacitor (§§1.7.1 and 1.7.7). In either case the −3 dB transition frequency is at f3dB=1/2πRC. The ultimate rolloff
+rate of such a “single-pole” lowpass filter is −6 dB/octave,
+or −20 dB/decade; i.e., the signal amplitude falls as 1/f
+well beyond f3dB. More complex filters can be created by
+combining inductors with capacitors, see Chapter 6. A capacitor in parallel with an inductor forms a resonant circuit; its impedance (for ideal components) goes to infinity
+at the resonant frequency f=1/(2π</p><p>LC). The impedance
+of a series LC goes to zero at that same resonant frequency.
+See §1.7.14.</p><p>Because a load impedance forms a voltage divider with
+the signal’s source impedance, it’s usually desirable for
+the latter to be small compared with any anticipated load
+impedance (§1.2.5A). However, there are two exceptions:
+(a) a current source has a high source impedance (ideally
+infinite), and should drive a load of much lower impedance;
+and (b) signals of high frequency (or fast risetime), traveling through a length of cable, suffer reflections unless
+the load impedance equals the so-called “characteristic
+impedance” Z0 of the cable (commonly 50 Ω), see Appendix H.</p><p>Other important capacitor applications in this chapter
+(§1.7.16) include (a) bypassing, in which a capacitor’s low</p></div></details></main>
+<footer>Visual layout, figures, tables, equations, footnotes, and original printed page number are preserved in the lossless page image. <a href="../text/page-069.txt">Plain text</a> · <a href="../data/page-069.json">JSON</a></footer>
+</body></html>

@@ -1,0 +1,121 @@
+Art of Electronics Third Edition
+1.6.6. Circuit applications of diodes
+35
+
++
+
+regulator
+
+ac
+
+in
+out
+
++
+
+in
+
++
+
+ground
+
+load
+
+Figure 1.68. Regulated dc power supply.
+
+doubler
+
+A.
+
++
+
+ac
+
++
+
+in
+
+10% of the dc voltage), then use an active feedback circuit
+to eliminate the remaining ripple. Such a feedback circuit
+“looks at” the output, making changes in a controllable series resistor (a transistor) as necessary to keep the output
+voltage constant (Figure 1.68). This is known as a “linear
+regulated dc power supply.”32
+
+load
+
++
+
+tripler
+
+B.
+
++
+
+ac
+
++
+
+in
+
++
+
+These voltage regulators are used almost universally as
+power supplies for electronic circuits. Nowadays complete
+voltage regulators are available as inexpensive ICs (priced
+under $1). A power supply built with a voltage regulator
+can be made easily adjustable and self-protecting (against
+short circuits, overheating, etc.), with excellent properties
+as a voltage source (e.g., internal resistance measured in
+milliohms). We will deal with regulated dc power supplies
+in Chapter 9.
+
+load
+
++
+
+1.6.6 Circuit applications of diodes
+
+quadrupler
+
+C.
+
+Figure 1.67. Voltage multipliers; these configurations don’t require
+a floating voltage source.
+
+A. Signal rectifier
+There are other occasions when you use a diode to make
+a waveform of one polarity only. If the input waveform
+isn’t a sinewave, you usually don’t think of it as a rectification in the sense of a power supply. For instance, you
+might want a train of pulses corresponding to the rising
+edge of a square wave. The easiest way is to rectify the differentiated wave (Figure 1.69). Always keep in mind the
+0.6 V(approximately) forward drop of the diode. This circuit, for instance, gives no output for square waves smaller
+than 0.6 V pp. If this is a problem, there are various tricks
+to circumvent this limitation. One possibility is to use hot
+carrier diodes (Schottky diodes), with a forward drop of
+about 0.25 V.
+
+A possible circuit solution to this problem of finite diode
+drop is shown in Figure 1.70. Here D1 compensates D2’s
+forward drop by providing 0.6 V of bias to hold D2 at the
+threshold of conduction. Using a diode (D1) to provide
+the bias (rather than, say, a voltage divider) has several
+
+• The required capacitors may be prohibitively bulky and
+expensive.
+• The very short interval of current flow during each cycle31 (only very near the top of the sinusoidal waveform)
+produces more I2R heating.
+• Even with the ripple reduced to negligible levels, you still
+have variations of output voltage that are due to other
+causes, e.g., the dc output voltage will be roughly proportional to the ac input voltage, giving rise to fluctuations caused by input line voltage variations. In addition,
+changes in load current will still cause the output voltage to change because of the finite internal resistances of
+the transformer, diode, etc. In other words, the Th´evenin
+equivalent circuit of the dc power supply has R > 0.
+
+A better approach to power-supply design is to use
+enough capacitance to reduce ripple to low levels (perhaps
+
+31 Called the conduction angle.
+
+32 A popular variant is the regulated switching power converter. Although
+its operation is quite different in detail, it uses the same feedback principle to maintain a constant output voltage. See Chapter 9 for much
+more on both techniques.

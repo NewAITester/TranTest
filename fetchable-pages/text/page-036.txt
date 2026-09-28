@@ -1,0 +1,138 @@
+36
+1.6. Diodes and diode circuits
+Art of Electronics Third Edition
+
++5V (when turned on)
+
+C
+
+D2
+D1
+
+R1
+
+R2
+
+real-time clock
+
++3V
+
+lithium
+
+NXP PCF8563,
+Seiko S-35390A, etc
+
+“coin”
+
+V+
+
+Figure 1.69. Signal rectifier applied to differentiator output.
+
+X2
+
+cell
+
+SDA
+SCL
+
+digital
+link to
+microprocessor
+
+X1
+
+G
+
+C
+100pF
+
+D2
+
+in
+
+out
+
++5V
+
+R1
+1.0k
+
+R2
+1.0k
+R3
+1.0k
+
++0.6V
+
+Figure 1.71. Diode OR gate: battery backup. The real-time clock
+chips are specified to operate properly with supply voltages from
++1.8 V to +5.5 V. They draw a paltry 0.25 μA, which calculates to a
+1-million-hour life (a hundred years) from a standard CR2032 coin
+cell!
+
+D1
+
++5V
+
+1N4148
+
+Figure 1.70. Compensating the forward voltage drop of a diode
+signal rectifier.
+
+in
+
+1.0k
+out
+
+Figure 1.72. Diode voltage clamp.
+
++15V
+
+2.0k
+
+advantages: (a) there is nothing to adjust, (b) the compensation will be nearly perfect, and (c) changes of the forward drop (e.g., with changing temperature) will be compensated properly. Later we will see other instances of
+matched-pair compensation of forward drops in diodes,
+transistors, and FETs. It is a simple and powerful trick.
+
+R
+
+signal
+
+out
+
+in
+
+1.0k
+
+Figure 1.73. Voltage divider providing clamping voltage.
+
+B. Diode gates
+Another application of diodes, which we will recognize
+later under the general heading of logic, is to pass the
+higher of two voltages without affecting the lower. A good
+example is battery backup, a method of keeping something running (e.g, the “real-time clock” chip in a computer, which keeps a running count of date and time) that
+must continue running even when the device is switched
+off. Figure 1.71 shows a circuit that does the job. The battery does nothing until the +5 V power is switched off; then
+it takes over without interruption.
+
+clamping action; however, a side effect is that it adds 1 kΩ
+of series resistance (in the Th´evenin sense) to the signal,
+so its value is a compromise between maintaining a desirable low source (Th´evenin) resistance and a desirable low
+clamping current. Diode clamps are standard equipment
+on all inputs in contemporary CMOS digital logic. Without them, the delicate input circuits are easily destroyed by
+static electricity discharges during handling.
+
+Exercise 1.22. Design a symmetrical clamp, i.e., one that confines
+a signal to the range −5.6 to +5.6 V.
+
+A voltage divider can provide the reference voltage for
+a clamp (Figure 1.73). In this case you must ensure that the
+resistance looking into the voltage divider (Rvd) is small
+compared with R because what you have looks as shown
+
+C. Diode clamps
+Sometimes it is desirable to limit the range of a signal (i.e.,
+prevent it from exceeding certain voltage limits) somewhere in a circuit. The circuit shown in Figure 1.72 will accomplish this. The diode prevents the output from exceeding about +5.6 V, with no effect on voltages less than that
+(including negative voltages); the only limitation is that
+the input must not go so negative that the reverse breakdown voltage of the diode is exceeded (e.g., −75 V for a
+1N4148). The series resistor limits the diode current during

@@ -1,0 +1,123 @@
+48
+1.7. Impedance and reactance
+Art of Electronics Third Edition
+
+Vin
+
+Z1
+
+Vout
+
+Z2
+
+in this case. The power factor is the cosine of the phase
+angle between the voltage and the current, and it ranges
+from 0 (purely reactive circuit) to 1 (purely resistive). A
+power factor of less than 1 indicates some component of
+reactive current.43 It’s worth noting that the power factor
+goes to unity, and the dissipated power goes to V 2/R, in
+the limit of large capacitance (or of high frequency), where
+the reactance of the capacitor becomes much less than R.
+
+Figure 1.96. Generalized voltage divider: a pair of arbitrary
+impedances.
+
+Exercise 1.28. Show that all the average power delivered to the
+preceding circuit winds up in the resistor. Do this by computing
+the value of V 2
+
+R/R. What is that power, in watts, for a series circuit
+of a 1 μF capacitor and a 1.0k resistor placed across the 115 volt
+(rms), 60 Hz powerline?
+
+.
+
+Vout = IZ2 = Vin
+
+Z2
+Z1 +Z2
+
+Rather than worrying about this result in general, let’s look
+at some simple (but very important) examples, beginning
+with the RC highpass and lowpass filters we approximated
+earlier.
+
+1.7.8 RC highpass filters
+
+Power factor is a serious matter in large-scale electrical
+power distribution, because reactive currents don’t result in
+useful power being delivered to the load, but cost the power
+company plenty in terms of I2R heating in the resistance of
+generators, transformers, and wiring. Although residential
+users are billed only for “real” power [Re(VI∗)], the power
+company charges industrial users according to the power
+factor. This explains the capacitor yards that you see behind
+large factories, built to cancel the inductive reactance of
+industrial machinery (i.e., motors).
+
+Exercise 1.29. Show that adding a series capacitor of value C =
+1/ω2L makes the power factor equal 1.0 in a series RL circuit.
+Now do the same thing, but with the word “series” changed to
+“parallel.”
+
+1.7.7 Voltage dividers generalized
+
+We’ve seen that by combining resistors with capacitors
+it is possible to make frequency-dependent voltage dividers, owing to the frequency dependence of a capacitor’s
+impedance ZC = −j/ωC. Such circuits can have the desirable property of passing signal frequencies of interest
+while rejecting undesired signal frequencies. In this subsection and the next we revisit the simple lowpass and
+highpass RC filters, correcting the approximate analysis
+of §1.7.1; though simple, these circuits are important and
+widely used. Chapter 6 and Appendix E describe filters of
+greater sophistication.
+
+Referring back to the classic RC highpass filter (Figure 1.92), we see that the complex Ohm’s law (or the complex voltage-divider equation) gives
+
+Vout = Vin
+
+R
+R−j/ωC = Vin
+
+R(R+ j/ωC)
+R2 +(1/ω2C2).
+
+(For the last step, multiply top and bottom by the complex
+conjugate of the denominator.) Most often we don’t care
+about the phase of Vout, just its amplitude:
+
+Our original voltage divider (Figure 1.6) consisted of a pair
+of resistors in series to ground, input at the top and output
+at the junction. The generalization of that simple resistive
+divider is a similar circuit in which either or both resistors are replaced with a capacitor or inductor (or a more
+complicated network made from R, L, and C), as in Figure 1.96. In general, the division ratio Vout/Vin of such a divider is not constant, but depends on frequency (as we have
+already seen, in our approximate treatment of the lowpass
+and highpass filters in §1.7.1). The analysis is straightforward:
+
+Vout = (VoutV∗
+
+out)1/2
+
+,
+
+I =
+Vin
+Ztotal
+
+=
+R
+[R2 +(1/ω2C2)]1/2 Vin.
+
+Note the analogy to a resistive divider, where
+
+Ztotal = Z1 +Z2
+
+Vin.
+
+Vout =
+R2
+R1 +R2
+
+43 Or, for nonlinear circuits, it indicates that the current waveform is not
+proportional to the voltage waveform. More on this in §9.7.1.
+
+Here the impedance of the series RC combination

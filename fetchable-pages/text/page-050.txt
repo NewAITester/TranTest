@@ -1,0 +1,159 @@
+50
+1.7. Impedance and reactance
+Art of Electronics Third Edition
+
+0.01μF
+
+1.0
+
++ –3dB
+
+Vout
+
+Vout
+
+1.0k
+
+∝ 1/ω
+Vin
+
+Vin
+
+0
+
+ω3dB = 1/RC
+ω
+
+Figure 1.101. Highpass filter example.
+
+Figure 1.103. Frequency response of lowpass filter.
+
+Figure 1.100 provides a very useful graph covering large
+ranges of capacitance and frequency, giving the value of
+|Z| = 1/2π fC.
+
+As an example, consider the filter shown in Figure 1.101. It is a highpass filter with the 3 dB point44 at
+15.9 kHz. The impedance of a load driven by it should be
+much larger than 1.0k in order to prevent circuit loading
+effects on the filter’s output, and the driving source should
+be able to drive a 1.0k load without significant attenuation
+(loss of signal amplitude) in order to prevent circuit loading effects by the filter on the signal source (recall §1.7.1D
+for worst-case source and load impedances of RC filters).
+
+1.7.9 RC lowpass filters
+
+The lowpass filter’s output can be viewed as a signal
+source in its own right. When driven by a perfect ac voltage
+(zero source impedance), the filter’s output looks like R at
+low frequencies (the perfect signal source can be replaced
+with a short, i.e., by its small-signal source impedance, for
+the purpose of impedance calculations). It drops to zero
+impedance at high frequencies, where the capacitor dominates the output impedance. The signal driving the filter
+sees a load of R plus the load resistance at low frequencies,
+dropping to just R at high frequencies. As we remarked in
+§1.7.1D, the worst-case source impedance and the worstcase load impedance of an RC filter (lowpass or highpass)
+are both equal to R.
+
+0.1fc
+0°
+
+Revisiting the lowpass filter, in which you get the opposite
+frequency behavior by interchanging R and C (Figure 1.90,
+repeated here as Figure 1.102), we find the accurate result
+
+≈0.6°
+≈6°
+
++
+
+= –tan-1(f/fc)
+
+f/fc
+
+Vout =
+1
+(1+ω2R2C2)1/2 Vin
+(1.36)
+
+phase shift
+
+–45°
+
+0
+–5.7º
+–11.3º
+–14º
+–26.5º
+–45º
+
+0
+0.1
+0.2
+0.25
+0.5
+1.0
+
++
+
+≈6°
+≈0.6°
+
+–90°
+
+as seen in Figure 1.103 (and earlier in Figure 1.91). The
+3 dB point is again at a frequency45 f = 1/2πRC. Lowpass
+filters are quite handy in real life. For instance, a lowpass
+filter can be used to eliminate interference from nearby
+radio and television stations (0.5–800 MHz), a problem
+that plagues audio amplifiers and other sensitive electronic
+equipment.
+
+10fc
+
+fc
+
+1.0
+
++ 0.707
+
+R
+Vin
+Vout
+
+C
+
+0.1
+
+Vout
+
+Vin
+
+~1/f
+
+Figure 1.102. Lowpass filter.
+
+0.01
+
+–6dB/octave
+–20dB/decade
+
+Exercise 1.30. Show that the preceding expression for the response of an RC lowpass filter is correct.
+
+10fc
+100fc
+fc
+0.1fc
+0.01fc
+0.001
+
+
+
+44 One often omits the minus sign when referring to the −3 dB point.
+45 As mentioned in §1.7.1A, we often like to define the breakpoint frequency ω0=1/RC, and work with frequency ratios ω/ω0. Then a useful form for the denominator in eq’n 1.36 is
+
+Figure 1.104. Frequency response (phase and amplitude) of lowpass filter plotted on logarithmic axes. Note that the phase shift is
+−45◦at the −3 dB point and is within 6◦of its asymptotic value for
+a decade of frequency change.
+
+1+(ω/ω0)2. The same
+applies to eq’n 1.35, where the numerator becomes ω/ω0.
