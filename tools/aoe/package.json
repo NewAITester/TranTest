@@ -1,0 +1,12 @@
+{
+ "name": "aoe-tools",
+ "private": true,
+ "type": "module",
+ "description": "Interaction tests for the Persian Art of Electronics book (jsdom; needs `npm i jsdom` here once).",
+ "scripts": {
+  "test": "node e2e_ch01.mjs"
+ },
+ "dependencies": {
+  "jsdom": "^30.1.2"
+ }
+}

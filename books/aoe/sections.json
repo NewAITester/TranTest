@@ -1,0 +1,11 @@
+[
+  {"folder": "ch01", "title": "1. Foundations — 1.1 Introduction, 1.2 Voltage, current, and resistance", "start": 1, "end": 12},
+  {"folder": "ch01signals", "title": "1.3 Signals", "start": 13, "end": 17},
+  {"folder": "ch01cap", "title": "1.4 Capacitors and ac circuits", "start": 18, "end": 27},
+  {"folder": "ch01ind", "title": "1.5 Inductors and transformers", "start": 28, "end": 30},
+  {"folder": "ch01dio", "title": "1.6 Diodes and diode circuits", "start": 31, "end": 39},
+  {"folder": "ch01imp", "title": "1.7 Impedance and reactance", "start": 40, "end": 54},
+  {"folder": "ch01radio", "title": "1.8 Putting it all together — an AM radio", "start": 55, "end": 55},
+  {"folder": "ch01passive", "title": "1.9 Other passive components, 1.10 A parting shot", "start": 56, "end": 65},
+  {"folder": "ch01ex", "title": "Additional Exercises and Review of Chapter 1", "start": 66, "end": 70}
+]
