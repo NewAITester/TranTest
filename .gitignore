@@ -1,0 +1,12 @@
+# ── source books and extracted reference material (private, never published) ──────────────
+# The skill's convention: source PDFs and the page images/text derived from them stay out of
+# version control. 01.pdf is already tracked from the first task; new sources are ignored.
+*.pdf
+books/*/pages/
+books/*/*.timings.json
+
+# ── build noise ───────────────────────────────────────────────────────────────────────────
+__pycache__/
+.venv/
+node_modules/
+.DS_Store

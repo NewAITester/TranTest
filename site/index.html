@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>هنر الکترونیک — کتاب تعاملی فارسی</title>
+<meta name="description" content="درآیگاهِ پیش‌نمایش محلی: جلد کتاب و درس یکم فصل یک هنر الکترونیک.">
+<style>
+  :root { --board: #1d2b27; --chalk: #ece8dc; --dim: #9aaba3; --task: #f0b45a; --quiz: #86c9e8;
+    --ui: Vazirmatn, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    color-scheme: dark; }
+  body { margin: 0; min-height: 100svh; display: grid; place-items: center; background: var(--board);
+    color: var(--chalk); font: 18px/1.6 var(--ui); }
+  main { max-width: 44rem; padding: 40px 24px; text-align: center; }
+  h1 { margin: 0 0 10px; font-size: clamp(28px, 5vw, 44px); font-weight: 600; }
+  p { margin: 0 auto 28px; max-width: 34em; color: var(--dim); }
+  .acts { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+  a { padding: 13px 26px; border-radius: 999px; text-decoration: none; font-weight: 600; }
+  a.go { background: var(--chalk); color: var(--board); }
+  a.quiet { border: 1.5px solid #3a5047; color: var(--chalk); }
+  small { display: block; margin-top: 26px; color: #5d7068; }
+</style>
+</head>
+<body>
+<main>
+  <h1>هنر الکترونیک — فصل یکم</h1>
+  <p>ترجمهٔ آموزشی و انیمیشنی فصل «شالودهٔ الکترونیک»، بر پایهٔ کتاب <i>The Art of Electronics</i>.
+     این صفحه فقط درآیگاهِ پیش‌نمایش محلی است؛ خود کتاب دو صفحه دارد: جلد و فهرست، و درس.</p>
+  <div class="acts">
+    <a class="go" href="aoe/">شروع از جلد کتاب</a>
+    <a class="quiet" href="aoe/ch01/">رفتن به درس ۱ — ولتاژ، جریان و توان</a>
+  </div>
+  <small>برای شنیدن صدا، صفحه باید روی یک سرور HTTP باز شود: <code>python3 -m http.server 8765 -d site</code></small>
+</main>
+</body>
+</html>

@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ولتاژ، جریان و توان — کتاب هنر الکترونیک، فصل ۱</title>
+<link rel="stylesheet" href="../lib/engine.css">
+<link rel="expect" href="#bar" blocking="render"><!-- hold the first frame until the player exists, so the page transition can run -->
+</head>
+<body>
+<script src="../lib/engine.js"></script>
+<script src="audio/fa/timings.js"></script>
+<script>
+'use strict';
+// درس یکم کتاب «هنر الکترونیک» (فصل ۱، بخش‌های ۱.۱ و ۱.۲): ولتاژ، جریان، بار و توان.
+// رنگ‌ها: ولتاژ کهربایی (task)، جریان آبی (whole)، بار سبز (good)، توان مرجانی (bad).
+const CHAPTER = { number: 1, title: 'ولتاژ، جریان و توان', minutes: 9, language: 'fa' };
+
+/* ---------- شکل‌های این درس ---------- */
+// برچسب متنی روی صحنه؛ هر متن یک بند مستقل است، پس فارسی راست‌به‌چپ خوانده می‌شود.
+const aoeLabel = (p, s, x, y, t0, { size = 30, fill = COL.dim, anchor = 'middle', weight = 500, dur = .5 } = {}) => {
+  const e = T(p, s, { x, y, size, fill, anchor, weight, o: 0 });
+  show(e, t0, dur);
+  return e;
+};
+// سیم: خطی که با قلم کشیده می‌شود.
+const aoeWire = (p, d, t0, { stroke = COL.chalk, sw = 4, dur = .8 } = {}) => {
+  const e = path(p, d, { stroke, 'stroke-width': sw, fill: 'none', 'stroke-linecap': 'round' }, { d: 0, c_stroke: stroke, 'a_stroke-width': sw });
+  draw(e, t0, dur);
+  return e;
+};
+// قاب ملایم پشت یک شکل.
+const aoeBox = (p, x, y, w, h, t0, { stroke = COL.faint, r = 18, fill = 'rgba(236,232,220,.04)' } = {}) => {
+  const g = G(p, { o: 0 });
+  mk('rect', { x, y, width: w, height: h, rx: r, fill, stroke, 'stroke-width': 1.6 }, g);
+  show(g, t0);
+  return g;
+};
+// مقاومت افقی، وسط آن روی cx،cy.
+const aoeRes = (p, cx, cy, t0, { color = COL.chalk, len = 130, h = 32, lead = 40 } = {}) => {
+  const half = len / 2, n = 6, step = len / n;
+  let d = `M${cx - half - lead} ${cy}H${cx - half}`;
+  for (let i = 0; i < n; i++) d += `L${cx - half + step * (i + .5)} ${cy + (i % 2 ? h : -h)}`;
+  d += `L${cx + half} ${cy}H${cx + half + lead}`;
+  return aoeWire(p, d, t0, { stroke: color });
+};
+// باتری افقی: صفحهٔ بلند (مثبت) و صفحهٔ کوتاه‌تر و ضخیم (منفی).
+const aoeBattery = (p, cx, cy, t0, { color = COL.chalk, gap = 30, big = 46, small = 26, stub = 70 } = {}) => {
+  const g = G(p, { o: 0 });
+  mk('path', { d: `M${cx - gap} ${cy - big}V${cy + big}M${cx - gap - stub} ${cy}H${cx - gap}`, stroke: color, 'stroke-width': 4, fill: 'none', 'stroke-linecap': 'round' }, g);
+  mk('path', { d: `M${cx + gap} ${cy - small}V${cy + small}M${cx + gap} ${cy}H${cx + gap + stub}`, stroke: color, 'stroke-width': 9, fill: 'none', 'stroke-linecap': 'round' }, g);
+  show(g, t0);
+  return g;
+};
+// باتری ایستاده (روی سیم عمودی).
+const aoeBatteryV = (p, cx, cy, t0, { color = COL.chalk, gap = 30, big = 46, small = 26, stub = 70 } = {}) => {
+  const g = G(p, { o: 0 });
+  mk('path', { d: `M${cx - big} ${cy - gap}H${cx + big}M${cx} ${cy - gap - stub}V${cy - gap}`, stroke: color, 'stroke-width': 4, fill: 'none', 'stroke-linecap': 'round' }, g);
+  mk('path', { d: `M${cx - small} ${cy + gap}H${cx + small}M${cx} ${cy + gap}V${cy + gap + stub}`, stroke: color, 'stroke-width': 9, fill: 'none', 'stroke-linecap': 'round' }, g);
+  show(g, t0);
+  return g;
+};
+// فلش ساده.
+const aoeArrow = (p, x1, y1, x2, y2, t0, { color = COL.chalk, sw = 4, head = 17, dur = .45 } = {}) => {
+  const a = Math.atan2(y2 - y1, x2 - x1), L = Math.hypot(x2 - x1, y2 - y1) - head;
+  const bx = x1 + Math.cos(a) * L, by = y1 + Math.sin(a) * L;
+  const g = G(p, { o: 0 });
+  mk('path', { d: `M${x1} ${y1}L${bx} ${by}`, stroke: color, 'stroke-width': sw, 'stroke-linecap': 'round', fill: 'none' }, g);
+  mk('path', { d: `M${x2} ${y2}L${bx + Math.sin(a) * head * .55} ${by - Math.cos(a) * head * .55}L${bx - Math.sin(a) * head * .55} ${by + Math.cos(a) * head * .55}Z`, fill: color }, g);
+  show(g, t0, dur);
+  return g;
+};
+// بستهٔ بار: دایره‌ای با برچسب.
+const aoePacket = (p, x, y, t0, { color = COL.good, r = 24, text = '1 C', size = 22 } = {}) => {
+  const g = G(p, { x, y, o: 0, s: .5 });
+  mk('circle', { r, fill: 'rgba(143,214,176,.12)', stroke: color, 'stroke-width': 2.5 }, g);
+  T(g, text, { y: size * .34, size, fill: color, anchor: 'middle', weight: 600 });
+  tw(g, { o: 1, s: 1 }, t0, .35, back);
+  return g;
+};
+// رابطه در یک قاب: rect + ریاضی.
+const aoeFormula = (p, parts, x, y, t0, { size = 52, fill = COL.chalk, pad = 30, stroke = COL.faint, anchor = 'middle' } = {}) => {
+  const g = G(p, { o: 0 });
+  const m = M(g, [].concat(parts), { x, y, size, fill, anchor });
+  const w = m._w + pad * 2, h = size * 1.75;
+  const r = mk('rect', { x: anchor === 'middle' ? x - w / 2 : x - pad, y: y - size * .95, width: w, height: h, rx: 16, fill: 'rgba(236,232,220,.05)', stroke, 'stroke-width': 1.6 }, g);
+  g.insertBefore(r, g.firstChild);   // قاب پشت رابطه بماند
+  show(g, t0, .55);
+  return g;
+};
+// آکولاد افقی برای نشان دادن «روی دو سر».
+const aoeBrace = (p, x1, x2, y, label, color, t0) => {
+  const g = G(p, { o: 0 });
+  mk('path', { d: `M${x1} ${y - 12}V${y}H${x2}V${y - 12}`, stroke: color, 'stroke-width': 3, fill: 'none', 'stroke-linecap': 'round' }, g);
+  T(g, label, { x: (x1 + x2) / 2, y: y + 34, size: 28, fill: color, anchor: 'middle', weight: 600 });
+  show(g, t0);
+  return g;
+};
+// چراغک: نماد لامپ (دایره با ضربدر) که روشن می‌شود.
+const aoeLamp = (p, x, y, t0, { r = 54, color = COL.task } = {}) => {
+  const g = G(p, { x, y, o: 0, s: .6 });
+  mk('circle', { r, fill: 'rgba(240,180,90,.10)', stroke: color, 'stroke-width': 4 }, g);
+  mk('path', { d: `M${-r * .7} ${-r * .7}L${r * .7} ${r * .7}M${r * .7} ${-r * .7}L${-r * .7} ${r * .7}`, stroke: color, 'stroke-width': 3.5 }, g);
+  tw(g, { o: 1, s: 1 }, t0, .5, back);
+  return g;
+};
+
+/* ---------- دادهٔ تمرین‌ها (ثابت‌های داخل BEATS باید پیش از آن تعریف شوند) ---------- */
+const AOE_TF = [['t', 'درست', null, 'T'], ['f', 'نادرست', null, 'F']];
+const AOE_UNITS = [['v', 'ولتاژ', COL.task, '1'], ['i', 'جریان', COL.whole, '2'], ['q', 'بار', COL.good, '3'], ['p', 'توان', COL.bad, '4']];
+
+/* ---------- گام‌ها: [شناسه، عنوان، run(m, D)، گزینه‌های دیگر] ---------- */
+const BEATS = [
+  ['intro', 'شالودهٔ الکترونیک', (m, D) => {
+    const g = G(scene, { o: 0, y: 24 });
+    T(g, 'فصل یک — کتاب هنر الکترونیک', { x: 800, y: 300, size: 28, fill: COL.dim, anchor: 'middle' });
+    T(g, 'شالودهٔ الکترونیک', { x: 800, y: 410, size: 92, weight: 600, anchor: 'middle' });
+    tw(g, { o: 1, y: 0 }, .2, 1.1, out);
+    const sub = aoeLabel(scene, 'بار  ·  جریان  ·  ولتاژ  ·  توان', 800, 540, m('sub'), { size: 42, fill: COL.task, weight: 600 });
+    // مدار سادهٔ پایین تصویر
+    const c = G(scene, { o: 0 });
+    aoeWire(c, 'M420 700H1180', .9, { stroke: COL.faint, sw: 3 });
+    aoeRes(c, 800, 700, 1.2, { color: COL.faint, len: 110, h: 26, lead: 30 });
+    aoeBattery(c, 420, 700, 1.5, { color: COL.faint, gap: 22, big: 34, small: 20 });
+    show(c, .9, .8);
+    tw(g, { o: 0, y: -24 }, D - .9, .8);
+    hide(sub, D - .9, .8);
+    hide(c, D - .9, .8);
+  }],
+  ['why', 'چرا ولتاژ و جریان؟', (m) => {
+    const p = panel(0);
+    aoeLabel(p, 'بخش ۱.۲ کتاب: ولتاژ، جریان و مقاومت', 800, 120, .1, { size: 28, fill: COL.dim });
+    // مدار: باتری روی ضلع چپ، مقاومت روی ضلع بالا
+    const loop = aoeWire(p, 'M260 420H1340V760H260Z', m('a'), { sw: 4.5, dur: 1.4 });
+    aoeBatteryV(p, 260, 590, m('a') + .3);
+    aoeRes(p, 800, 420, m('a') + .5, { color: COL.chalk, len: 140, h: 34, lead: 46 });
+    // ولتاژ روی دو سر مقاومت (بالای مدار)
+    aoeBrace(p, 700, 900, 340, 'V', COL.task, m('b'));
+    aoeLabel(p, 'ولتاژ روی دو سر مقاومت', 1120, 300, m('b') + .2, { size: 28, fill: COL.task });
+    // جریان از میان مسیر (پایین مدار)
+    aoeArrow(p, 520, 760, 660, 760, m('c'), { color: COL.whole, sw: 4.5 });
+    aoeArrow(p, 1200, 760, 1060, 760, m('c') + .2, { color: COL.whole, sw: 4.5 });
+    aoeLabel(p, 'جریان از میان مدار می‌گذرد', 800, 845, m('c') + .4, { size: 28, fill: COL.whole });
+    return loop;
+  }],
+  ['voltage', 'ولتاژ', (m) => {
+    const p = panel(0);
+    aoeLabel(p, 'ولتاژ', 800, 130, m('v1'), { size: 44, fill: COL.task, weight: 600 });
+    // دو تراز پتانسیل
+    aoeWire(p, 'M220 420H930', m('v1') + .2, { stroke: COL.dim, sw: 4 });
+    aoeWire(p, 'M220 740H930', m('v1') + .4, { stroke: COL.dim, sw: 4 });
+    aoeLabel(p, 'پتانسیل بالاتر', 575, 385, m('v1') + .6, { size: 26, fill: COL.dim });
+    aoeLabel(p, 'پتانسیل پایین‌تر', 575, 785, m('v1') + .8, { size: 26, fill: COL.dim });
+    // بار مثبت و سرازیری
+    const ramp = aoeWire(p, 'M330 420L840 740', m('v2'), { stroke: COL.faint, sw: 2.5, dur: .7 });
+    const dot = G(p, { x: 330, y: 420, o: 0 });
+    mk('circle', { r: 22, fill: 'rgba(143,214,176,.14)', stroke: COL.good, 'stroke-width': 3 }, dot);
+    T(dot, '+', { y: 12, size: 34, fill: COL.good, anchor: 'middle', weight: 700 });
+    show(dot, m('v2'), .4);
+    prog(q => put(dot, { x: 330 + 510 * q, y: 420 + 320 * q }), m('v3'), 1.6, io);
+    aoeLabel(p, 'انرژی آزاد می‌شود', 720, 610, m('v3') + 1.0, { size: 26, fill: COL.good });
+    // رابطه
+    aoeFormula(p, 'V = W / Q', 1230, 300, m('v4'), { size: 58 });
+    aoeLabel(p, 'انرژی بر واحد بار', 1230, 400, m('v4') + .35, { size: 28, fill: COL.dim });
+    aoeFormula(p, ['1 V = 1 J / C'], 1230, 520, m('v5'), { size: 46, stroke: COL.task });
+    aoeLabel(p, 'ولتاژ مثل فشار آب است', 1160, 700, m('v6'), { size: 32, fill: COL.chalk, weight: 600 });
+    aoeLabel(p, 'جریان مثل جریان آب است', 1160, 760, m('v6') + .45, { size: 32, fill: COL.chalk, weight: 600 });
+    return ramp;
+  }],
+  ['current', 'جریان', (m) => {
+    const p = panel(0);
+    aoeLabel(p, 'جریان', 800, 130, m('i1'), { size: 44, fill: COL.whole, weight: 600 });
+    aoeWire(p, 'M180 520H1420', m('i2'), { sw: 6, dur: 1.1 });
+    // مقطع سنجش بار
+    const cut = aoeWire(p, 'M800 462V578', m('i2') + .5, { stroke: COL.faint, sw: 2.5, dur: .4 });
+    aoeLabel(p, 'یک نقطه', 800, 440, m('i2') + .7, { size: 24, fill: COL.faint });
+    // بسته‌های بار که از مقطع می‌گذرند
+    const pk = [0, 1, 2, 3].map(i => aoePacket(p, 600, 520, m('i3') + .15 + i * .35, { text: '1 C' }));
+    pk.forEach((g, i) => prog(q => put(g, { x: 600 + 400 * q }), m('i3') + .5 + i * .55, 1.15, lin));
+    aoeLabel(p, 'هر ثانیه یک کولن = یک آمپر', 800, 650, m('i3') + 2.1, { size: 30, fill: COL.whole, weight: 600 });
+    // رابطه و یکا
+    aoeFormula(p, 'I = Q / t', 1260, 250, m('i4'), { size: 50 });
+    aoeLabel(p, 'یکا: آمپر، یعنی کولن بر ثانیه', 1260, 350, m('i4') + .3, { size: 28, fill: COL.dim });
+    aoeLabel(p, 'در یک آمپر، هر ثانیه حدود ۶ ضربدر ۱۰ به توان ۱۸ الکترون می‌گذرد', 800, 800, m('i5'), { size: 28 });
+    return cut;
+  }],
+  ['ah', 'بار = جریان × زمان', (m) => {
+    const p = panel(0);
+    aoeFormula(p, 'Q = I · t', 800, 200, m('h1'), { size: 52 });
+    // مدار: باتری، حسگر، جریان
+    aoeWire(p, 'M380 460H1180V680H380Z', .4, { sw: 4, dur: 1.4 });
+    aoeBatteryV(p, 380, 570, .7);
+    const dev = aoeBox(p, 640, 625, 280, 105, m('h2'), { stroke: COL.chalk });
+    T(dev, 'حسگر', { x: 780, y: 665, size: 34, fill: COL.chalk, anchor: 'middle', weight: 600 });
+    T(dev, 'الکترونیکی', { x: 780, y: 707, size: 24, fill: COL.dim, anchor: 'middle' });
+    aoeArrow(p, 1000, 460, 1100, 460, m('h2') + .4, { color: COL.whole });
+    aoeLabel(p, 'I = 0.2 A', 1050, 420, m('h3'), { size: 30, fill: COL.whole, weight: 600 });
+    // ساعت
+    const clk = G(p, { x: 1360, y: 560, o: 0, s: .8 });
+    mk('circle', { cx: 0, cy: 0, r: 52, fill: 'none', stroke: COL.dim, 'stroke-width': 3 }, clk);
+    mk('path', { d: 'M0 0V-32M0 0H22', stroke: COL.dim, 'stroke-width': 3, fill: 'none', 'stroke-linecap': 'round' }, clk);
+    tw(clk, { o: 1, s: 1 }, m('h4'), .45, back);
+    aoeLabel(p, '۱ ساعت', 1360, 660, m('h4') + .2, { size: 28, fill: COL.dim });
+    // حساب
+    const calc = G(p, { o: 0 });
+    M(calc, ['0.2 × 3600 = 720'], { x: 800, y: 790, size: 38, fill: COL.task, anchor: 'middle' });
+    show(calc, m('h4') + .5);
+    aoeLabel(p, '۰٫۲ آمپرساعت = ۷۲۰ کولن', 800, 850, m('h5'), { size: 28, fill: COL.dim });
+  }],
+  ['gen', 'منبع ولتاژ', (m) => {
+    const p = panel(0);
+    aoeLabel(p, 'این ولتاژها از کجا می‌آیند؟', 800, 130, m('g1'), { size: 34, fill: COL.chalk, weight: 600 });
+    const cards = [
+      [330, 'باتری', 'شیمیایی ← الکتریکی'],
+      [800, 'مولد', 'مکانیکی ← الکتریکی'],
+      [1270, 'پیل خورشیدی', 'نور ← الکتریکی'],
+    ];
+    cards.forEach(([x, name, sub], i) => {
+      const t0 = i === 0 ? m('g2') : m('g3') + (i - 1) * .35;
+      const c = aoeBox(p, x - 175, 260, 350, 230, t0, { stroke: COL.faint });
+      if (i === 0) aoeBatteryV(c, x, 352, t0 + .2, { gap: 18, big: 30, small: 18, stub: 18 });
+      else if (i === 1) {
+        mk('circle', { cx: x, cy: 330, r: 40, fill: 'none', stroke: COL.chalk, 'stroke-width': 3.5 }, c);
+        const a = G(c, { x, y: 330, o: 0, r: 0 });
+        mk('path', { d: 'M0 -40A40 40 0 0 1 40 0', stroke: COL.task, 'stroke-width': 4, fill: 'none' }, a);
+        mk('path', { d: 'M40 0l-14 -6l6 14z', fill: COL.task }, a);
+        show(a, t0 + .3);
+        // چرخش پیوستهٔ روتور: چند دور پشت سر هم، با زمان‌بندی ثابت تا بازپخش هم‌سان بماند
+        for (let k = 0; k < 3; k++) prog(q => put(a, { r: 360 * (k + q) }), t0 + .3 + k * 1.5, 1.5, lin);
+      } else {
+        mk('rect', { x: x - 46, y: 300, width: 92, height: 62, rx: 6, fill: 'rgba(240,180,90,.12)', stroke: COL.task, 'stroke-width': 3 }, c);
+        mk('path', { d: `M${x - 70} 290l-16 -16M${x} 286v-22M${x + 70} 290l16 -16`, stroke: COL.task, 'stroke-width': 3, fill: 'none', 'stroke-linecap': 'round' }, c);
+      }
+      T(c, name, { x, y: 430, size: 32, fill: COL.chalk, anchor: 'middle', weight: 600 });
+      T(c, sub, { x, y: 470, size: 22, fill: COL.dim, anchor: 'middle' });
+    });
+    // مدار: سه منبع روی یک ریل
+    const bus = G(p, { o: 0 });
+    aoeWire(bus, 'M330 490V600M800 490V600M1270 490V600M330 600H1270', m('g4'), { stroke: COL.faint, sw: 3, dur: .9 });
+    aoeRes(bus, 800, 600, m('g4') + .3, { len: 120, h: 28, lead: 36 });
+    aoeArrow(bus, 520, 600, 620, 600, m('g4') + .5, { color: COL.whole, sw: 4 });
+    aoeArrow(bus, 1080, 600, 980, 600, m('g4') + .65, { color: COL.whole, sw: 4 });
+    aoeLabel(bus, 'جریان، وقتی ولتاژ به دو سر مدار می‌رسد', 800, 700, m('g4') + .8, { size: 28, fill: COL.whole });
+    show(bus, m('g4'));
+  }],
+  ['q1', 'بررسی: بار و جریان', () => { panel(0); }, { ask: done => quiz(BAND, [{
+    id: 'c-charge-current',
+    prompt: ['در ۲ ثانیه، ۰٫۶ کولن بار از یک نقطه می‌گذرد. جریان چند آمپر است؟ اگر جریان ۰٫۵ آمپر باشد، در ۴ ثانیه چند کولن بار می‌گذرد؟'],
+    build: blanks([
+      { parts: ['I = ', { box: '0.3' }, ' A'], why: 'جریان = بار ÷ زمان = ۰٫۶ ÷ ۲ = ۰٫۳ آمپر.', hint: 'بار را بر زمان تقسیم کنید.' },
+      { parts: ['Q = ', { box: '2' }, ' C'], why: 'بار = جریان × زمان = ۰٫۵ × ۴ = ۲ کولن.', hint: 'جریان را در زمان ضرب کنید.' },
+    ]),
+  }], done) }],
+  ['rule', 'زبان دقیق', (m) => {
+    const p = panel(0);
+    aoeLabel(p, 'یک نکتهٔ زبانی', 800, 120, m('y1'), { size: 32, fill: COL.chalk, weight: 600 });
+    // راست: جریان از میان
+    const right = aoeBox(p, 840, 200, 660, 380, .2, { stroke: COL.faint });
+    aoeRes(p, 1170, 390, .5, { color: COL.chalk, len: 150, h: 34, lead: 50 });
+    aoeArrow(p, 1000, 460, 1340, 460, m('y2'), { color: COL.whole, sw: 4.5 });
+    aoeLabel(p, 'جریان از میان مقاومت می‌گذرد', 1170, 520, m('y2') + .3, { size: 30, fill: COL.whole, weight: 600 });
+    // چپ: ولتاژ روی دو سر
+    const left = aoeBox(p, 100, 200, 660, 380, .2, { stroke: COL.faint });
+    aoeRes(p, 430, 390, .5, { color: COL.chalk, len: 150, h: 34, lead: 50 });
+    aoeArrow(p, 330, 300, 330, 350, m('y3'), { color: COL.task, sw: 3.5, head: 14 });
+    aoeArrow(p, 530, 300, 530, 350, m('y3') + .15, { color: COL.task, sw: 3.5, head: 14 });
+    aoeLabel(p, 'ولتاژ روی دو سر مقاومت است', 430, 260, m('y3') + .3, { size: 30, fill: COL.task, weight: 600 });
+    // جملهٔ نادرست، خط‌خورده
+    const wrong = aoeLabel(p, 'ولتاژ از مقاومت می‌گذرد', 430, 520, m('y4'), { size: 30, fill: COL.bad });
+    const strike = aoeWire(p, 'M300 508L560 508', m('y4') + .5, { stroke: COL.bad, sw: 4, dur: .35 });
+    aoeLabel(p, 'ولتاژ همیشه میان دو نقطه اندازه گرفته می‌شود', 430, 560, m('y4') + .8, { size: 24, fill: COL.dim });
+    // نقطهٔ مرجع
+    const ref = G(p, { o: 0 });
+    aoeWire(ref, 'M300 800H1300', m('y5') + .1, { stroke: COL.faint, sw: 2.5, dur: .6 });
+    mk('circle', { cx: 520, cy: 800, r: 12, fill: COL.task }, ref);
+    mk('circle', { cx: 1080, cy: 800, r: 12, fill: COL.chalk }, ref);
+    aoeArrow(ref, 1080, 760, 1080, 786, m('y5') + .2, { color: COL.task, sw: 3, head: 12, dur: .3 });
+    show(ref, m('y5'));
+    aoeLabel(p, 'ولتاژ یک نقطه، نسبت به نقطهٔ مرجع', 800, 740, m('y5') + .4, { size: 26, fill: COL.dim });
+    return strike;
+  }],
+  ['kcl', 'قانون اول کیرشهف', (m) => {
+    const p = panel(0);
+    aoeLabel(p, 'قانون جریان کیرشهف', 800, 130, m('j1'), { size: 38, fill: COL.chalk, weight: 600 });
+    // گره
+    const node = G(p, { o: 0 });
+    aoeWire(node, 'M220 560H520M520 300V560M520 560H820M520 560V760', m('j2') + .1, { stroke: COL.chalk, sw: 4, dur: 1 });
+    mk('circle', { cx: 520, cy: 560, r: 15, fill: COL.task }, node);
+    show(node, m('j2'));
+    aoeArrow(node, 300, 560, 390, 560, m('j2') + .6, { color: COL.whole, sw: 4.5 });
+    aoeArrow(node, 520, 380, 520, 460, m('j2') + .75, { color: COL.whole, sw: 4.5 });
+    aoeArrow(node, 700, 560, 620, 560, m('j3'), { color: COL.whole, sw: 4.5 });
+    aoeArrow(node, 520, 680, 520, 600, m('j3') + .15, { color: COL.whole, sw: 4.5 });
+    aoeLabel(node, 'مجموع جریان‌های ورودی', 330, 500, m('j2') + .3, { size: 24, fill: COL.whole });
+    aoeLabel(node, 'مجموع جریان‌های خروجی', 700, 500, m('j3') + .3, { size: 24, fill: COL.whole });
+    aoeLabel(node, 'یک نقطه (گره)', 520, 810, m('j4'), { size: 24, fill: COL.dim });
+    aoeLabel(node, 'بار نه ساخته می‌شود و نه نابود', 800, 250, m('j4') + .3, { size: 26, fill: COL.dim });
+    // مدار سری
+    const loop = G(p, { o: 0 });
+    aoeWire(loop, 'M960 320H1420V700H960Z', m('j5'), { stroke: COL.chalk, sw: 4, dur: 1.1 });
+    aoeRes(loop, 1190, 320, m('j5') + .3, { len: 110, h: 26, lead: 34 });
+    aoeBattery(loop, 1190, 700, m('j5') + .45, { gap: 22, big: 34, small: 20 });
+    aoeArrow(loop, 1360, 320, 1250, 320, m('j5') + .6, { color: COL.whole, sw: 4 });
+    aoeArrow(loop, 1420, 620, 1420, 510, m('j5') + .7, { color: COL.whole, sw: 4 });
+    aoeArrow(loop, 1240, 700, 1130, 700, m('j5') + .8, { color: COL.whole, sw: 4 });
+    aoeLabel(loop, 'جریان همه‌جا یکی است', 1190, 840, m('j5') + .9, { size: 26, fill: COL.whole });
+    show(loop, m('j5'));
+    return loop;
+  }],
+  ['kvl', 'قانون دوم کیرشهف', (m) => {
+    const p = panel(0);
+    aoeLabel(p, 'قانون ولتاژ کیرشهف', 800, 130, m('u1'), { size: 38, fill: COL.chalk, weight: 600 });
+    // دو مسیر از A به B
+    aoeWire(p, 'M240 560V340H1360V560', m('u2'), { stroke: COL.chalk, sw: 4, dur: 1.1 });
+    aoeWire(p, 'M240 560V730H1360V560', m('u2') + .4, { stroke: COL.chalk, sw: 4, dur: 1.1 });
+    aoeRes(p, 800, 340, m('u2') + .8, { len: 120, h: 28, lead: 36, color: COL.chalk });
+    aoeRes(p, 800, 730, m('u2') + 1.0, { len: 120, h: 28, lead: 36, color: COL.chalk });
+    const A = G(p, { o: 0 }), B = G(p, { o: 0 });
+    mk('circle', { cx: 240, cy: 560, r: 13, fill: COL.chalk }, A);
+    mk('circle', { cx: 1360, cy: 560, r: 13, fill: COL.chalk }, B);
+    T(A, 'A', { x: 185, y: 568, size: 32, fill: COL.chalk, anchor: 'middle' });
+    T(B, 'B', { x: 1415, y: 568, size: 32, fill: COL.chalk, anchor: 'middle' });
+    show(A, m('u2') + 1.2); show(B, m('u2') + 1.2);
+    aoeLabel(p, 'مسیر یک', 460, 300, m('u3'), { size: 26, fill: COL.task });
+    aoeLabel(p, 'مسیر دو', 460, 790, m('u3') + .2, { size: 26, fill: COL.task });
+    aoeBrace(p, 620, 980, 268, '5 V', COL.task, m('u3') + .5);
+    aoeBrace(p, 620, 980, 800, '5 V', COL.task, m('u3') + .8);
+    // حلقهٔ بسته
+    aoeBatteryV(p, 240, 660, m('u4'), { gap: 24, big: 36, small: 22 });
+    aoeLabel(p, 'منبع ۵ ولتی', 430, 655, m('u4') + .3, { size: 24, fill: COL.dim });
+    aoeFormula(p, 'V(A→B) = 5 V', 800, 550, m('u5'), { size: 46 });
+    aoeLabel(p, 'روی هر دو مسیر، همان ۵ ولت', 800, 645, m('u5') + .3, { size: 28, fill: COL.dim });
+    aoeLabel(p, 'و دور حلقهٔ بسته: ۵ ولت − ۵ ولت = ۰', 800, 690, m('u5') + .6, { size: 28, fill: COL.dim });
+  }],
+  ['power', 'توان', (m) => {
+    const p = panel(0);
+    aoeLabel(p, 'توان', 800, 130, m('p1'), { size: 44, fill: COL.bad, weight: 600 });
+    aoeFormula(p, 'P = V · I', 800, 300, m('p4'), { size: 64, stroke: COL.bad });
+    aoeLabel(p, 'توان = ولتاژ × جریان', 800, 420, m('p4') + .3, { size: 30, fill: COL.chalk, weight: 600 });
+    aoeFormula(p, ['1 W = 1 J / s'], 800, 520, m('p5'), { size: 42 });
+    aoeLabel(p, 'توان آهنگ مصرف انرژی است', 800, 620, m('p5') + .3, { size: 28, fill: COL.dim });
+    aoeLabel(p, 'پس توان با ضرب ولتاژ در جریان به دست می‌آید', 800, 200, m('p2'), { size: 30, fill: COL.dim });
+    // بخش پایین: مقاومت با برچسب‌های ولتاژ و جریان
+    const r = G(p, { o: 0 });
+    aoeRes(r, 420, 720, 0, { len: 140, h: 32, lead: 50 });
+    aoeArrow(r, 250, 640, 250, 690, 0, { color: COL.task, sw: 3.5, head: 14, dur: .3 });
+    aoeArrow(r, 590, 640, 590, 690, 0, { color: COL.task, sw: 3.5, head: 14, dur: .3 });
+    T(r, 'V', { x: 420, y: 630, size: 30, fill: COL.task, anchor: 'middle', weight: 600 });
+    aoeArrow(r, 300, 770, 540, 770, 0, { color: COL.whole, sw: 4.5, dur: .3 });
+    T(r, 'I', { x: 420, y: 812, size: 30, fill: COL.whole, anchor: 'middle', weight: 600 });
+    show(r, m('p3'));
+    // نمونهٔ لامپ
+    const lamp = G(p, { o: 0 });
+    aoeLamp(lamp, 1160, 740, 0, { r: 52 });
+    T(lamp, '120 V', { x: 950, y: 686, size: 28, fill: COL.task, anchor: 'middle' });
+    T(lamp, '0.5 A', { x: 950, y: 792, size: 28, fill: COL.whole, anchor: 'middle' });
+    T(lamp, '→ 60 W', { x: 1300, y: 752, size: 36, fill: COL.bad, anchor: 'middle', weight: 600 });
+    hide(r, m('p6')); show(lamp, m('p6'));
+    aoeLabel(p, 'لامپ: ۱۲۰ ولت × ۰٫۵ آمپر = ۶۰ وات', 800, 870, m('p6') + .4, { size: 26, fill: COL.dim });
+  }],
+  ['q2', 'بررسی: توان', () => { panel(0); }, { ask: done => quiz(BAND, [{
+    id: 'c-power',
+    prompt: ['یک لامپ جیبی با ولتاژ ۱۲ ولت، ۰٫۵ آمپر جریان می‌کشد. توان آن چند وات است؟ اگر همین لامپ ۲ ساعت روشن بماند، چند وات‌ساعت انرژی مصرف می‌کند؟'],
+    build: blanks([
+      { parts: ['P = ', { box: '6' }, ' W'], why: 'توان = ولتاژ × جریان = ۱۲ × ۰٫۵ = ۶ وات.', hint: 'ولتاژ را در جریان ضرب کنید.' },
+      { parts: ['E = ', { box: '12' }, ' Wh'], why: 'انرژی = توان × زمان = ۶ وات × ۲ ساعت = ۱۲ وات‌ساعت.', hint: 'توان را در زمان ضرب کنید.' },
+    ]),
+  }], done) }],
+  ['wrap', 'خلاصه', (m) => {
+    const p = panel(0);
+    aoeLabel(p, 'خلاصهٔ درس', 800, 130, m('w1'), { size: 36, fill: COL.chalk, weight: 600 });
+    const items = [
+      ['بار را با کولن می‌شماریم؛ آهنگ گذر آن، جریان است', 'w2', COL.good],
+      ['ولتاژ، انرژی بر واحد بار است؛ میان دو نقطه', 'w3', COL.task],
+      ['توان، حاصل‌ضرب ولتاژ در جریان است', 'w4', COL.bad],
+    ];
+    items.forEach(([str, mark, colr], i) => {
+      const g = G(p, { x: 24, y: 300 + i * 150, o: 0 });
+      mk('circle', { cx: 1400, cy: -12, r: 30, fill: colr }, g);
+      T(g, String(i + 1), { x: 1400, y: 2, size: 34, fill: COL.board, weight: 700, anchor: 'middle' });
+      T(g, str, { x: 1330, y: 4, size: 34, weight: 600, anchor: 'start' });
+      tw(g, { o: 1, x: 0 }, m(mark), .7);
+    });
+    aoeLabel(p, 'حالا نوبت تمرین فصل است', 800, 790, m('w5'), { size: 32, fill: COL.task, weight: 600 });
+  }],
+  ['final1', 'تمرین فصل ۱', () => { panel(0); }, { ask: done => quiz(SCREEN, [
+    {
+      id: 'p-language',
+      prompt: ['کدام جمله از نظر فنی درست است؟'],
+      build: choice([
+        'جریان از مقاومت می‌گذرد و ولتاژ روی دو سر آن است.',
+        'ولتاژ از مقاومت می‌گذرد و جریان روی دو سر آن است.',
+        'هم ولتاژ و هم جریان روی دو سر مقاومت هستند.',
+      ], 0, 'درست است: جریان از میان یک قطعه می‌گذرد و ولتاژ میان دو نقطه، یعنی روی دو سر قطعه، اندازه گرفته می‌شود.', [
+        'ولتاژ از میان یک قطعه نمی‌گذرد؛ ولتاژ همیشه میان دو نقطه تعریف می‌شود.',
+        'جریان کمیتی است که از میان مسیر می‌گذرد، نه روی دو سر.',
+      ]),
+    },
+    {
+      id: 'p-q1',
+      prompt: ['یک باتری ۹ ولتی، جریانی ثابت ۰٫۱ آمپر را از مداری می‌گذراند. در ۱۰ ثانیه چند کولن بار از مدار می‌گذرد؟'],
+      build: blanks([{ parts: ['Q = ', { box: '1' }, ' C'], why: 'بار = جریان × زمان = ۰٫۱ × ۱۰ = ۱ کولن.', hint: 'جریان را در زمان ضرب کنید.' }]),
+    },
+    {
+      id: 'p-tf',
+      prompt: ['درست یا نادرست؟'],
+      build: grid([
+        { parts: ['یک کولن بار در هر ثانیه، یک آمپر جریان است.'], ans: ['t'], why: 'آمپر همان کولن بر ثانیه است.' },
+        { parts: ['توان از ضرب ولتاژ در جریان به دست می‌آید.'], ans: ['t'], why: 'رابطهٔ توان همین است: P = V · I.' },
+        { parts: ['ولتاژ را می‌توان داخل یک نقطه اندازه گرفت.'], ans: ['f'], why: 'ولتاژ همیشه میان دو نقطه اندازه گرفته می‌شود.' },
+        { parts: ['در مدار سری، جریان همه‌جا یکسان است.'], ans: ['t'], why: 'در مسیر سری، بار جایی نمی‌ماند؛ پس جریان همه‌جا یکی است.' },
+      ], AOE_TF, { text: true }),
+    },
+  ], done, 'تمرین فصل   ۱ از ۲') }],
+  ['final2', 'تمرین فصل ۲', () => { panel(0); }, { ask: done => quiz(SCREEN, [
+    {
+      id: 'p-units',
+      prompt: ['کدام گزینه یکای توان را درست معرفی می‌کند؟'],
+      build: choice([
+        'وات؛ یعنی یک ژول در هر ثانیه.',
+        'کولن؛ یعنی یک آمپر در هر ثانیه.',
+        'ولت؛ یعنی یک ژول بر کولن.',
+      ], 0, 'درست است: توان آهنگ مصرف انرژی است، پس یکای آن ژول بر ثانیه یا وات است.', [
+        'کولن، یکای بار است؛ یک آمپر در هر ثانیه یکایی برای بار نیست.',
+        'ولت، یکای ولتاژ است: یک ژول بر کولن.',
+      ]),
+    },
+    {
+      id: 'p-minutes',
+      prompt: ['جریانی ثابت ۲ آمپر در ۵ دقیقه از مداری می‌گذرد. چند کولن بار جابه‌جا می‌شود؟ و همین بار چند آمپرساعت است؟'],
+      build: blanks([
+        { parts: ['Q = ', { box: '600' }, ' C'], why: 'زمان = ۵ × ۶۰ = ۳۰۰ ثانیه؛ بار = ۲ × ۳۰۰ = ۶۰۰ کولن.', hint: 'نخست دقیقه را به ثانیه برگردانید.' },
+        { parts: ['Q = ', { box: '1/6' }, ' Ah'], why: '۵ دقیقه یک‌دوازدهم ساعت است؛ پس ۲ × ۱/۱۲ = ۱/۶ آمپرساعت (≈ ۰٫۱۶۷ آمپرساعت).', hint: ' زمان را بر حسب ساعت بنویسید: ۵ دقیقه = ۱/۱۲ ساعت.' },
+      ]),
+    },
+    {
+      id: 'p-table',
+      prompt: ['هر یکا به کدام کمیت تعلق دارد؟'],
+      build: grid([
+        { parts: ['کولن (C)'], ans: ['q'], why: 'کولن، یکای بار الکتریکی است.' },
+        { parts: ['آمپر (A)'], ans: ['i'], why: 'آمپر، یکای جریان است: یک کولن بر ثانیه.' },
+        { parts: ['ولت (V)'], ans: ['v'], why: 'ولت، یکای ولتاژ است: یک ژول بر کولن.' },
+        { parts: ['وات (W)'], ans: ['p'], why: 'وات، یکای توان است: یک ژول بر ثانیه.' },
+      ], AOE_UNITS, { multi: false, text: true }),
+    },
+  ], done, 'تمرین فصل   ۲ از ۲') }],
+  ['finish', 'پایان درس', () => { panel(0); }, { ask: finishCard }],
+].map(([id, title, run, extra]) => ({ id, title, run, ...extra }));
+
+boot();
+</script>
+</body>
+</html>
